@@ -26,7 +26,7 @@
 				CGPROGRAM
 
 				#include "UnityCG.cginc"
-				#include "Assets/Tools/Playtime Painter/Shaders/quizcanners_built_in.cginc"
+				#include "Assets/Playtime Painter/Shaders/quizcanners_built_in.cginc"
 
 				#pragma vertex vert
 				#pragma fragment frag

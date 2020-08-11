@@ -24,7 +24,7 @@
 				#pragma multi_compile ______ USE_NOISE_TEXTURE
 				#pragma target 3.0
 
-				#include "Assets/Tools/Playtime Painter/Shaders/quizcanners_built_in.cginc"
+				#include "Assets/Playtime Painter/Shaders/quizcanners_built_in.cginc"
 
 				sampler2D _MainTex;
 				float4 _MainTex_TexelSize;
