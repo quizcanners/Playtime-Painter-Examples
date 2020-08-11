@@ -392,7 +392,7 @@ namespace PlaytimePainter.Examples
                         {
                             "No Render Texture Pool found".write();
                             if ("Create".Click().nl())
-                                pegi.GameView.ShowNotification((TexturesPool.GetOrCreateInstance.gameObject.name + " created"));
+                                pegi.GameView.ShowNotification((TexturesPool.ForceInstance.gameObject.name + " created"));
                         }
                     }
                 }
