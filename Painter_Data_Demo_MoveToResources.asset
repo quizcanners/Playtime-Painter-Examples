@@ -161,7 +161,7 @@ MonoBehaviour:
   playtimePainterLayer: 30
   isLineraColorSpace: 1
   customBlitModes:
-  - {fileID: 11400000, guid: 86b954b606b70b948b6d5506f12a4e86, type: 2}
+  - {fileID: 0}
   selectedCustomBlitMode: 0
   defaultMaterial: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   dontIncludeShaderInBuild: 1
