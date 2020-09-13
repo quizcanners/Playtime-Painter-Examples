@@ -32,7 +32,7 @@ Shader "Playtime Painter/Geometry/Destructible/Character" {
 				#pragma vertex vert
 				#pragma fragment frag
 				#pragma multi_compile_fog
-				#include "Assets/Playtime Painter/Shaders/quizcanners_built_in.cginc"
+				#include "Assets/Playtime-Painter/Shaders/quizcanners_built_in.cginc"
 
 				#pragma multi_compile_fwdbase 
 				#pragma shader_feature __ _DEBUG_UV2
