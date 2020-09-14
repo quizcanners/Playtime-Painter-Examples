@@ -247,7 +247,7 @@ namespace PlaytimePainter.Examples
                 "No Painter Camera found".writeWarning();
 
                 if ("Refresh".Click())
-                    PainterSystem.applicationIsQuitting = false;
+                    PainterClass.applicationIsQuitting = false;
 
                 return false;
             }

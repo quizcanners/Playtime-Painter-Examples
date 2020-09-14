@@ -8,7 +8,7 @@ namespace PlaytimePainter
 {
 
     [Serializable]
-    public class MaterialLightManager : PainterSystem, IPEGI
+    public class MaterialLightManager : PainterClass , IPEGI
     {
         public const int maxLights = 3;
 

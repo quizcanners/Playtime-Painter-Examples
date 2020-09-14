@@ -116,7 +116,7 @@ namespace PlaytimePainter.Examples
                 var cam = PainterCamera.GetModule<ColorBleedCameraModule>();
                 if (cam != null)
                 {
-                    cam.Nested_Inspect(ref changed);
+                    cam.Nested_Inspect().nl(ref changed);
                 }
             }
 
