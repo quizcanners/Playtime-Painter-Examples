@@ -43,7 +43,7 @@ namespace PlaytimePainter.Examples
             return cody;
         }
 
-        public bool Decode(string tg, string data)
+        public void Decode(string tg, CfgData data)
         {
             switch (tg)
             {
@@ -51,13 +51,11 @@ namespace PlaytimePainter.Examples
                 case "rot": _rotationLerp.TargetValue = data.ToQuaternion(); break;
                 case "h": _heightLerp.TargetValue = data.ToFloat(); break;
                 case "sp": speed = data.ToFloat(); break;
-                default: return false;
             }
-
-            return true;
+            
         }
 
-        public void Decode(string data)
+        public void Decode(CfgData data)
         {
             IsLerpInitialized();
             new CfgDecoder(data).DecodeTagsFor(this);

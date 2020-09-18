@@ -369,6 +369,33 @@ MonoBehaviour:
   brushPrefab: {fileID: 114218434713451120, guid: 28dd40865c642244687d2f1f5835f69e,
     type: 3}
   brushRenderer: {fileID: 789634958}
+  imgMetaUsingRendTex:
+    target: 0
+    renderTexture: {fileID: 0}
+    texture2D: {fileID: 0}
+    other: {fileID: 0}
+    width: 128
+    height: 128
+    useTexCoord2: 0
+    _useTexCoord2AutoAssigned: 0
+    lockEditing: 0
+    isATransparentLayer: 0
+    enableUndoRedo: 0
+    preserveTransparency: 1
+    sdfMaxInside: 1
+    sdfMaxOutside: 1
+    sdfPostProcessDistance: 1
+    _repaintDelay: 0.016
+    updateTex2DafterStroke: 0
+    _numberOfTexture2DBackups: 10
+    _numberOfRenderTextureBackups: 10
+    isAVolumeTexture: 0
+    clearColor: {r: 0, g: 0, b: 0, a: 1}
+    backupManually: 0
+    saveName: No Name
+    url: 
+    inspectedItems: -1
+  materialsUsingRenderTexture: []
   autodisabledBufferTarget: {fileID: 0}
   tmpCurve:
     serializedVersion: 2
@@ -961,7 +988,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 499987844}
   m_LocalRotation: {x: 0.21358483, y: -0.40610796, z: 0.09822398, w: 0.88306844}
-  m_LocalPosition: {x: -0.2929411, y: 2.0061674, z: 4.7047987}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1489,10 +1516,8 @@ MonoBehaviour:
   _fallbackMaterial: {fileID: 0}
   meshEditing: 0
   selectedMeshProfile: 0
-  savedMeshData: 
   meshDataSavedFor: {fileID: 0}
   tilingY: 8
-  _pluginStd: mdls|119|pgns|109|TilAtlsPntr|21|sm|0||iai|1|0|ar|1|1||VolTexM|5|b|0|||TerCol|0||TerHeight|0||TerLight|0||TerSplat|0||UiMdl|0||||
   forcedMeshCollider: 0
   autoSelectMaterialByNumberOfPointedSubMesh: 1
   isBeingDisabled: 0
@@ -2005,10 +2030,8 @@ MonoBehaviour:
   _fallbackMaterial: {fileID: 0}
   meshEditing: 0
   selectedMeshProfile: 0
-  savedMeshData: 
   meshDataSavedFor: {fileID: 0}
   tilingY: 8
-  _pluginStd: mdls|119|pgns|109|TilAtlsPntr|21|sm|0||iai|1|0|ar|1|1||VolTexM|5|b|0|||TerCol|0||TerHeight|0||TerLight|0||TerSplat|0||UiMdl|0||||
   forcedMeshCollider: 1
   autoSelectMaterialByNumberOfPointedSubMesh: 1
   isBeingDisabled: 0
@@ -2406,7 +2429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c3f118dadbb21046a63091381593fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableNoise: 1
+  enableNoise: 0
   prerenderedNoiseTexture: {fileID: 2800000, guid: 11497ba5e98f8f745b5c3051fcf4eae0,
     type: 3}
 --- !u!4 &2020219816
@@ -2498,10 +2521,8 @@ MonoBehaviour:
   _fallbackMaterial: {fileID: 0}
   meshEditing: 0
   selectedMeshProfile: 0
-  savedMeshData: 
   meshDataSavedFor: {fileID: 0}
   tilingY: 8
-  _pluginStd: mdls|119|pgns|109|TilAtlsPntr|21|sm|0||iai|1|0|ar|1|1||VolTexM|5|b|0|||TerCol|0||TerHeight|0||TerLight|0||TerSplat|0||UiMdl|0||||
   forcedMeshCollider: 0
   autoSelectMaterialByNumberOfPointedSubMesh: 1
   isBeingDisabled: 0
