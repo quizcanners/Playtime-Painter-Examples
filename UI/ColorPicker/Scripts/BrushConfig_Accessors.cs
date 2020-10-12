@@ -77,7 +77,7 @@ namespace PlaytimePainter.Examples {
         }
 
         public void LoadFromURL(string url) =>
-                painterComponent?.loadingOrder.Add(PainterCamera.DownloadManager.StartDownload(url), painterComponent.GetMaterialTextureProperty);
+                painterComponent?.loadingOrder.Add(PainterCamera.DownloadManager.StartDownload(url), painterComponent.GetMaterialTextureProperty());
 
         public string urlName;
 
