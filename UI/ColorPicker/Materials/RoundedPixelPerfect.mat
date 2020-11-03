@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: RoundedPixelPerfect
   m_Shader: {fileID: 4800000, guid: 57ec043f13a89564a99c74a75a5b59fd, type: 3}
-  m_ShaderKeywords: _GRADS_LEFT _UNLINKED
+  m_ShaderKeywords: _GRADS_LEFT
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
