@@ -19,7 +19,7 @@
 
 					CGPROGRAM
 
-					#include "Assets\Playtime Painter\Shaders\PlaytimePainter_cg.cginc"
+					#include "Assets\Playtime-Painter\Shaders\PlaytimePainter_cg.cginc"
 
 					#pragma vertex vert
 					#pragma fragment frag
