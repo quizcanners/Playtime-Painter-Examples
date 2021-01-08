@@ -66,6 +66,7 @@
 					i.viewDir.xyz = normalize(i.viewDir.xyz);
 
 					float4 height = tex2D(_qcPp_mergeTerrainHeight, i.tc_Control.xz + _qcPp_mergeTerrainScale.w);
+
 					float aboveTerrain = saturate((((i.wpos.y - _qcPp_mergeTeraPosition.y) - height.a*_qcPp_mergeTerrainScale.y) - 0.5)*0.5);
 					float deAboveTerrain = 1 - aboveTerrain;
 
@@ -168,6 +169,8 @@
 					APPLY_PROJECTED_WATER(underWater, worldNormal, nrmNdSm, i.tc_Control, projectedWpos, i.viewDir.y, col, smoothness, ambient, shadow, caustics);
 #endif
 
+
+//return float4(worldNormal,1);
 
 					Terrain_Water_AndLight(col, i.tc_Control, 
 						ambient, smoothness

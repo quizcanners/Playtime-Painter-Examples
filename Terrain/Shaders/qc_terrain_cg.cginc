@@ -119,7 +119,7 @@ inline void Terrain_Water_AndLight(inout float4 col, float3 tc_Control, float am
 
 	shadow = saturate(shadow * 2 - ambientBlock);
 
-	float diff = saturate((dot(worldNormal, _WorldSpaceLightPos0.xyz)));
+	float diff = saturate((dot(worldNormal, _WorldSpaceLightPos0.xyz))); // _WorldSpaceLightPos0 will not look right in the editor
 	diff = saturate(diff - ambientBlock * 4 * (1 - diff));
 	float direct = diff*shadow;
 
@@ -145,7 +145,20 @@ inline void Terrain_Water_AndLight(inout float4 col, float3 tc_Control, float am
 
 	_LightColor0 *= direct;
 
-	col.rgb = col.rgb * (_LightColor0  + (terrainAmbient.rgb + ambientCol)*fernel*terrainAmbient.a) *(0.5 + deSmoothness*0.5);
+	col.rgb = col.rgb * (
+		_LightColor0  +
+
+		(
+			terrainAmbient.rgb 
+			+ 
+			ambientCol
+			)
+		*fernel
+		*terrainAmbient.a
+		)
+		*(0.5 + deSmoothness*0.5)
+		
+		;
 	
 	float3 halfDirection = normalize(viewDir.xyz + _WorldSpaceLightPos0.xyz);
 

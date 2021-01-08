@@ -22,11 +22,11 @@ namespace PlaytimePainter.Examples
         public bool _disableRotation;
         public bool rotateWithoutRmb;
         public bool simulateFlying;
+        public bool _onlyInEditor;
 
         [SerializeField] private QcUtils.DynamicRangeFloat targetHeight = new QcUtils.DynamicRangeFloat(0.1f, 10, 1);
 
         public Mode mode;
-
 
         #region Encode & Decode
 
@@ -63,25 +63,6 @@ namespace PlaytimePainter.Examples
         }
         #endregion
         
-      /*  #region Camera Smoothing
-        
-        [NonSerialized] private Vector3 cameraSmoothedVelocity;
-        [NonSerialized] private Vector3 mainCameraVelocity;
-        [NonSerialized] private Vector3 cameraSmoothingOffset;
-
-        private void UpdateCameraSmoothing()
-        {
-            var offset = cameraSmoothedVelocity - mainCameraVelocity - cameraSmoothingOffset * 16;
-
-            var magn = offset.magnitude;
-
-            cameraSmoothedVelocity = cameraSmoothedVelocity.LerpBySpeed_DirectionFirst(mainCameraVelocity, magn * 0.8f);
-
-            cameraSmoothingOffset = cameraSmoothingOffset.LerpBySpeed_DirectionFirst(offset, magn);
-        }
-
-        #endregion*/
-
         #region Advanced Camera
 
         private float CameraWindowNearClip()
@@ -244,7 +225,7 @@ namespace PlaytimePainter.Examples
         public virtual void Update()
         {
 
-            if (!_mainCam)
+            if (!_mainCam || (_onlyInEditor && Application.isEditor == false))
                 return;
             
             switch (mode)
@@ -441,9 +422,7 @@ namespace PlaytimePainter.Examples
                 }
             }
 
-
             pegi.nl();
-
 
             switch (mode)
             {
@@ -470,11 +449,8 @@ namespace PlaytimePainter.Examples
             }
 
             pegi.nl();
-            
 
-          /*  "Smoothing offset: {0}".F(cameraSmoothingOffset).nl();
-
-            "Smoothing velocity: {0}".F(cameraSmoothedVelocity).nl();*/
+            "Editor Only".toggleIcon(ref _onlyInEditor).nl();
 
             return false;
         }
