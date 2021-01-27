@@ -99,12 +99,15 @@ namespace PlaytimePainter.Examples
 
            // if (advancedCamera)
           //  {
-                float clipRange = CameraClipDistance;
+            float clipRange = CameraClipDistance;
 
-                float clip = CameraWindowNearClip();
+            float clip = CameraWindowNearClip();
+            if (_mainCam.transform.parent && _mainCam.transform.parent == transform.parent)
+            {
                 _mainCam.transform.position = transform.position - _mainCam.transform.forward * clip;
                 _mainCam.nearClipPlane = clip;
                 _mainCam.farClipPlane = clip + CameraClipDistance;
+            }
 
 
            /* }
@@ -375,7 +378,7 @@ namespace PlaytimePainter.Examples
                 if (!_mainCam.transform.IsChildOf(transform) || (_mainCam.transform == transform))
                 {
 
-                    "Make main camera a child object of this script".writeWarning();
+                    "Make main camera a child object of this script.".writeWarning();
 
                     if (transform.childCount == 0)
                     {
