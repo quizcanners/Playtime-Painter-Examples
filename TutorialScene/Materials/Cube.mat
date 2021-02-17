@@ -103,6 +103,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _ATLASED: 0
     - _AtlasTextures: 4
@@ -142,3 +143,4 @@ Material:
     - l1pos: {r: 0, g: 0, b: 0, a: 0}
     - l2col: {r: 0, g: 0, b: 0, a: 0}
     - l2pos: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
