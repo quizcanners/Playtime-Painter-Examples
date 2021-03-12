@@ -3,6 +3,11 @@ using PlayerAndEditorGUI;
 using QuizCannersUtilities;
 using UnityEngine;
 
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 namespace PlaytimePainter
 {
 
@@ -13,8 +18,6 @@ namespace PlaytimePainter
         private static int freeIndex;
 
         public ProjectorCameraConfiguration cameraConfiguration;
-
-        public MeshColorSetter emissiveMesh;
 
         Vector3 CameraRootPositionOffset => -transform.forward * cameraConfiguration.nearPlane;
 
@@ -45,7 +48,7 @@ namespace PlaytimePainter
 
            // Debug.Log("Setting mesh color "+ind);
 
-            if (!emissiveMesh)
+          /*  if (!emissiveMesh)
                 return;
 
             bool valid = ind >= 0 && ind <= 3;
@@ -62,7 +65,7 @@ namespace PlaytimePainter
                 case 2:
                     emissiveMesh.color = Color.blue;
                     break;
-            }
+            }*/
 
         }
 
@@ -133,8 +136,8 @@ namespace PlaytimePainter
 
                 "Emission Color".edit(ref ecol).nl(ref changed);
                 "Brightness".edit(ref brightness).nl(ref changed);
-                if (!emissiveMesh)
-                    "Emissive Mesh".edit(ref emissiveMesh).nl(ref changed);
+              //  if (!emissiveMesh)
+                //    "Emissive Mesh".edit(ref emissiveMesh).nl(ref changed);
             }
 
             if ("Projection".enter(ref inspectedElement, 1).nl())
@@ -166,4 +169,10 @@ namespace PlaytimePainter
      
 
     }
+
+#if UNITY_EDITOR
+    [CustomEditor(typeof(LightCaster))]
+    public class BakedShadowsLightProbeEditor : PEGI_Inspector_Mono<LightCaster> { }
+#endif
+
 }

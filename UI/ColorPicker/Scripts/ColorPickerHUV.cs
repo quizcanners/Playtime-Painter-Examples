@@ -4,6 +4,10 @@ using QuizCannersUtilities;
 using UnityEngine;
 using UnityEngine.UI;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 // Note: Some seamingly arbitraru constants in script and shader are there to match Unity's picker (For Editor UI).
 
 namespace PlaytimePainter.Examples {
@@ -109,4 +113,10 @@ namespace PlaytimePainter.Examples {
             return changed;
         }
     }
+
+#if UNITY_EDITOR
+    [CustomEditor(typeof(ColorPickerHUV))]
+    public class ColorPickerHUVEditor : PEGI_Inspector_Mono<ColorPickerHUV> { }
+
+#endif
 }

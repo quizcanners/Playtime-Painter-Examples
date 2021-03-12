@@ -26,60 +26,10 @@ MonoBehaviour:
   imgMetas:
   - target: 0
     renderTexture: {fileID: 0}
-    texture2D: {fileID: 2800000, guid: 57cf4349caa09bd468e5b6fe28238942, type: 3}
+    texture2D: {fileID: 2800000, guid: b7fdfbe5ad74fa04f962a034390a76f1, type: 3}
     other: {fileID: 0}
-    width: 80
-    height: 80
-    useTexCoord2: 0
-    _useTexCoord2AutoAssigned: 0
-    lockEditing: 0
-    isATransparentLayer: 1
-    enableUndoRedo: 0
-    preserveTransparency: 1
-    sdfMaxInside: 1
-    sdfMaxOutside: 1
-    sdfPostProcessDistance: 1
-    _repaintDelay: 0.016
-    updateTex2DafterStroke: 0
-    _numberOfTexture2DBackups: 10
-    _numberOfRenderTextureBackups: 10
-    isAVolumeTexture: 0
-    clearColor: {r: 0, g: 0, b: 0, a: 1}
-    backupManually: 0
-    saveName: icon_general_parameters_strength2
-    url: 
-    inspectedItems: -1
-  - target: 0
-    renderTexture: {fileID: 0}
-    texture2D: {fileID: 2800000, guid: 761134e55cb8cff4fa21df7cad867058, type: 3}
-    other: {fileID: 0}
-    width: 120
-    height: 120
-    useTexCoord2: 0
-    _useTexCoord2AutoAssigned: 0
-    lockEditing: 0
-    isATransparentLayer: 1
-    enableUndoRedo: 0
-    preserveTransparency: 1
-    sdfMaxInside: 20
-    sdfMaxOutside: 20
-    sdfPostProcessDistance: 5
-    _repaintDelay: 0.016
-    updateTex2DafterStroke: 0
-    _numberOfTexture2DBackups: 10
-    _numberOfRenderTextureBackups: 10
-    isAVolumeTexture: 0
-    clearColor: {r: 0, g: 0, b: 0, a: 1}
-    backupManually: 0
-    saveName: icon_general_parameters_strength
-    url: 
-    inspectedItems: -1
-  - target: 0
-    renderTexture: {fileID: 0}
-    texture2D: {fileID: 2800000, guid: 507834b80a307ef42914caba414f2562, type: 3}
-    other: {fileID: 0}
-    width: 16
-    height: 16
+    width: 256
+    height: 256
     useTexCoord2: 0
     _useTexCoord2AutoAssigned: 0
     lockEditing: 0
@@ -96,7 +46,32 @@ MonoBehaviour:
     isAVolumeTexture: 0
     clearColor: {r: 0, g: 0, b: 0, a: 1}
     backupManually: 0
-    saveName: pixArt
+    saveName: Cube
+    url: 
+    inspectedItems: -1
+  - target: 0
+    renderTexture: {fileID: 0}
+    texture2D: {fileID: 2800000, guid: b8432e0e7ec51b649af38d31e6b884d2, type: 3}
+    other: {fileID: 0}
+    width: 512
+    height: 512
+    useTexCoord2: 0
+    _useTexCoord2AutoAssigned: 0
+    lockEditing: 0
+    isATransparentLayer: 0
+    enableUndoRedo: 0
+    preserveTransparency: 1
+    sdfMaxInside: 1
+    sdfMaxOutside: 1
+    sdfPostProcessDistance: 1
+    _repaintDelay: 0.016
+    updateTex2DafterStroke: 0
+    _numberOfTexture2DBackups: 10
+    _numberOfRenderTextureBackups: 10
+    isAVolumeTexture: 0
+    clearColor: {r: 0, g: 0, b: 0, a: 1}
+    backupManually: 0
+    saveName: TerrainLight
     url: 
     inspectedItems: -1
   - target: 0
@@ -126,7 +101,132 @@ MonoBehaviour:
     inspectedItems: -1
   - target: 0
     renderTexture: {fileID: 0}
-    texture2D: {fileID: 2800000, guid: b7fdfbe5ad74fa04f962a034390a76f1, type: 3}
+    texture2D: {fileID: 2800000, guid: d0f92a4ed08135042b3f5c2a555f4076, type: 3}
+    other: {fileID: 0}
+    width: 1024
+    height: 1024
+    useTexCoord2: 0
+    _useTexCoord2AutoAssigned: 0
+    lockEditing: 0
+    isATransparentLayer: 1
+    enableUndoRedo: 0
+    preserveTransparency: 1
+    sdfMaxInside: 1
+    sdfMaxOutside: 1
+    sdfPostProcessDistance: 1
+    _repaintDelay: 0.016
+    updateTex2DafterStroke: 0
+    _numberOfTexture2DBackups: 10
+    _numberOfRenderTextureBackups: 10
+    isAVolumeTexture: 0
+    clearColor: {r: 0, g: 0, b: 0, a: 1}
+    backupManually: 0
+    saveName: Tiles_COLOR
+    url: 
+    inspectedItems: -1
+  - target: 0
+    renderTexture: {fileID: 0}
+    texture2D: {fileID: 2800000, guid: 6454a6051debd404394d701039883a53, type: 3}
+    other: {fileID: 0}
+    width: 2048
+    height: 2048
+    useTexCoord2: 0
+    _useTexCoord2AutoAssigned: 0
+    lockEditing: 0
+    isATransparentLayer: 0
+    enableUndoRedo: 0
+    preserveTransparency: 1
+    sdfMaxInside: 1
+    sdfMaxOutside: 1
+    sdfPostProcessDistance: 1
+    _repaintDelay: 0.016
+    updateTex2DafterStroke: 0
+    _numberOfTexture2DBackups: 10
+    _numberOfRenderTextureBackups: 10
+    isAVolumeTexture: 0
+    clearColor: {r: 0, g: 0, b: 0, a: 1}
+    backupManually: 0
+    saveName: Grass_COLOR
+    url: 
+    inspectedItems: -1
+  - target: 0
+    renderTexture: {fileID: 0}
+    texture2D: {fileID: 2800000, guid: 3bfad2a70a3556e4c8e347ac64073ec3, type: 3}
+    other: {fileID: 0}
+    width: 2048
+    height: 2048
+    useTexCoord2: 0
+    _useTexCoord2AutoAssigned: 0
+    lockEditing: 0
+    isATransparentLayer: 0
+    enableUndoRedo: 0
+    preserveTransparency: 1
+    sdfMaxInside: 1
+    sdfMaxOutside: 1
+    sdfPostProcessDistance: 1
+    _repaintDelay: 0.016
+    updateTex2DafterStroke: 0
+    _numberOfTexture2DBackups: 10
+    _numberOfRenderTextureBackups: 10
+    isAVolumeTexture: 0
+    clearColor: {r: 0, g: 0, b: 0, a: 1}
+    backupManually: 0
+    saveName: Dirt_COLOR
+    url: 
+    inspectedItems: -1
+  - target: 0
+    renderTexture: {fileID: 0}
+    texture2D: {fileID: 2800000, guid: 963e34d7b4af5d64984565a55337d3fa, type: 3}
+    other: {fileID: 0}
+    width: 2048
+    height: 1024
+    useTexCoord2: 0
+    _useTexCoord2AutoAssigned: 0
+    lockEditing: 0
+    isATransparentLayer: 1
+    enableUndoRedo: 0
+    preserveTransparency: 1
+    sdfMaxInside: 1
+    sdfMaxOutside: 1
+    sdfPostProcessDistance: 1
+    _repaintDelay: 0.016
+    updateTex2DafterStroke: 0
+    _numberOfTexture2DBackups: 10
+    _numberOfRenderTextureBackups: 10
+    isAVolumeTexture: 0
+    clearColor: {r: 0, g: 0, b: 0, a: 1}
+    backupManually: 0
+    saveName: Cliff_COLOR
+    url: 
+    inspectedItems: -1
+  - target: 0
+    renderTexture: {fileID: 0}
+    texture2D: {fileID: 2846298, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    other: {fileID: 0}
+    width: 128
+    height: 128
+    useTexCoord2: 0
+    _useTexCoord2AutoAssigned: 0
+    lockEditing: 0
+    isATransparentLayer: 0
+    enableUndoRedo: 0
+    preserveTransparency: 1
+    sdfMaxInside: 1
+    sdfMaxOutside: 1
+    sdfPostProcessDistance: 1
+    _repaintDelay: 0.016
+    updateTex2DafterStroke: 0
+    _numberOfTexture2DBackups: 10
+    _numberOfRenderTextureBackups: 10
+    isAVolumeTexture: 0
+    clearColor: {r: 0, g: 0, b: 0, a: 1}
+    backupManually: 0
+    saveName: LiberationSans SDF Atlas
+    url: 
+    inspectedItems: -1
+  - target: 0
+    renderTexture: {fileID: 0}
+    texture2D: {fileID: 2800000, guid: 9da58cdd9148caf448a96f5649c14fc9, type: 3}
     other: {fileID: 0}
     width: 256
     height: 256
@@ -146,17 +246,37 @@ MonoBehaviour:
     isAVolumeTexture: 0
     clearColor: {r: 0, g: 0, b: 0, a: 1}
     backupManually: 0
-    saveName: Cube
+    saveName: TerrainHeight
+    url: 
+    inspectedItems: -1
+  - target: 0
+    renderTexture: {fileID: 0}
+    texture2D: {fileID: 2800000, guid: 507834b80a307ef42914caba414f2562, type: 3}
+    other: {fileID: 0}
+    width: 16
+    height: 16
+    useTexCoord2: 0
+    _useTexCoord2AutoAssigned: 0
+    lockEditing: 0
+    isATransparentLayer: 0
+    enableUndoRedo: 0
+    preserveTransparency: 1
+    sdfMaxInside: 1
+    sdfMaxOutside: 1
+    sdfPostProcessDistance: 1
+    _repaintDelay: 0.016
+    updateTex2DafterStroke: 0
+    _numberOfTexture2DBackups: 10
+    _numberOfRenderTextureBackups: 10
+    isAVolumeTexture: 0
+    clearColor: {r: 0, g: 0, b: 0, a: 1}
+    backupManually: 0
+    saveName: pixArt
     url: 
     inspectedItems: -1
   matMetas:
-  - material: {fileID: 2100000, guid: bb1039fdea1354f48bac482aeb335241, type: 2}
-    selectedTexture: 2
-    usePreviewShader: 0
-    colorToVertexColorOnMerge: 0
-    selectedForMerge: 0
-  - material: {fileID: 0}
-    selectedTexture: 0
+  - material: {fileID: 2100000, guid: 2506b329c538c664fbc6261b7f8dc2bc, type: 2}
+    selectedTexture: 1
     usePreviewShader: 0
     colorToVertexColorOnMerge: 0
     selectedForMerge: 0
@@ -167,6 +287,16 @@ MonoBehaviour:
     selectedForMerge: 0
   - material: {fileID: 2100000, guid: 4111ec3737538d24eac860c521e3f96e, type: 2}
     selectedTexture: 0
+    usePreviewShader: 0
+    colorToVertexColorOnMerge: 0
+    selectedForMerge: 0
+  - material: {fileID: 10652, guid: 0000000000000000f000000000000000, type: 0}
+    selectedTexture: 0
+    usePreviewShader: 0
+    colorToVertexColorOnMerge: 0
+    selectedForMerge: 0
+  - material: {fileID: 2100000, guid: bb1039fdea1354f48bac482aeb335241, type: 2}
+    selectedTexture: 2
     usePreviewShader: 0
     colorToVertexColorOnMerge: 0
     selectedForMerge: 0
@@ -246,11 +376,11 @@ MonoBehaviour:
     hardness: 1.588
     blurAmount: 1.77
     brush3DRadius: 0.354
-    brush2DRadius: 22
+    brush2DRadius: 74
     useAlphaBuffer: 0
     alphaLimitForAlphaBuffer: 0.55
     worldSpaceBrushPixelJitter: 0
-    Color: {r: 0, g: 1, b: 1, a: 0}
+    Color: {r: 1, g: 1, b: 1, a: 1}
     _dFlow:
       min: 0.1
       max: 10
@@ -259,7 +389,7 @@ MonoBehaviour:
   showColorSliders: 1
   disableNonMeshColliderInPlayMode: 0
   previewAlphaChanel: 0
-  moreOptions: 1
+  moreOptions: 0
   allowExclusiveRenderTextures: 0
   showConfig: 0
   showTeachingNotifications: 0

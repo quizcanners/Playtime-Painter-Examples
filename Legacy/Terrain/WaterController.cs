@@ -2,6 +2,10 @@
 using QuizCannersUtilities;
 using UnityEngine;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 namespace PlaytimePainter.Examples
 {
     [ExecuteInEditMode]
@@ -78,4 +82,9 @@ namespace PlaytimePainter.Examples
 
         
     }
+
+#if UNITY_EDITOR
+    [CustomEditor(typeof(WaterController))]
+    public class WaterEditor : PEGI_Inspector_Mono<WaterController> { }
+#endif
 }

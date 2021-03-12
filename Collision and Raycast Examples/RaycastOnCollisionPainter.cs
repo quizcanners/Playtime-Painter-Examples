@@ -3,6 +3,10 @@ using PlayerAndEditorGUI;
 using QuizCannersUtilities;
 using UnityEngine;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 namespace PlaytimePainter.Examples
 {
 
@@ -125,4 +129,9 @@ namespace PlaytimePainter.Examples
 
         #endregion
     }
+
+#if UNITY_EDITOR
+    [CustomEditor(typeof(RaycastOnCollisionPainter))]
+    public class PainterCasterEditor : PEGI_Inspector_Mono<RaycastOnCollisionPainter> { }
+#endif
 }

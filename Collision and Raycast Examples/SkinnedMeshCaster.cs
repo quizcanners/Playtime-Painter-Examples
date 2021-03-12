@@ -2,6 +2,10 @@
 using QuizCannersUtilities;
 using UnityEngine;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 namespace PlaytimePainter.Examples {
 
 #pragma warning disable IDE0018 // Inline variable declaration
@@ -122,4 +126,9 @@ namespace PlaytimePainter.Examples {
             return changed;
         }
     }
+
+#if UNITY_EDITOR
+    [CustomEditor(typeof(SkinnedMeshCaster))]
+    public class SkinnedMeshCasterEditor : PEGI_Inspector_Mono<SkinnedMeshCaster> { }
+#endif
 }

@@ -4,6 +4,10 @@ using QuizCannersUtilities;
 using Unity.Collections;
 using UnityEngine;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 namespace PlaytimePainter.Examples
 {
 
@@ -457,7 +461,13 @@ namespace PlaytimePainter.Examples
 
             return false;
         }
-        
+
         #endregion
     }
+
+#if UNITY_EDITOR
+    [CustomEditor(typeof(GodMode))]
+    public class GodModeDrawer : PEGI_Inspector_Mono<GodMode> { }
+#endif
+
 }

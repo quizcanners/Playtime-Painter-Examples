@@ -119,6 +119,7 @@ Material:
         m_Texture: {fileID: 2800000, guid: 60984d76b24f0c24eaa24beb9094851f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _ALPHA: 0
     - _ATLASED: 0
@@ -136,7 +137,7 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Lightmapping: 1
-    - _Merge: 0.39
+    - _Merge: 0.96
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -156,3 +157,4 @@ Material:
     - _EmissionColorUI: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColorWithMapUI: {r: 1, g: 1, b: 1, a: 1}
     - _WetColor: {r: 0.26, g: 0.16, b: 0.16, a: 0}
+  m_BuildTextureStacks: []

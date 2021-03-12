@@ -3,6 +3,10 @@ using PlayerAndEditorGUI;
 using QuizCannersUtilities;
 using UnityEngine;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 namespace PlaytimePainter
 {
     [ExecuteInEditMode]
@@ -162,4 +166,9 @@ namespace PlaytimePainter
 
 #endregion
     }
+
+#if UNITY_EDITOR
+    [CustomEditor(typeof(VolumeRayTrace))]
+    public class VolumeRayTraceEditor : PEGI_Inspector_Mono<VolumeRayTrace> { }
+#endif
 }
