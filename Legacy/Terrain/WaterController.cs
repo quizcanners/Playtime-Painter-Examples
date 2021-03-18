@@ -54,14 +54,15 @@ namespace PlaytimePainter.Examples
         public bool Inspect() {
             var changed = false;
 
-            if (pegi.FullWindow.DocumentationClick("About Water Controller"))  
-            pegi.FullWindow.DocumentationOpen("This water works only with Merging Terrain shaders. The method is as follows: {0}" +
-            "Terrain shaders compare it's Y(up) position with water height and calculate where the foam should be." +
-            "THos shaders paint foam onto themselves. Below the foam they pain screen alpha channel 1, and above - 0." +
-            "Water just renders the plane, but multiplies it by screen's alpha rendered by underlying objects. " +
-            "This is one of those methods I labeled as EXPERIMENTAL in the Asset description. And it will probably will stay in that category" +
-            "since it is not a robust method. And I only recommend working on those method at the later stages of your project, " +
-            "when you can be sure it will not conflict with other effects.");
+            if (pegi.FullWindow.DocumentationClickOpen(
+                text: ()=> "This water works only with Merging Terrain shaders. The method is as follows: {0}" +
+                "Terrain shaders compare it's Y(up) position with water height and calculate where the foam should be." +
+                "THos shaders paint foam onto themselves. Below the foam they pain screen alpha channel 1, and above - 0." +
+                "Water just renders the plane, but multiplies it by screen's alpha rendered by underlying objects. " +
+                "This is one of those methods I labeled as EXPERIMENTAL in the Asset description. And it will probably will stay in that category" +
+                "since it is not a robust method. And I only recommend working on those method at the later stages of your project, " +
+                "when you can be sure it will not conflict with other effects."
+                , toolTip: "About Water Controller"))  
 
             "Bump".edit(70, ref waterBump).nl(ref changed);
 
