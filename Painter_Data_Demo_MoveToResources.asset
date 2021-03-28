@@ -20,7 +20,7 @@ MonoBehaviour:
   defaultMaterial: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   dontIncludeShaderInBuild: 1
   shadersToBuldWith: []
-  textureSets: []
+  texturePackagingSolutions: []
   atlasedMaterials: []
   playtimeSavedTextures: []
   imgMetas:
@@ -349,43 +349,7 @@ MonoBehaviour:
   vectorsFolderName: Vectors
   atlasFolderName: Atlases
   enablePainterUIonPlay: 0
-  Brush:
-    _inGpuBrushType: 3
-    _inCpuBrushType: 4
-    _inGpuBlitMode: 0
-    _inCpuBlitMode: 0
-    targetIsTex2D: 0
-    selectedSourceTexture: 5
-    clampSourceTexture: 0
-    ignoreSrcTextureTransparency: 0
-    srcColorUsage: 0
-    useMask: 0
-    selectedSourceMask: 0
-    maskFromGreyscale: 0
-    maskOffset: {x: 0, y: 0}
-    randomMaskOffset: 0
-    flipMaskAlpha: 0
-    maskTiling: 1
-    mask: 15
-    selectedDecal: 0
-    decalAngle: 0
-    rotationMethod: 0
-    decalContentious: 0
-    decalAngleModifier: 0
-    showBrushDynamics: 0
-    hardness: 1.588
-    blurAmount: 1.77
-    brush3DRadius: 0.354
-    brush2DRadius: 1
-    useAlphaBuffer: 0
-    alphaLimitForAlphaBuffer: 0.55
-    worldSpaceBrushPixelJitter: 0
-    Color: {r: 1, g: 1, b: 0, a: 0}
-    _dFlow:
-      min: 0.1
-      max: 10
-      _value: 4.5
-    showingSize: 1
+  BrushConfig: {fileID: 0}
   showColorSliders: 1
   disableNonMeshColliderInPlayMode: 0
   previewAlphaChanel: 0
@@ -405,4 +369,3 @@ MonoBehaviour:
   selectedHeightIndex: 4
   recordingNames: []
   browsedRecord: 0
-  systemLanguage: 10
