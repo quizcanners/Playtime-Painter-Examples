@@ -228,7 +228,7 @@ namespace PlaytimePainter.Examples
             return false;
         }
 
-        public bool Inspect()
+        public void Inspect()
         {
             var changed = false;
 
@@ -270,7 +270,6 @@ namespace PlaytimePainter.Examples
             if (!brush.PaintingRGB)
                 "Enable RGB, disable A to use faster Brush Shader (if painting to RenderTexture).".writeHint();
 
-            return changed;
         }
         #endregion
     }

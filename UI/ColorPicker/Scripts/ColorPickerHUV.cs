@@ -100,17 +100,13 @@ namespace PlaytimePainter.Examples {
             return true;
         }
         
-        public bool Inspect()
+        public void Inspect()
         {
-            var changed = false;
 
             pegi.toggleDefaultInspector(this);
             "HUE: {0}".F(hue).nl();
             "Saturateion: {0}".F(Saturation).nl();
             "Value: {0}".F(Saturation).nl();
-
-
-            return changed;
         }
     }
 

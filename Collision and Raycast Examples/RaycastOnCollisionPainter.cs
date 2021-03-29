@@ -110,9 +110,8 @@ namespace PlaytimePainter.Examples
 
         #region Inspector
 
-        public bool Inspect()
+        public void Inspect()
         {
-            var changed = false;
 
             pegi.FullWindow.DocumentationClickOpen(()=> "During collision will try to cast ray in the direction of that collision. " +
                                                        "If target has Playtime Painter Component this script will try to paint on it.", "How to use Raycast On Collision");
@@ -120,11 +119,10 @@ namespace PlaytimePainter.Examples
             if (Application.isPlaying)
                 "Painting on {0} objects".F(_paintingOn.Count).nl();
 
-            brush.Targets_PEGI().nl(ref changed);
-            brush.Mode_Type_PEGI().nl(ref changed);
-            brush.ColorSliders().nl(ref changed);
+            brush.Targets_PEGI().nl();
+            brush.Mode_Type_PEGI().nl();
+            brush.ColorSliders().nl();
 
-            return changed;
         }
 
         #endregion

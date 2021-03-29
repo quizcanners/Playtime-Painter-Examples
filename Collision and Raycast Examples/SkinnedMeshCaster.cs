@@ -101,29 +101,22 @@ namespace PlaytimePainter.Examples {
 
         }
 
-        public bool Inspect()
+        public void Inspect()
         {
-            var changed = false;
-
-      
             pegi.FullWindow.DocumentationClickOpen(()=> "Will cast a ray in transform.forward direction when Left Mouse Button is pressed. " +
                                                        "Target objects need to have PlaytimePainter component attached. Then this brush will be applied " +
                                                        "on texture (if not locked) selected on target PlaytimePainter component" +
                                                        "This Component has it's own brush configuration. Can be replaced with PainterCamera.Data.brushConfig " +
                                                        "to use global brush.", "How to use Skinned Mesh Caster", 15);
         
-
             if ("Paint!".Click().nl())
                 Paint();
 
             "Last ray Cast result: {0}".F(lastShotResult).nl();
 
-            brush.Targets_PEGI().nl(ref changed);
-            brush.Mode_Type_PEGI().nl(ref changed);
-            brush.ColorSliders().nl(ref changed);
-            
-
-            return changed;
+            brush.Targets_PEGI().nl();
+            brush.Mode_Type_PEGI().nl();
+            brush.ColorSliders().nl();
         }
     }
 

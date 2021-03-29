@@ -227,7 +227,7 @@ namespace PlaytimePainter.Examples
         #region Inspector
         [SerializeField] private bool _showOptional;
 
-        public virtual bool Inspect()
+        public virtual void Inspect()
         {
 
             pegi.toggleDefaultInspector(this);
@@ -253,7 +253,7 @@ namespace PlaytimePainter.Examples
                 if ("Refresh".Click())
                     PainterClass.applicationIsQuitting = false;
 
-                return false;
+                return;
             }
             
             pegi.FullWindow.DocumentationClickOpen(()=> "Works with PaintWithoutComponent script. This lets you configure how painting will be received." +
@@ -443,9 +443,6 @@ namespace PlaytimePainter.Examples
                     }
                 }
             }
-
-
-            return changes;
         }
 
         #endregion

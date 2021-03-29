@@ -16,9 +16,9 @@ namespace PlaytimePainter
 
         #region Inspect
         
-        public override bool Inspect()
+        public override void Inspect()
         {
-            var changed = base.Inspect();
+            base.Inspect();
 
             var dp = DepthProjectorCamera.Instance;
 
@@ -47,9 +47,7 @@ namespace PlaytimePainter
             }
 
             if ("Lights ".enter(ref inspectedElement, 11).nl())
-                lights.Nested_Inspect().nl(ref changed);
-
-            return changed;
+                lights.Nested_Inspect().nl();
         }
 
         

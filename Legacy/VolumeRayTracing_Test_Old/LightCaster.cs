@@ -69,7 +69,7 @@ namespace PlaytimePainter
 
         }
 
-        private void OnAwake()
+        protected void OnAwake()
         {
             AllProbes[index] = this;
         }
@@ -121,50 +121,45 @@ namespace PlaytimePainter
         
         private int inspectedElement = -1;
 
-        public bool Inspect()
+        public void Inspect()
         {
-            var changed = false;
+            var changes = pegi.ChangeTrackStart();
 
             if (inspectedElement == -1)
             {
 
                 var tmp = index;
-                if ("Index".edit(ref tmp).nl(ref changed))
+                if ("Index".edit(ref tmp).nl())
                     ChangeIndexTo(tmp);
 
                 "Shake".edit(50, ref camShake, 0, 0.001f).nl();
 
-                "Emission Color".edit(ref ecol).nl(ref changed);
-                "Brightness".edit(ref brightness).nl(ref changed);
+                "Emission Color".edit(ref ecol).nl();
+                "Brightness".edit(ref brightness).nl();
               //  if (!emissiveMesh)
                 //    "Emissive Mesh".edit(ref emissiveMesh).nl(ref changed);
             }
 
             if ("Projection".enter(ref inspectedElement, 1).nl())
             {
-                cameraConfiguration.Nested_Inspect().nl(ref changed);
+                cameraConfiguration.Nested_Inspect().nl();
             }
 
             if (inspectedElement == -1 && cameraConfiguration.nearPlane < 5 && "Increase near plane to 5".Click())
                 cameraConfiguration.nearPlane = 5;
 
 
-            if (changed) QcUnity.RepaintViews();
-
-            return changed;
+            if (changes) 
+                QcUnity.RepaintViews();
         }
 
-        public bool InspectInList(IList list, int ind, ref int edited)
+        public void InspectInList(IList list, int ind, ref int edited)
         {
-            var changed = false;
            index.ToString().write(25);
-           pegi.edit(ref ecol, 40).changes(ref changed);
-               //   pegi.edit(ref brightness, 0, 10).changes(ref changed);
+           pegi.edit(ref ecol, 40);
 
            if (icon.Enter.Click("Inspect"))
                edited = ind;
-
-           return changed;
         }
      
 

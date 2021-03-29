@@ -81,15 +81,11 @@ namespace PlaytimePainter.Examples
 
         private int _inspectedStuff = -1;
 
-        public bool Inspect()
+        public void Inspect()
         {
-            var changed = false;
-
             if (_inspectedStuff == -1)
             {
                 pegi.toggleDefaultInspector(this);
-
-
 
                 "Main Cam".edit(ref _mainCam).nl();
                 "Directional Light".edit(ref directional).nl();
@@ -110,17 +106,14 @@ namespace PlaytimePainter.Examples
                 }
             }
 
-
             if ("Weather configurations".enter(ref _inspectedStuff, 0).nl())
             {
                 var cam = PainterCamera.GetModule<ColorBleedCameraModule>();
                 if (cam != null)
-                {
-                    cam.Nested_Inspect().nl(ref changed);
-                }
+                    cam.Nested_Inspect().nl();
+                
             }
 
-            return changed;
         }
     }
 

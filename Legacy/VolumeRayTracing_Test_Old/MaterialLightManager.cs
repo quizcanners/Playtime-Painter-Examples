@@ -74,7 +74,7 @@ namespace PlaytimePainter
 
         private int inspectedProbe = -1;
 
-        public virtual bool Inspect()
+        public virtual void Inspect()
         {
 
             var changed = false;
@@ -123,7 +123,7 @@ namespace PlaytimePainter
                         }
 
                         if (prb)
-                            prb.Inspect_AsInList(null, ind, ref inspectedProbe);
+                            prb.Inspect_AsInListNested(null, ind, ref inspectedProbe);
 
                         pegi.nl();
 
@@ -146,8 +146,6 @@ namespace PlaytimePainter
 
             if (changed)
                 SetIndexesOnLightSources();
-
-            return changed;
         }
 
         #endregion

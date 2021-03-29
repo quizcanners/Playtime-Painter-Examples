@@ -341,7 +341,7 @@ namespace PlaytimePainter.Examples
         }
 
         #region Inspector
-        public bool Inspect()
+        public void Inspect()
         {
 
             var changed = false;
@@ -405,11 +405,11 @@ namespace PlaytimePainter.Examples
 
                     if (mode != Mode.LERP)
                     {
-                        bool cameraDirty = false;
+                        bool cameraDirty = pegi.ChangeTrackStart();
 
                         float fov = _mainCam.fieldOfView;
 
-                        "FOV".edit(ref fov, 5, 170).nl(ref cameraDirty);
+                        "FOV".edit(ref fov, 5, 170).nl();
                         _mainCam.fieldOfView = fov;
 
                         float clipDistance = CameraClipDistance;
@@ -419,7 +419,8 @@ namespace PlaytimePainter.Examples
                             CameraClipDistance = Mathf.Clamp(clipDistance, 0.03f, 100000);
 
                         "Height:".write(60);
-                        targetHeight.Inspect().nl(ref cameraDirty);
+                        targetHeight.Inspect();
+                        pegi.nl();
 
                         "Clip Distance: {0}".F(CameraWindowNearClip()).nl();
 
@@ -458,8 +459,6 @@ namespace PlaytimePainter.Examples
             pegi.nl();
 
             "Editor Only".toggleIcon(ref _onlyInEditor).nl();
-
-            return false;
         }
 
         #endregion

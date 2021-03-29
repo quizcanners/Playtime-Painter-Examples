@@ -181,13 +181,12 @@ namespace PlaytimePainter {
         #endif
 
         #region Inspector
-        public bool Inspect()
+        public void Inspect()
         {
-            bool changed = false;
-            "Mesh Filter".edit(ref meshFilter).nl(ref changed);
-            "Mesh Collider".edit(ref meshCollider).nl(ref changed);
-            "Width: ".edit(ref testWidth).nl(ref changed);
-            "Thickness ".edit(ref thickness).nl(ref changed);
+            "Mesh Filter".edit(ref meshFilter).nl();
+            "Mesh Collider".edit(ref meshCollider).nl();
+            "Width: ".edit(ref testWidth).nl();
+            "Thickness ".edit(ref thickness).nl();
                 /*   "UV Sector".edit(ref uvSector).changes(ref changed);
             if (uvSector != new Vector4(0,0,1,1) && icon.Refresh.Click())
                 uvSector = new Vector4(0,0,1,1);
@@ -223,7 +222,6 @@ namespace PlaytimePainter {
 
             "For Pix Art shader set width equal to texture size, and thickness - 0".writeHint();
 
-            return changed;
         }
         #endregion
 

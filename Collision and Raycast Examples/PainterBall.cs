@@ -85,26 +85,23 @@ namespace PlaytimePainter.Examples {
             }
         }
 
-        public bool Inspect()
+        public void Inspect()
         {
-
-            var changed = false;
 
             pegi.FullWindow.DocumentationClickOpen(()=> "When colliding with other object will try to use sphere brush to paint on them." +
                                                        "Targets need to have PlaytimePainter component", "About Painter Ball");
      
-
             if (Application.isPlaying)
                 "Painting on {0} objects".F(paintingOn.Count).nl();
 
-            if (_collider.isTrigger && "Set as Rigid Collider object".Click().nl(ref changed))
+            if (_collider.isTrigger && "Set as Rigid Collider object".Click().nl())
             {
                 _collider.isTrigger = false;
                 rigid.isKinematic = false;
                 rigid.useGravity = true;
             }
 
-            if (!_collider.isTrigger && "Set as Trigger".Click().nl(ref changed))
+            if (!_collider.isTrigger && "Set as Trigger".Click().nl())
             {
                 _collider.isTrigger = true;
                 rigid.isKinematic = true;
@@ -113,14 +110,14 @@ namespace PlaytimePainter.Examples {
 
             var size = transform.localScale.x;
 
-            if ("Size:".edit("Size of the ball", 50, ref size, 0.1f, 10).nl(ref changed))
+            if ("Size:".edit("Size of the ball", 50, ref size, 0.1f, 10).nl())
                 transform.localScale = Vector3.one * size;
 
             const string ballHint = "PaintBall_brushHint";
 
             "Painter ball made for World Space Brushes only".writeOneTimeHint(ballHint);
 
-            if ((brush.Targets_PEGI().nl(ref changed)) || (brush.Mode_Type_PEGI().nl(ref changed)))
+            if ((brush.Targets_PEGI().nl()) || (brush.Mode_Type_PEGI().nl()))
             {
                 if (brush.targetIsTex2D || !brush.Is3DBrush())
                 {
@@ -133,8 +130,6 @@ namespace PlaytimePainter.Examples {
 
             if (brush.ColorSliders())
                 rendy.sharedMaterial.color = brush.Color;
-
-            return false;
         }
 
     }

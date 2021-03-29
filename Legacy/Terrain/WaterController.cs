@@ -51,8 +51,9 @@ namespace PlaytimePainter.Examples
 
         #region Inspector
 
-        public bool Inspect() {
-            var changed = false;
+        public void Inspect() {
+
+            var changed = pegi.ChangeTrackStart();
 
             if (pegi.FullWindow.DocumentationClickOpen(
                 text: ()=> "This water works only with Merging Terrain shaders. The method is as follows: {0}" +
@@ -64,17 +65,15 @@ namespace PlaytimePainter.Examples
                 "when you can be sure it will not conflict with other effects."
                 , toolTip: "About Water Controller"))  
 
-            "Bump".edit(70, ref waterBump).nl(ref changed);
+            "Bump".edit(70, ref waterBump).nl();
 
-            "Wet Area Height:".edit(50, ref wetAreaHeight, 0.1f, 10).nl(ref changed);
+            "Wet Area Height:".edit(50, ref wetAreaHeight, 0.1f, 10).nl();
 
             if (changed) {
                 SetFoamDynamics();
                 QcUnity.RepaintViews(); 
                 this.SetToDirty();
             }
-            
-            return changed;
         }
 
         
