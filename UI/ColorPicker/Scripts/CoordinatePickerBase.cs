@@ -1,5 +1,5 @@
 ﻿using System;
-using PlayerAndEditorGUI;
+using QuizCanners.Inspect;
 using UnityEngine;
 using UnityEngine.EventSystems;
 

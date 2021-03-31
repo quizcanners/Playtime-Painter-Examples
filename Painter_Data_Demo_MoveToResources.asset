@@ -355,7 +355,7 @@ MonoBehaviour:
   previewAlphaChanel: 0
   moreOptions: 0
   allowExclusiveRenderTextures: 0
-  showConfig: 1
+  showConfig: 0
   showTeachingNotifications: 0
   samplingMaskSize:
     x: 4

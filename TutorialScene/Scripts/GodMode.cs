@@ -1,8 +1,8 @@
-﻿using System;
-using PlayerAndEditorGUI;
-using QuizCannersUtilities;
-using Unity.Collections;
+﻿using QuizCanners.Inspect;
+using QuizCanners.Utils;
 using UnityEngine;
+using QuizCanners.Lerp;
+using QuizCanners.CfgDecode;
 
 #if UNITY_EDITOR
 using UnityEditor;

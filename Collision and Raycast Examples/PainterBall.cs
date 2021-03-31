@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using PlayerAndEditorGUI;
-using QuizCannersUtilities;
+using QuizCanners.Inspect;
+using QuizCanners.Utils;
 using UnityEngine;
 
 #if UNITY_EDITOR

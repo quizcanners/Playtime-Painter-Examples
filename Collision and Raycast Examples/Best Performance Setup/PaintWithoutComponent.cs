@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using PlayerAndEditorGUI;
+using QuizCanners.Inspect;
 using PlaytimePainter.ComponentModules;
-using QuizCannersUtilities;
+using QuizCanners.Utils;
 using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;

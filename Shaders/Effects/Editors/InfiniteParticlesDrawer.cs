@@ -1,5 +1,5 @@
-﻿using PlayerAndEditorGUI;
-using QuizCannersUtilities;
+﻿using QuizCanners.Inspect;
+using QuizCanners.Utils;
 using UnityEngine;
 
 public class InfiniteParticlesDrawerGUI : PEGI_Inspector_Material {

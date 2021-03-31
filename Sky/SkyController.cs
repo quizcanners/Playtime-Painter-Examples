@@ -1,6 +1,6 @@
-﻿using QuizCannersUtilities;
+﻿using QuizCanners.Utils;
 using UnityEngine;
-using PlayerAndEditorGUI;
+using QuizCanners.Inspect;
 using static PlaytimePainter.CameraModules.ColorBleedCameraModule;
 using System.Collections.Generic;
 using PlaytimePainter.CameraModules;
