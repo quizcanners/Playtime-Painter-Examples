@@ -100,39 +100,19 @@ namespace PlaytimePainter.Examples
 
         void AdjustCamera()
         {
-
-           // if (advancedCamera)
-          //  {
-            float clipRange = CameraClipDistance;
-
-            float clip = CameraWindowNearClip();
             if (_mainCam.transform.parent && _mainCam.transform.parent == transform.parent)
             {
+                float clip = CameraWindowNearClip();
                 _mainCam.transform.position = transform.position - _mainCam.transform.forward * clip;
                 _mainCam.nearClipPlane = clip;
                 _mainCam.farClipPlane = clip + CameraClipDistance;
             }
-
-
-           /* }
-            else
-            {
-                _mainCam.transform.localPosition = Vector3.zero;
-                _mainCam.nearClipPlane = 0.3f;
-            }*/
-
-           // _mainCam.transform.position += cameraSmoothingOffset;
-
         }
 
         #endregion
         
         void OnEnable()
         {
-            /*cameraSmoothedVelocity = Vector3.zero;
-            mainCameraVelocity = Vector3.zero;
-            cameraSmoothingOffset = Vector3.zero;*/
-
             if (mode == Mode.LERP)
                 mode = Mode.FPS;
         }
