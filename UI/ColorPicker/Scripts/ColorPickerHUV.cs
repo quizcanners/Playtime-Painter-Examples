@@ -18,10 +18,10 @@ namespace PlaytimePainter.Examples {
     {
 
         public static ColorPickerHUV instance;
-        
-        static float Saturation { get { return ColorPickerContrast.Saturation; } set { ColorPickerContrast.Saturation = value; } }
 
-        static float Value { get { return ColorPickerContrast.Value; } set { ColorPickerContrast.Value = value; } }
+        private static float Saturation { get { return ColorPickerContrast.Saturation; } set { ColorPickerContrast.Saturation = value; } }
+
+        private static float Value { get { return ColorPickerContrast.Value; } set { ColorPickerContrast.Value = value; } }
         
         public List<Graphic> graphicToShowBrushColorRGB = new List<Graphic>();
         
@@ -54,9 +54,9 @@ namespace PlaytimePainter.Examples {
             }
         }
 
-        static ShaderProperty.FloatValue contrastProperty = new ShaderProperty.FloatValue("_Picker_Contrast");
-        static ShaderProperty.FloatValue brightnessProperty = new ShaderProperty.FloatValue("_Picker_Brightness");
-        static ShaderProperty.FloatValue huvProperty = new ShaderProperty.FloatValue("_Picker_HUV");
+        private static ShaderProperty.FloatValue contrastProperty = new ShaderProperty.FloatValue("_Picker_Contrast");
+        private static ShaderProperty.FloatValue brightnessProperty = new ShaderProperty.FloatValue("_Picker_Brightness");
+        private static ShaderProperty.FloatValue huvProperty = new ShaderProperty.FloatValue("_Picker_HUV");
 
         protected override void Update()
         {

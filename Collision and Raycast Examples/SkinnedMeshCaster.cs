@@ -63,11 +63,9 @@ namespace PlaytimePainter.Examples {
             } else
                 lastShotResult = "Painted on Object";
 
-            var v = new Stroke(hit, false);
-
             painter.stroke.From(hit, false);
             
-            brush.Paint(painter.PaintCommand); //v,painter.SetTexTarget(brush));
+            brush.Paint(painter.PaintCommand);
         }
 
 
@@ -88,13 +86,15 @@ namespace PlaytimePainter.Examples {
             {
 
                 Gizmos.color = Color.blue;
-                Gizmos.DrawLine(transform.position, transform.position + transform.forward);
+                var tf = transform;
+                var pos = tf.position;
+                Gizmos.DrawLine(pos, pos + tf.forward);
             }
         }
 #endif
 
 
-        void Update() {
+        private void Update() {
 
             if (Input.GetMouseButton(0))
                 Paint();

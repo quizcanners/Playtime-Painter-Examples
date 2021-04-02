@@ -65,7 +65,7 @@ namespace PlaytimePainter.Examples
                 "when you can be sure it will not conflict with other effects."
                 , toolTip: "About Water Controller"))  
 
-            "Bump".edit(70, ref waterBump).nl();
+                "Bump".edit(70, ref waterBump).nl();
 
             "Wet Area Height:".edit(50, ref wetAreaHeight, 0.1f, 10).nl();
 

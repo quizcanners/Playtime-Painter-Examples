@@ -34,7 +34,7 @@ namespace PlaytimePainter.Examples {
 
         public void OnCollisionEnter(Collision collision) => TryGetPainterFrom(collision.gameObject);
         
-        public void OnTriggerEnter(Collider collider) => TryGetPainterFrom(collider.gameObject);
+        public void OnTriggerEnter(Collider enteredCollider) => TryGetPainterFrom(enteredCollider.gameObject);
          
         private void TryRemove(GameObject go)
         {

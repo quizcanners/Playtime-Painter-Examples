@@ -79,7 +79,7 @@ namespace PlaytimePainter.Examples
         public float CameraWindowHeight
         {
 
-            get { return targetHeight.Value; }
+            get => targetHeight.Value;
             set
             {
                 targetHeight.Value = Mathf.Max(0.1f, value);
@@ -90,28 +90,24 @@ namespace PlaytimePainter.Examples
 
         private float CameraClipDistance
         {
-            get
-            {
-                return _mainCam.farClipPlane - _mainCam.nearClipPlane;
-
-            }
-            set { _mainCam.farClipPlane = _mainCam.nearClipPlane + value; }
+            get => _mainCam.farClipPlane - _mainCam.nearClipPlane;
+            set => _mainCam.farClipPlane = _mainCam.nearClipPlane + value;
         }
 
-        void AdjustCamera()
+        private void AdjustCamera()
         {
-            if (_mainCam.transform.parent && _mainCam.transform.parent == transform.parent)
-            {
-                float clip = CameraWindowNearClip();
-                _mainCam.transform.position = transform.position - _mainCam.transform.forward * clip;
-                _mainCam.nearClipPlane = clip;
-                _mainCam.farClipPlane = clip + CameraClipDistance;
-            }
+            var camTf = _mainCam.transform;
+
+            if (!camTf.parent || camTf.parent != transform.parent) return;
+            float clip = CameraWindowNearClip();
+            camTf.position = transform.position - camTf.forward * clip;
+            _mainCam.nearClipPlane = clip;
+            _mainCam.farClipPlane = clip + CameraClipDistance;
         }
 
         #endregion
-        
-        void OnEnable()
+
+        private void OnEnable()
         {
             if (mode == Mode.LERP)
                 mode = Mode.FPS;
@@ -119,9 +115,9 @@ namespace PlaytimePainter.Examples
 
         #region Linked Lerp
 
-        LinkedLerp.TransformLocalPosition _positionLerp;// = new LinkedLerp.TransformLocalPosition("Position");
-        LinkedLerp.TransformLocalRotation _rotationLerp;// = new LinkedLerp.TransformLocalRotation("Rotation");
-        LinkedLerp.FloatValue _heightLerp = new LinkedLerp.FloatValue(name: "Height");
+        private LinkedLerp.TransformLocalPosition _positionLerp;// = new LinkedLerp.TransformLocalPosition("Position");
+        private LinkedLerp.TransformLocalRotation _rotationLerp;// = new LinkedLerp.TransformLocalRotation("Rotation");
+        private LinkedLerp.FloatValue _heightLerp = new LinkedLerp.FloatValue(name: "Height");
         
         private bool IsLerpInitialized()
         {
@@ -207,7 +203,7 @@ namespace PlaytimePainter.Examples
 
         private LerpData lerpData = new LerpData();
 
-        private bool lerpYourself = false;
+        private bool lerpYourself;
 
         public virtual void Update()
         {
@@ -339,7 +335,7 @@ namespace PlaytimePainter.Examples
 
                     if ("Enable first-person controls".Click().nl())
                         mode = Mode.FPS;
-                break;
+                    break;
                 case Mode.LERP:
                     "IS LERPING".nl();
                     break;

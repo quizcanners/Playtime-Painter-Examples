@@ -8,7 +8,8 @@ namespace PlaytimePainter.Examples {
     public class BrushConfig_Accessors : MonoBehaviour {
 
         #region Brush Configurations
-        Brush Brush => PainterCamera.Data.Brush;
+
+        private Brush Brush => PainterCamera.Data.Brush;
 
         public List<Graphic> graphicToShowScale = new List<Graphic>();
 
@@ -29,7 +30,7 @@ namespace PlaytimePainter.Examples {
 
         #endregion
 
-        bool defaultSet;
+        private bool defaultSet;
 
         private void Update()
         {
@@ -41,8 +42,8 @@ namespace PlaytimePainter.Examples {
 
         #region Painter Configurations
         public PlaytimePainter painterComponent;
-        
-        TextureMeta GetCurrentImage() {
+
+        private TextureMeta GetCurrentImage() {
 
             if (painterComponent) {
                 var img = painterComponent.TexMeta;
@@ -57,7 +58,7 @@ namespace PlaytimePainter.Examples {
             return null;
         }
 
-        string nameOfSavedTexture;
+        private string nameOfSavedTexture;
         
         public void SaveTexture() {
             var img = GetCurrentImage();
@@ -76,8 +77,12 @@ namespace PlaytimePainter.Examples {
             
         }
 
-        public void LoadFromURL(string url) =>
-                painterComponent?.loadingOrder.Add(PainterCamera.DownloadManager.StartDownload(url), painterComponent.GetMaterialTextureProperty());
+        private void LoadFromURL(string url)
+        {
+            if (painterComponent)
+                painterComponent.loadingOrder.Add(PainterCamera.DownloadManager.StartDownload(url),
+                    painterComponent.GetMaterialTextureProperty());
+        }
 
         public string urlName;
 

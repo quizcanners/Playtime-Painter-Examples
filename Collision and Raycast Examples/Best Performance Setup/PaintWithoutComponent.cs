@@ -114,9 +114,7 @@ namespace PlaytimePainter.Examples
                         if (receiver.type == PaintingReceiver.RendererType.Skinned && receiver.skinnedMeshRenderer)
                             BrushTypes.Sphere.Paint(
                                 receiver.TryMakePaintCommand(st, brush, subMesh));
-                               // new PaintCommand.WorldSpace(st, rendTex.GetTextureMeta(), brush, receiver.skinnedMeshRenderer,
-                                  //  subMesh, receiver.gameObject)
-                       
+
                         else if (receiver.type == PaintingReceiver.RendererType.Regular && receiver.meshFilter)
                         {
                             if (brush.GetBrushType(false) == BrushTypes.Sphere.Inst)
@@ -124,28 +122,10 @@ namespace PlaytimePainter.Examples
                                 var mat = receiver.Material;
                                 if (mat && mat.IsAtlased())
                                     BrushTypes.Sphere.PaintAtlased(receiver.TryMakePaintCommand(st, brush, subMesh),
-
-                                       /* rendTex, receiver.gameObject,
-                                        receiver.originalMesh
-                                            ? receiver.originalMesh
-                                            : receiver.meshFilter.sharedMesh, brush, st, new List<int> { subMesh },*/
                                         (int)mat.GetFloat(PainterShaderVariables.ATLASED_TEXTURES)
                                             );
                                 else
-                                    BrushTypes.Sphere.Paint(
-                                        receiver.TryMakePaintCommand(st, brush, subMesh));
-
-                                        /*new PaintCommand.WorldSpace(st, rendTex.GetTextureMeta(), brush, receiver.originalMesh
-                                            ? receiver.originalMesh
-                                            : receiver.meshFilter.sharedMesh,
-                                            subMesh,
-                                            receiver.gameObject
-                                            )*/
-                                     /*   rendTex, receiver.gameObject,
-                                        receiver.originalMesh
-                                            ? receiver.originalMesh
-                                            : receiver.meshFilter.sharedMesh, brush, st,
-                                        new List<int> { subMesh });*/
+                                    BrushTypes.Sphere.Paint(receiver.TryMakePaintCommand(st, brush, subMesh));
                             }
                             else
                                 BrushTypes.Normal.Paint(rendTex, brush, st);
@@ -215,7 +195,7 @@ namespace PlaytimePainter.Examples
         }
 #endif
 
-        bool Documentation()
+        private bool Documentation()
         {
             "I can paint on objects with PaintingReceiver script and:".nl();
             "Mesh Collider + any Texture".nl();

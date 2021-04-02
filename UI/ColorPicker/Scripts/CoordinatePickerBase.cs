@@ -8,8 +8,7 @@ namespace PlaytimePainter.Examples
 
     [ExecuteInEditMode]
     public abstract class CoordinatePickerBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler, IPointerEnterHandler {
-
-        static CoordinatePickerBase currentPicker;
+        private static CoordinatePickerBase currentPicker;
         
         [NonSerialized] public bool mouseDown;
 
@@ -29,7 +28,7 @@ namespace PlaytimePainter.Examples
             }
         }
 
-        [NonSerialized] Camera clickCamera;
+        [NonSerialized] private Camera clickCamera;
         public RectTransform rectTransform;
 
         public Vector2 uvClick;
@@ -46,8 +45,8 @@ namespace PlaytimePainter.Examples
             if (Down)
                 DataUpdate(eventData);
         }
-        
-        bool DataUpdate(PointerEventData eventData)
+
+        private bool DataUpdate(PointerEventData eventData)
         {
 
             if (DataUpdate(eventData.position, eventData.pressEventCamera))
@@ -57,7 +56,7 @@ namespace PlaytimePainter.Examples
             return true;
         }
 
-        bool DataUpdate(Vector2 position, Camera cam)
+        private bool DataUpdate(Vector2 position, Camera cam)
         {
             Vector2 localCursor;
             if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(rectTransform, position, cam, out localCursor))

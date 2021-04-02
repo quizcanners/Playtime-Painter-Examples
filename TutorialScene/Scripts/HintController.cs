@@ -11,7 +11,7 @@ namespace PlaytimePainter.Examples
 
         private HintStage _stage;
 
-        enum HintStage { EnableTool, UnlockTexture, Draw, AddTool, AddTexture, RenderTexture, WellDone }
+        private enum HintStage { EnableTool, UnlockTexture, Draw, AddTool, AddTexture, RenderTexture, WellDone }
 
         public GameObject picture;
         public GameObject pill;
@@ -85,7 +85,7 @@ namespace PlaytimePainter.Examples
 
         public GUIStyle style = new GUIStyle();
 
-        PlaytimePainter pp;
+        private PlaytimePainter pp;
 
         private PlaytimePainter PillPainter
         {

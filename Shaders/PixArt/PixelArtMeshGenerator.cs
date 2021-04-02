@@ -9,13 +9,10 @@ namespace PlaytimePainter {
 
     [ExecuteInEditMode]
     public class PixelArtMeshGenerator : MonoBehaviour, IPEGI {
-
-
-
-        static int width = 8;
-        static float halfPix;
-        static Vert[] verts;
-        static List<int> tris = new List<int>();
+        private static int width = 8;
+        private static float halfPix;
+        private static Vert[] verts;
+        private static List<int> tris = new List<int>();
 
       //  public Vector4 uvSector = new Vector4(0, 0, 1, 1);
         public int testWidth = 8;
@@ -24,9 +21,9 @@ namespace PlaytimePainter {
         public MeshFilter meshFilter;
         public MeshCollider meshCollider;
 
-        enum PicV { lup = 0, rup = 1, rdwn = 2, ldwn = 3 }
+        private enum PicV { lup = 0, rup = 1, rdwn = 2, ldwn = 3 }
 
-        class Vert
+        private class Vert
         {
             public Vector3 pos;
             public Vector4 uv;
@@ -61,10 +58,10 @@ namespace PlaytimePainter {
             }
         }
 
-        static int GetIndOf(int x, int y, PicV p) => (y * width + x) * 4 + (int)p;
-        
+        private static int GetIndOf(int x, int y, PicV p) => (y * width + x) * 4 + (int)p;
 
-        void JoinDiagonal(int x, int y)
+
+        private void JoinDiagonal(int x, int y)
         {
             tris.Add(GetIndOf(x, y, PicV.rdwn));
             tris.Add(GetIndOf(x + 1, y, PicV.ldwn));
@@ -75,7 +72,7 @@ namespace PlaytimePainter {
             tris.Add(GetIndOf(x + 1, y + 1, PicV.lup));
         }
 
-        void JoinDown(int x, int y)
+        private void JoinDown(int x, int y)
         {
             tris.Add(GetIndOf(x, y, PicV.ldwn));
             tris.Add(GetIndOf(x, y, PicV.rdwn));
@@ -87,7 +84,7 @@ namespace PlaytimePainter {
 
         }
 
-        void JoinRight(int x, int y)
+        private void JoinRight(int x, int y)
         {
             tris.Add(GetIndOf(x, y, PicV.rup));
             tris.Add(GetIndOf(x + 1, y, PicV.lup));
@@ -98,7 +95,7 @@ namespace PlaytimePainter {
             tris.Add(GetIndOf(x, y, PicV.rdwn));
         }
 
-        void FillPixel(int x, int y)
+        private void FillPixel(int x, int y)
         {
             tris.Add(GetIndOf(x, y, PicV.lup));
             tris.Add(GetIndOf(x, y, PicV.rup));
@@ -156,7 +153,7 @@ namespace PlaytimePainter {
             return m;
         }
 
-        void OnEnable() {
+        private void OnEnable() {
             if (!meshFilter)
                 meshFilter = GetComponent<MeshFilter>();
 
@@ -168,7 +165,7 @@ namespace PlaytimePainter {
         }
 
         #if UNITY_EDITOR
-        void Save() {
+        private void Save() {
 
            
             string meshFilePath = "Assets/" + meshFilter.transform.name + ".asset";

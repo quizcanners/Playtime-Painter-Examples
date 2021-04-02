@@ -25,7 +25,6 @@ namespace PlaytimePainter.Examples
 
         [SerializeField]
         public int materialIndex;
-        [HideInInspector]
 
         public RenderTexture TryGetRenderTexture()
         {

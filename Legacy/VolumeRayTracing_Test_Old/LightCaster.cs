@@ -19,7 +19,7 @@ namespace PlaytimePainter
 
         public ProjectorCameraConfiguration cameraConfiguration;
 
-        Vector3 CameraRootPositionOffset => -transform.forward * cameraConfiguration.nearPlane;
+        private Vector3 CameraRootPositionOffset => -transform.forward * cameraConfiguration.nearPlane;
 
         public ProjectorCameraConfiguration UpdateAndGetCameraConfiguration() {
 
@@ -87,20 +87,24 @@ namespace PlaytimePainter
             AllProbes[index] = this;
         }
 
-        void OnDrawGizmosSelected() {
+        private void OnDrawGizmosSelected() {
 
             Gizmos.color = ecol;
             //Gizmos.DrawWireSphere(transform.position, 1);
 
             var off = CameraRootPositionOffset;
 
-            transform.position += off;
+            var tf = transform;
 
-            Gizmos.matrix = transform.localToWorldMatrix;
+            var position = tf.position;
+            position += off;
 
-            transform.position -= off;
+            Gizmos.matrix = tf.localToWorldMatrix;
 
-            cameraConfiguration.DrawFrustrum(transform.localToWorldMatrix);
+            position -= off;
+            tf.position = position;
+
+            cameraConfiguration.DrawFrustrum(tf.localToWorldMatrix);
         }
 
         private void OnDisable() {

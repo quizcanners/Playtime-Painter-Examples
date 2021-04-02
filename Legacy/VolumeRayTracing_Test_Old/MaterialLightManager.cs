@@ -18,7 +18,7 @@ namespace PlaytimePainter
 
         public LightCaster GetNextLight(ref int index)
         {
-            int tmpIndex = index;
+            int tmpIndex;
 
             do
             {

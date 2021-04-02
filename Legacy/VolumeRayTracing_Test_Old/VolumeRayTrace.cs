@@ -72,7 +72,7 @@ namespace PlaytimePainter
 #region ProjectionUpdates
         public static RenderTexture allBakedDepthesBufferTexture;
         public static RenderTexture _allBakedDepthesTexture;
-        static readonly ShaderProperty.TextureValue bakedDepthes = new ShaderProperty.TextureValue("_qcPp_RayProjectorDepthes");
+        private static readonly ShaderProperty.TextureValue bakedDepthes = new ShaderProperty.TextureValue("_qcPp_RayProjectorDepthes");
 
         public RenderTexture GetAllBakedDepths() {
 

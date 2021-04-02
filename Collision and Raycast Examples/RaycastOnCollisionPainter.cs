@@ -14,7 +14,7 @@ namespace PlaytimePainter.Examples
     {
 
         public Brush brush = new Brush();
-        readonly List<PaintingCollision> _paintingOn = new List<PaintingCollision>();
+        private readonly List<PaintingCollision> _paintingOn = new List<PaintingCollision>();
 
         private PaintingCollision GetPainterFrom(GameObject go)
         {
