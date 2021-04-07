@@ -225,7 +225,7 @@ namespace PlaytimePainter.Examples
 
                         Lerp(lerpData, false);
 
-                        if (lerpData.MinPortion == 1)
+                        if (lerpData.Done)
                         {
                             mode = Mode.FPS;
                             lerpYourself = false;

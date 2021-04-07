@@ -31,7 +31,7 @@ namespace PlaytimePainter.Examples
            return texture.GetType() == typeof(RenderTexture) ? (RenderTexture)texture : null;
         }
 
-        public PaintCommand.WorldSpace TryMakePaintCommand(Stroke stroke, Brush brush, int subMesh) 
+        public PaintCommand.WorldSpaceBase TryMakePaintCommand(Stroke stroke, Brush brush, int subMesh) 
             => new PaintCommand.WorldSpace(stroke, TryGetRenderTexture().GetTextureMeta(), brush,
                 originalMesh
                     ? originalMesh

@@ -105,7 +105,7 @@ MonoBehaviour:
     other: {fileID: 0}
     width: 1024
     height: 1024
-    useTexCoord2: 1
+    useTexCoord2: 0
     _useTexCoord2AutoAssigned: 0
     lockEditing: 0
     isATransparentLayer: 0
@@ -226,31 +226,6 @@ MonoBehaviour:
     inspectedItems: -1
   - target: 0
     renderTexture: {fileID: 0}
-    texture2D: {fileID: 2846298, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    other: {fileID: 0}
-    width: 128
-    height: 128
-    useTexCoord2: 0
-    _useTexCoord2AutoAssigned: 0
-    lockEditing: 0
-    isATransparentLayer: 0
-    enableUndoRedo: 0
-    preserveTransparency: 1
-    sdfMaxInside: 1
-    sdfMaxOutside: 1
-    sdfPostProcessDistance: 1
-    _repaintDelay: 0.016
-    updateTex2DafterStroke: 0
-    _numberOfTexture2DBackups: 10
-    _numberOfRenderTextureBackups: 10
-    isAVolumeTexture: 0
-    clearColor: {r: 0, g: 0, b: 0, a: 1}
-    backupManually: 0
-    saveName: LiberationSans SDF Atlas
-    url: 
-    inspectedItems: -1
-  - target: 0
-    renderTexture: {fileID: 0}
     texture2D: {fileID: 2800000, guid: 9da58cdd9148caf448a96f5649c14fc9, type: 3}
     other: {fileID: 0}
     width: 256
@@ -306,7 +281,7 @@ MonoBehaviour:
     colorToVertexColorOnMerge: 0
     selectedForMerge: 0
   showRecentTextures: 0
-  showColorSchemes: 0
+  showColorSchemes: 1
   sourceTextures:
   - {fileID: 2800000, guid: e0dcd6bc6bfb9a34ab4fab040b0fbb3c, type: 3}
   - {fileID: 2800000, guid: 2656c92f14669ff49bcf3065c9fdf450, type: 3}
@@ -328,7 +303,7 @@ MonoBehaviour:
     type: 0
     heightMap: {fileID: 2800000, guid: 740fe187dd334be4b9699871910b9ae5, type: 3}
     overlay: {fileID: 2800000, guid: 2545000fc9616a345af5d536bc52515a, type: 3}
-  selectedColorScheme: 1
+  selectedColorScheme: 0
   inspectedColorScheme: -1
   showUrlField: 0
   meshTool: 0
