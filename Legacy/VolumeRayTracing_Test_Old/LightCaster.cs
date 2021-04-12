@@ -170,8 +170,7 @@ namespace PlaytimePainter
     }
 
 #if UNITY_EDITOR
-    [CustomEditor(typeof(LightCaster))]
-    public class BakedShadowsLightProbeEditor : PEGI_Inspector_Mono<LightCaster> { }
+    [CustomEditor(typeof(LightCaster))] internal class BakedShadowsLightProbeEditor : PEGI_Inspector_Mono<LightCaster> { }
 #endif
 
 }

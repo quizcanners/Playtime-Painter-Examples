@@ -166,7 +166,6 @@ namespace PlaytimePainter
     }
 
 #if UNITY_EDITOR
-    [CustomEditor(typeof(VolumeRayTrace))]
-    public class VolumeRayTraceEditor : PEGI_Inspector_Mono<VolumeRayTrace> { }
+    [CustomEditor(typeof(VolumeRayTrace))] internal class VolumeRayTraceEditor : PEGI_Inspector_Mono<VolumeRayTrace> { }
 #endif
 }

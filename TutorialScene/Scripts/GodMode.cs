@@ -441,8 +441,7 @@ namespace PlaytimePainter.Examples
     }
 
 #if UNITY_EDITOR
-    [CustomEditor(typeof(GodMode))]
-    public class GodModeDrawer : PEGI_Inspector_Mono<GodMode> { }
+    [CustomEditor(typeof(GodMode))] internal class GodModeDrawer : PEGI_Inspector_Mono<GodMode> { }
 #endif
 
 }

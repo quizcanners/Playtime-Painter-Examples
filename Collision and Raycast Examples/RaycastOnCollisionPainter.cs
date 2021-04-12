@@ -129,7 +129,6 @@ namespace PlaytimePainter.Examples
     }
 
 #if UNITY_EDITOR
-    [CustomEditor(typeof(RaycastOnCollisionPainter))]
-    public class PainterCasterEditor : PEGI_Inspector_Mono<RaycastOnCollisionPainter> { }
+    [CustomEditor(typeof(RaycastOnCollisionPainter))] internal class PainterCasterEditor : PEGI_Inspector_Mono<RaycastOnCollisionPainter> { }
 #endif
 }

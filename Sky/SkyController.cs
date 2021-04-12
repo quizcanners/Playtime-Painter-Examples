@@ -116,8 +116,7 @@ namespace PlaytimePainter.Examples
     }
 
 #if UNITY_EDITOR
-    [CustomEditor(typeof(SkyController))]
-    public class SkyControllerDrawer : PEGI_Inspector_Mono<SkyController> { }
+    [CustomEditor(typeof(SkyController))] internal class SkyControllerDrawer : PEGI_Inspector_Mono<SkyController> { }
 #endif
 
 }
