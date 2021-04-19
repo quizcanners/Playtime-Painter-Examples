@@ -157,7 +157,7 @@ namespace PlaytimePainter
                 QcUnity.RepaintViews();
         }
 
-        public void InspectInList(IList list, int ind, ref int edited)
+        public void InspectInList(int ind, ref int edited)
         {
            index.ToString().write(25);
            pegi.edit(ref ecol, 40);
