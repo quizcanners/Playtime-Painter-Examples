@@ -104,7 +104,7 @@ namespace PlaytimePainter.Examples
                 }
             }
 
-            if ("Weather configurations".enter(ref _inspectedStuff, 0).nl())
+            if ("Weather configurations".IsEntered(ref _inspectedStuff, 0).nl())
             {
                 var cam = PainterCamera.GetModule<ColorBleedCameraModule>();
                 if (cam != null)
