@@ -90,13 +90,6 @@
 					i.viewDir.xyz = normalize(i.viewDir.xyz);
 					float dist = length(i.wpos.xyz - _WorldSpaceCameraPos.xyz);
 					float caustics = 0;
-					/*
-#if _qcPp_WATER_FOAM
-					float underWater = _qcPp_foamParams.z - i.wpos.y;
-					float3 projectedWpos;
-						
-					float3 nrmNdSm = SAMPLE_WATER_NORMAL(i.viewDir.xyz,  projectedWpos, i.tc_Control, caustics, underWater);
-#endif*/
 
 					float4 col = tex2D(_MainTex, i.texcoord.xy);
 	
@@ -110,31 +103,32 @@
 						float4 bumpMap = float4(0, 0, 1, 1);
 					#else
 
-					float4 bumpMap = tex2D(_Map, i.texcoord.xy);
-					float3 tnormal;
-				#if _BUMP_REGULAR
-					tnormal = UnpackNormal(bumpMap);
-					bumpMap = float4(0, 0, 1, 1);
-				#else
-					bumpMap.rg = (bumpMap.rg - 0.5) * 2;
-					tnormal = float3(bumpMap.r, bumpMap.g, 1);
-				#endif
+						float4 bumpMap = tex2D(_Map, i.texcoord.xy);
+						float3 tnormal;
 
-					float3 worldNormal;
-					worldNormal.x = dot(i.tspace0, tnormal);
-					worldNormal.y = dot(i.tspace1, tnormal);
-					worldNormal.z = dot(i.tspace2, tnormal);
+						#if _BUMP_REGULAR
+							tnormal = UnpackNormal(bumpMap);
+							bumpMap = float4(0, 0, 1, 1);
+						#else
+							bumpMap.rg = (bumpMap.rg - 0.5) * 2;
+							tnormal = float3(bumpMap.r, bumpMap.g, 1);
+						#endif
+
+						float3 worldNormal;
+						worldNormal.x = dot(i.tspace0, tnormal);
+						worldNormal.y = dot(i.tspace1, tnormal);
+						worldNormal.z = dot(i.tspace2, tnormal);
 					#endif
 
-					float4 terrainN = 0;
+					float4 terrainCombinedMap = 0;
 
-					Terrain_Trilanear(i.tc_Control, i.wpos, dist, worldNormal, col, terrainN, bumpMap);
+					Terrain_Trilanear(i.tc_Control, i.wpos, dist, worldNormal, col, terrainCombinedMap, bumpMap);
 
 					float shadow = SHADOW_ATTENUATION(i);
 
 					float Metalic = 0;
 
-					float ambient = terrainN.a;
+					float ambient = terrainCombinedMap.a;
 
 					float smoothness = col.a;
 				

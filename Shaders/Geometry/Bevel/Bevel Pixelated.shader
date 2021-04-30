@@ -86,7 +86,7 @@
 
 					i.viewDir.xyz = normalize(i.viewDir.xyz);
 
-					Simple_Light(float4 (0, 0, col.a, 1),
+					Simple_Light(1,
 						normal, i.viewDir.xyz, col, shadow, 1);
 
 					BleedAndBrightness(col, 1, i.texcoord.xy);

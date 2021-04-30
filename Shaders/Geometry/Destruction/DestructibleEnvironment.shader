@@ -66,18 +66,15 @@
 			mask_TexelSize.zw = max(16, _MainTex_ATL_UvTwo_TexelSize.zw);
 			mask_TexelSize.xy = 1 / mask_TexelSize.zw;
 
-
 			float2 damUv = i.uv2_MainTex_ATL_UvTwo.xy;
 
 			#if _qcPp_UV_ATLASED
 
-			//damUv = (frac(damUv)*(i.atlasedUV.w) + i.atlasedUV.xy);
-			
 			float lod;
 
 			atlasUVlod(i.uv_Diffuse, lod, mask_TexelSize, i.atlasedUV);
 
-			float4 col = tex2Dlod(_Diffuse, float4(i.uv_Diffuse, 0, lod)); // tex2Dlod(_Diffuse, float4(i.uv_Diffuse, 0, lod));
+			float4 col = tex2Dlod(_Diffuse, float4(i.uv_Diffuse, 0, lod)); 
 			float4 bump = tex2Dlod(_Bump, float4(i.uv_Diffuse, 0, lod)); 
 
 			#else

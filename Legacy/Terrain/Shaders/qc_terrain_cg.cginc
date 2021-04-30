@@ -179,7 +179,7 @@ inline void Terrain_Water_AndLight(inout float4 col, float3 tc_Control, float am
 
 }
 
-inline void Terrain_4_Splats(float4 cont, float2 lowtiled, float2 tiled, float far, float deFar, inout float4 terrain, float triplanarY, inout float4 terrainN, inout float maxheight)
+inline void Terrain_4_Splats(float4 cont, float2 lowtiled, float2 tiled, float far, float deFar, inout float4 terrain, float triplanarY, inout float4 terrainCombinedMap, inout float maxheight)
 {
 
 	float4 lt = float4(lowtiled, 0, getLOD(lowtiled, _qcPp_mergeSplat_4_TexelSize));
@@ -202,7 +202,7 @@ inline void Terrain_4_Splats(float4 cont, float2 lowtiled, float2 tiled, float f
 	float alpha = min(1, adiff*(1 + merge *terrain.a*splat0.a));
 	float dAlpha = (1 - alpha);
 	terrain = terrain*(dAlpha)+splat0*alpha;
-	terrainN = terrainN*(dAlpha)+splat0N*alpha;
+	terrainCombinedMap = terrainCombinedMap*(dAlpha)+splat0N*alpha;
 	maxheight += adiff;
 
 	newHeight = cont.g*triplanarY + splat1N.b;
@@ -210,7 +210,7 @@ inline void Terrain_4_Splats(float4 cont, float2 lowtiled, float2 tiled, float f
 	alpha = min(1, adiff*(1 + merge *terrain.a*splat1.a));
 	dAlpha = (1 - alpha);
 	terrain = terrain*(dAlpha)+splat1*alpha;
-	terrainN = terrainN*(dAlpha)+splat1N*alpha;
+	terrainCombinedMap = terrainCombinedMap*(dAlpha)+splat1N*alpha;
 	maxheight += adiff;
 
 	newHeight = cont.b*triplanarY + splat2N.b;
@@ -218,7 +218,7 @@ inline void Terrain_4_Splats(float4 cont, float2 lowtiled, float2 tiled, float f
 	alpha = min(1, adiff*(1 + merge *terrain.a*splat2.a));
 	dAlpha = (1 - alpha);
 	terrain = terrain*(dAlpha)+splat2*alpha;
-	terrainN = terrainN*(dAlpha)+splat2N*alpha;
+	terrainCombinedMap = terrainCombinedMap*(dAlpha)+splat2N*alpha;
 	maxheight += adiff;
 
 	newHeight = cont.a*triplanarY + splat3N.b;
@@ -226,13 +226,13 @@ inline void Terrain_4_Splats(float4 cont, float2 lowtiled, float2 tiled, float f
 	alpha = min(1, adiff*(1 + merge *terrain.a*splat3.a));
 	dAlpha = (1 - alpha);
 	terrain = terrain*(dAlpha)+splat3*alpha;
-	terrainN = terrainN*(dAlpha)+splat3N*alpha;
+	terrainCombinedMap = terrainCombinedMap*(dAlpha)+splat3N*alpha;
 	maxheight += adiff;
 
-	terrainN.rg = terrainN.rg * 2 - 1;
+	terrainCombinedMap.rg = terrainCombinedMap.rg * 2 - 1;
 }
 
-inline void Terrain_Trilanear(float3 tc_Control, float3 worldPos, float dist, inout float3 worldNormal, inout float4 col, inout float4 terrainN, float4 bumpMap) {
+inline void Terrain_Trilanear(float3 tc_Control, float3 worldPos, float dist, inout float3 worldNormal, inout float4 col, inout float4 terrainCombinedMap, float4 bumpMap) {
 
 	float far = min(1, dist*0.01);
 	float deFar = 1 - far;
@@ -268,7 +268,7 @@ inline void Terrain_Trilanear(float3 tc_Control, float3 worldPos, float dist, in
 	const float edge = MERGE_POWER;
 
 	float4 terrain = splaty;
-	terrainN = splatNy; //float4(0.5, 0.5, bumpMap.b, bumpMap.a);
+	terrainCombinedMap = splatNy; //float4(0.5, 0.5, bumpMap.b, bumpMap.a);
 
 	float maxheight = (1 + splatNy.b)*abs(bump.y);
 
@@ -280,7 +280,7 @@ inline void Terrain_Trilanear(float3 tc_Control, float3 worldPos, float dist, in
 	float alpha = min(1, adiff*(1 + edge*terrain.a*splatx.a));
 	float dAlpha = (1 - alpha);
 	terrain = terrain*dAlpha + splatx*alpha;
-	terrainN.ba = terrainN.ba*dAlpha + splatNx.ba*alpha;
+	terrainCombinedMap.ba = terrainCombinedMap.ba*dAlpha + splatNx.ba*alpha;
 	newBump = newBump*dAlpha + float3(0, splatNx.y - 0.5, splatNx.x - 0.5)*alpha;
 	maxheight += adiff;
 
@@ -290,11 +290,11 @@ inline void Terrain_Trilanear(float3 tc_Control, float3 worldPos, float dist, in
 	alpha = min(1, adiff*(1 + edge*terrain.a*splatz.a));
 	dAlpha = (1 - alpha);
 	terrain = terrain*(dAlpha)+splatz*alpha;
-	terrainN.ba = terrainN.ba*dAlpha + splatNz.ba*alpha;
+	terrainCombinedMap.ba = terrainCombinedMap.ba*dAlpha + splatNz.ba*alpha;
 	newBump = newBump*dAlpha + float3(splatNz.x - 0.5, splatNz.y - 0.5, 0)*alpha;
 	maxheight += adiff;
 
-	terrainN.rg = 0.5;
+	terrainCombinedMap.rg = 0.5;
 
 	float tripMaxH = maxheight;
 	float3 tmpbump = normalize(bump + newBump * 2 * deAboveBump);
@@ -303,26 +303,24 @@ inline void Terrain_Trilanear(float3 tc_Control, float3 worldPos, float dist, in
 
 	float triplanarY = max(0, tmpbump.y) * 2; // Recalculate it based on previously sampled bump
 
-	Terrain_4_Splats(cont, lowtiled,  tiled,  far,  deFar,  terrain,  triplanarY,  terrainN,  maxheight);
+	Terrain_4_Splats(cont, lowtiled,  tiled,  far,  deFar,  terrain,  triplanarY,  terrainCombinedMap,  maxheight);
 
 	adiff = max(0, (tripMaxH + 0.5 - maxheight));
 	alpha = min(1, adiff * 2);
 
-	float aboveTerrain = saturate((aboveTerrainBump / _Merge - maxheight + terrainN.b - 1) * 4); // MODIFIED
+	float aboveTerrain = saturate((aboveTerrainBump / _Merge - maxheight + terrainCombinedMap.b - 1) * 4); // MODIFIED
 	float deAboveTerrain = 1 - aboveTerrain;
 
 	alpha *= deAboveTerrain;
 	bump = tmpbump*alpha + (1 - alpha)*bump;
 
 	worldNormal = normalize(bump
-		+ float3(terrainN.r, 0, terrainN.g)*deAboveTerrain
+		+ float3(terrainCombinedMap.r, 0, terrainCombinedMap.g)*deAboveTerrain
 	);
 
 	col = col* aboveTerrain + terrain*deAboveTerrain;
 
-	terrainN.ba = terrainN.ba * deAboveTerrain +
+	terrainCombinedMap.ba = terrainCombinedMap.ba * deAboveTerrain +
 		aboveTerrain*bumpMap.ba;
-
-//	col = saturate((above-0.2)*1000);
 
 }
