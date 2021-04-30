@@ -114,7 +114,7 @@
 					Simple_Light(float4(1, 1, 1, 1), normal, i.viewDir.xyz, col, shadow, tex2D(_Refl, TRANSFORM_TEX(i.texcoord, _Refl)).r);
 
 					BleedAndBrightness(col, 1, i.texcoord.xy);
-
+					
 					return saturate(col);
 
 				}
@@ -232,7 +232,7 @@
 					Simple_Light(float4(1, 1, 1, 1), normal, i.viewDir.xyz, col, shadow, tex2D(_Refl, TRANSFORM_TEX(i.texcoord, _Refl)).r);
 
 					BleedAndBrightness(col, 1, i.texcoord.xy);
-
+				
 					return saturate(col);
 
 				}

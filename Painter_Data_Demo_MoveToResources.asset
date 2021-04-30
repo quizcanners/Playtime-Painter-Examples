@@ -250,16 +250,6 @@ MonoBehaviour:
     url: 
     inspectedItems: -1
   matMetas:
-  - material: {fileID: 2100000, guid: f90d3c8fe8280d043b64fa62d862113a, type: 2}
-    selectedTexture: 0
-    usePreviewShader: 0
-    colorToVertexColorOnMerge: 0
-    selectedForMerge: 0
-  - material: {fileID: 2100000, guid: 2506b329c538c664fbc6261b7f8dc2bc, type: 2}
-    selectedTexture: 1
-    usePreviewShader: 0
-    colorToVertexColorOnMerge: 0
-    selectedForMerge: 0
   - material: {fileID: 2100000, guid: 122ad79ee7336ca40aca8b9e1c8420da, type: 2}
     selectedTexture: 0
     usePreviewShader: 0
@@ -267,6 +257,21 @@ MonoBehaviour:
     selectedForMerge: 0
   - material: {fileID: 2100000, guid: 4111ec3737538d24eac860c521e3f96e, type: 2}
     selectedTexture: 0
+    usePreviewShader: 0
+    colorToVertexColorOnMerge: 0
+    selectedForMerge: 0
+  - material: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+    selectedTexture: 0
+    usePreviewShader: 0
+    colorToVertexColorOnMerge: 0
+    selectedForMerge: 0
+  - material: {fileID: 2100000, guid: f90d3c8fe8280d043b64fa62d862113a, type: 2}
+    selectedTexture: 0
+    usePreviewShader: 0
+    colorToVertexColorOnMerge: 0
+    selectedForMerge: 0
+  - material: {fileID: 2100000, guid: 2506b329c538c664fbc6261b7f8dc2bc, type: 2}
+    selectedTexture: 1
     usePreviewShader: 0
     colorToVertexColorOnMerge: 0
     selectedForMerge: 0
@@ -307,8 +312,8 @@ MonoBehaviour:
   inspectedColorScheme: -1
   showUrlField: 0
   meshTool: 0
-  bevelDetectionSensitivity: 4.1
-  meshToolsStd: t_pos|15|dm|1|1|inM|1|y||t_shF|7|dm|1|0||t_vCol|0||t_edgs|23|v|1|0|doCol|1|y|fe|1|y||t_noStd|16|cat|1|8|cac|1|0||t_sbmsh|0||t_uv|39|gtuv|1|y|nrmWrap|5|0.399|fr|1|y|mp|1|y||
+  bevelDetectionSensitivity: 5.77
+  meshToolsStd: t_pos|15|dm|1|0|inM|1|y||t_shF|7|dm|1|0||t_vCol|0||t_edgs|23|v|1|0|doCol|1|y|fe|1|y||t_noStd|16|cat|1|8|cac|1|0||t_sbmsh|0||t_uv|39|gtuv|1|y|nrmWrap|5|0.399|fr|1|y|mp|1|y||
   saveMeshUndos: 0
   makeVerticesUniqueOnEdgeColoring: 0
   gridSize: 1
