@@ -420,6 +420,11 @@ MonoBehaviour:
     usePreviewShader: 0
     colorToVertexColorOnMerge: 0
     selectedForMerge: 0
+  - material: {fileID: 2100000, guid: 4111ec3737538d24eac860c521e3f96e, type: 2}
+    selectedTexture: 0
+    usePreviewShader: 0
+    colorToVertexColorOnMerge: 0
+    selectedForMerge: 0
   decals:
   - decalName: Bullet Hole
     type: 1
@@ -475,7 +480,7 @@ MonoBehaviour:
   samplingMaskSize:
     x: 4
     y: 4
-  useDepthForProjector: 0
+  useDepthForProjector: 1
   useFloatForScalingBuffers: 0
   newTextureIsColor: 1
   newTextureClearColor: {r: 0, g: 0, b: 0, a: 1}
