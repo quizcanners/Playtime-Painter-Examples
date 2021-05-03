@@ -87,22 +87,27 @@
 
 					i.viewDir.xyz = normalize(i.viewDir.xyz);
 
-					float4 col = tex2D(_MainTex, TRANSFORM_TEX(i.texcoord, _MainTex));
+					float2 uv = TRANSFORM_TEX(i.texcoord, _MainTex);
 
+					float4 col = tex2D(_MainTex, uv);
+
+					float4 colMip = tex2Dlod(_MainTex, float4(uv, 0 , 12));
 					
-
 					float weight;
 					float3 normal = DetectSmoothEdge(i.edge, i.normal.xyz, i.snormal.xyz, i.edgeNorm0, i.edgeNorm1, i.edgeNorm2, weight); 
 
-					float deWeight = 1 - weight;
-					col = col*deWeight + i.vcol*weight;
+					float edgeColorVisibility = smoothstep(0.9, 1, i.vcol.a) * weight;
+
+					col.rgb = col.rgb*(1-edgeColorVisibility) + colMip.rgb * edgeColorVisibility; //i.vcol.rgb*edgeColorVisibility;
 
 					float3 preNorm = normal;
 
 					#if _BUMP_NONE
 						float4 bumpMap = DEFAULT_COMBINED_MAP;
+						float4 bumpMapMip = DEFAULT_COMBINED_MAP;
 					#else
 						float4 bumpMap = tex2D(_Map, i.texcoord.xy);
+						float4 bumpMapMip = tex2Dlod(_Map, float4(i.texcoord.xy, 0 ,12));
 						float3 tnormal;
 						#if _BUMP_REGULAR
 							tnormal = UnpackNormal(bumpMap);
@@ -112,18 +117,20 @@
 							tnormal = float3(bumpMap.r, bumpMap.g, 1);
 						#endif
 
-				
-
 						ApplyTangent (normal, tnormal,  i.wTangent);
 						
+						bumpMap = bumpMap*(1-edgeColorVisibility) + bumpMapMip * edgeColorVisibility; //i.vcol.rgb*edgeColorVisibility;
+
 							
 					#endif
 
-					normal = normal*deWeight + preNorm*weight;
+					float deWeight = 1 - weight;
+
+					normal = normalize(normal*deWeight + preNorm*weight);
 
 					float shadow = SHADOW_ATTENUATION(i);
 
-					float ambient =bumpMap.a;
+					float ambient = bumpMap.a;
 
 					float smoothness =  bumpMap.b ;
 

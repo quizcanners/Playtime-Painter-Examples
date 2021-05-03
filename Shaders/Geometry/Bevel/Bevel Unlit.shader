@@ -87,7 +87,6 @@
 					float weight;
 					float3 normal = DetectSmoothEdge(i.edge, i.normal.xyz, i.snormal.xyz, i.edgeNorm0, i.edgeNorm1, i.edgeNorm2, weight); 
 
-
 					// Adding Color to edges if Edge Color alpha>0
 					weight *= _EdgeColor.a;
 					float deWeight = 1 - weight;
