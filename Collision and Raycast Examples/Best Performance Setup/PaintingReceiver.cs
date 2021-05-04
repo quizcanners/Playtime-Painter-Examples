@@ -333,7 +333,7 @@ namespace PlaytimePainter.Examples
                         if (t2D)
                         {
 
-                            icon.Done.write();
+                            icon.Done.draw();
                             "CPU brush will work if object has MeshCollider".nl();
 
                             if (originalTexture)
@@ -359,7 +359,7 @@ namespace PlaytimePainter.Examples
                         {
                             if (Renderer)
                             {
-                                icon.Done.write();
+                                icon.Done.draw();
                                 "Will paint if object has any collider".nl();
                                 if (skinnedMeshRenderer)
                                 {
@@ -384,7 +384,7 @@ namespace PlaytimePainter.Examples
                             if (!Renderer) "! Renderer needs to be Assigned.".nl();
                             else
                             {
-                                icon.Done.write();
+                                icon.Done.draw();
                                 "COMPONENT SET UP CORRECTLY".write();
                                 if (fromRtManager && "Restore".Click())
                                     Restore();

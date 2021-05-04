@@ -98,7 +98,9 @@ namespace PlaytimePainter.Examples
         {
             var camTf = _mainCam.transform;
 
-            if (!camTf.parent || camTf.parent != transform.parent) return;
+            if (!camTf.parent || camTf.parent != transform) 
+                return;
+            
             float clip = CameraWindowNearClip();
             camTf.position = transform.position - camTf.forward * clip;
             _mainCam.nearClipPlane = clip;

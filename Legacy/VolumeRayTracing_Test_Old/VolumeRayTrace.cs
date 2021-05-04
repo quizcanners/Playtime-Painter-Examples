@@ -35,7 +35,7 @@ namespace PlaytimePainter
 
             if ("Depth Camera ".IsEntered(ref inspectedElement, 10).nl())
             {
-                GetAllBakedDepths().write(250);
+                GetAllBakedDepths().draw(250);
 
                 var tex = GetAllBakedDepths();
 

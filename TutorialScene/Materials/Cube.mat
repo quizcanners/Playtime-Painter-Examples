@@ -142,9 +142,9 @@ Material:
     m_Colors:
     - VOLUME_H_SLICES: {r: 0, g: 0, b: 0, a: 0}
     - VOLUME_POSITION_N_SIZE: {r: 0, g: 0, b: 0, a: 0}
-    - _BackColor: {r: 0.32562703, g: 0.3301887, b: 0, a: 0}
+    - _BackColor: {r: 0, g: 0.08575377, b: 0.24528301, a: 0.43137255}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EdgeColor: {r: 0, g: 0, b: 0, a: 0}
+    - _EdgeColor: {r: 0.3820755, g: 0.5913446, b: 1, a: 0.13333334}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - l0col: {r: 0, g: 0, b: 0, a: 0}
