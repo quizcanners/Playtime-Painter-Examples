@@ -258,8 +258,6 @@ namespace PlaytimePainter.Examples
             pegi.FullWindow.DocumentationClickOpen(()=> "Works with PaintWithoutComponent script. This lets you configure how painting will be received." +
                                                        " PaintWithoutComponent.cs is usually attached to a main camera (if painting in first person). Current Texture: " + TextureId, "About Painting Receiver");
 
-            var changes = false;
-
             if (icon.Refresh.Click("Find Components automatically"))
                 Refresh();
 
@@ -281,12 +279,12 @@ namespace PlaytimePainter.Examples
             switch (type)
             {
                 case RendererType.Skinned:
-                    "   Skinned Mesh Renderer".edit(90, ref skinnedMeshRenderer).nl(ref changes);
+                    "   Skinned Mesh Renderer".edit(90, ref skinnedMeshRenderer).nl();
                     break;
 
                 case RendererType.Regular:
-                    "   Mesh Filter".edit(90, ref meshFilter).nl(ref changes);
-                    "   Renderer".edit(90, ref meshRenderer).nl(ref changes);
+                    "   Mesh Filter".edit(90, ref meshFilter).nl();
+                    "   Renderer".edit(90, ref meshRenderer).nl();
                     break;
             }
 
@@ -424,7 +422,7 @@ namespace PlaytimePainter.Examples
             {
 
                 if (texture || !MatTex)
-                    "Start Texture:".edit("Copy of this texture will be modified.", 110, ref originalTexture).nl(ref changes);
+                    "Start Texture:".edit("Copy of this texture will be modified.", 110, ref originalTexture).nl();
                 
                 if (!texture || texture.GetType() == typeof(RenderTexture))
                 {

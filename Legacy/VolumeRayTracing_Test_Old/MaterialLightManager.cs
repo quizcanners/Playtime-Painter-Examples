@@ -95,7 +95,7 @@ namespace PlaytimePainter
                     if (ind < 0)
                     {
                         pegi.write(((ColorChanel)c).GetIcon());
-                        if (icon.Add.Click().nl(ref changed))
+                        if (icon.Add.Click().nl())
                         {
                             probes[c] = 0;
                             probeChanged = c;
@@ -109,14 +109,14 @@ namespace PlaytimePainter
 
                         if (!prb)
                             ("Probe " + ind).write(50);
-                        else if (icon.Delete.Click(ref changed))
+                        else if (icon.Delete.Click())
                         {
                             probes[c] = -1;
                             probeChanged = c;
                         }
 
                         if ("Light:".select_iGotIndex("Select Light Source", 50, ref ind,
-                            LightCaster.AllProbes.GetAllObjsNoOrder()).changes(ref changed))
+                            LightCaster.AllProbes.GetAllObjsNoOrder()))
                         {
                             probes[c] = ind;
                             probeChanged = c;

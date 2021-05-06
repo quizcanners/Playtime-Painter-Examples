@@ -10,9 +10,9 @@ public class InfiniteParticlesDrawerGUI : PEGI_Inspector_Material {
 
         var changed = pegi.toggleDefaultInspector(mat);
 
-        mat.toggle("SCREENSPACE").nl(ref changed);
-        mat.toggle("DYNAMIC_SPEED").nl(ref changed);
-        mat.toggle(FadeOutTag).nl(ref changed);
+        mat.toggle("SCREENSPACE").nl();
+        mat.toggle("DYNAMIC_SPEED").nl();
+        mat.toggle(FadeOutTag).nl();
 
         var fo = mat.HasTag(FadeOutTag);
 
@@ -26,20 +26,20 @@ public class InfiniteParticlesDrawerGUI : PEGI_Inspector_Material {
         pegi.nl();
         
         if (!dynamicSpeed)
-            mat.edit(speed, "speed", 0, 60).nl(ref changed);
+            mat.edit(speed, "speed", 0, 60).nl();
         else
         {
-            mat.edit(time, "Time").nl(ref changed);
+            mat.edit(time, "Time").nl();
             "It is expected that time Float will be set via script. Parameter name is _CustomTime. ".writeHint();
             pegi.nl();
         }
 
-        mat.edit(tiling, "Tiling", 0.1f, 20f).nl(ref changed);
+        mat.edit(tiling, "Tiling", 0.1f, 20f).nl();
 
-        mat.edit(upscale, "Scale", 0.1f, 1).nl(ref changed);
+        mat.edit(upscale, "Scale", 0.1f, 1).nl();
 
-        mat.editTexture("_MainTex").nl(ref changed);
-        mat.editTexture("_MainTex2").nl(ref changed);
+        mat.editTexture("_MainTex").nl();
+        mat.editTexture("_MainTex2").nl();
 
 
         return changed;

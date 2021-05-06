@@ -141,7 +141,7 @@ namespace PlaytimePainter
                 "Emission Color".edit(ref ecol).nl();
                 "Brightness".edit(ref brightness).nl();
               //  if (!emissiveMesh)
-                //    "Emissive Mesh".edit(ref emissiveMesh).nl(ref changed);
+                //    "Emissive Mesh".edit(ref emissiveMesh).nl();
             }
 
             if ("Projection".IsEntered(ref inspectedElement, 1).nl())

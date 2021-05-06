@@ -247,10 +247,10 @@
 					//float4 g_BakedRays_VOLVOLUME_H_SLICES; //g_VOLUME_H_SLICES;
 					//float4 g_BakedRays_VOLVOLUME_POSITION_N_SIZE; //g_VOLUME_POSITION_N_SIZE;
 
-
+					float outOfBounds;
 					float4 bake = SampleVolume(g_BakedRays_VOL, o.worldPos.xyz + o.normal - reflected * fernel * (0.25 + smoothness), 
 						g_BakedRays_VOLVOLUME_POSITION_N_SIZE,
-						g_BakedRays_VOLVOLUME_H_SLICES);
+						g_BakedRays_VOLVOLUME_H_SLICES, outOfBounds);
 
 					float power = smoothness * (128+ fernel*128);
 

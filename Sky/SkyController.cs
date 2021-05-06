@@ -83,12 +83,12 @@ namespace PlaytimePainter.Examples
         {
             if (_inspectedStuff == -1)
             {
-                pegi.toggleDefaultInspector(this);
+                pegi.toggleDefaultInspector(this).nl();
 
-                "Main Cam".edit(ref _mainCam).nl();
-                "Directional Light".edit(ref directional).nl();
-                "Sky Renderer".edit(ref skeRenderer).nl();
-                "Sky dinamics".edit(ref skyDynamics).nl();
+                "Main Cam".edit(90, ref _mainCam).nl();
+                "Directional Light".edit(90, ref directional).nl();
+                "Sky Renderer".edit(90, ref skeRenderer).nl();
+                "Sky dinamics".edit(90, ref skyDynamics).nl();
 
                 if (_mainCam)
                 {
@@ -103,6 +103,8 @@ namespace PlaytimePainter.Examples
                     }
                 }
             }
+
+            pegi.nl();
 
             if ("Weather configurations".IsEntered(ref _inspectedStuff, 0).nl())
             {

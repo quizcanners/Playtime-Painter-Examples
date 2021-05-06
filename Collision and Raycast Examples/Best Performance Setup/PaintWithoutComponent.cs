@@ -210,7 +210,6 @@ namespace PlaytimePainter.Examples
 
         public void Inspect()
         {
-            var changed = false;
 
             pegi.toggleDefaultInspector(this);
 
@@ -220,16 +219,16 @@ namespace PlaytimePainter.Examples
 
             if (!continious)
             {
-                "Bullets:".edit(50, ref shoots, 1, 50).nl(ref changed);
-                "Spread:".edit(50, ref spread, 0f, 1f).nl(ref changed);
+                "Bullets:".edit(50, ref shoots, 1, 50).nl();
+                "Spread:".edit(50, ref spread, 0f, 1f).nl();
             }
 
             if ("Fire!".Click().nl())
                 Paint();
 
-            brush.Targets_PEGI().nl(ref changed);
-            brush.Mode_Type_PEGI().nl(ref changed);
-            brush.ColorSliders().nl(ref changed);
+            brush.Targets_PEGI().nl();
+            brush.Mode_Type_PEGI().nl();
+            brush.ColorSliders().nl();
 
             if (brush.targetIsTex2D)
             {
