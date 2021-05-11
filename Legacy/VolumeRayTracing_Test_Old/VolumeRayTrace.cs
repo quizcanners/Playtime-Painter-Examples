@@ -33,7 +33,7 @@ namespace PlaytimePainter
                 }
             }
 
-            if ("Depth Camera ".IsEntered(ref inspectedElement, 10).nl())
+            if ("Depth Camera ".isEntered(ref inspectedElement, 10).nl())
             {
                 GetAllBakedDepths().draw(250);
 
@@ -46,7 +46,7 @@ namespace PlaytimePainter
                 dp.Nested_Inspect();
             }
 
-            if ("Lights ".IsEntered(ref inspectedElement, 11).nl())
+            if ("Lights ".isEntered(ref inspectedElement, 11).nl())
                 lights.Nested_Inspect().nl();
         }
 

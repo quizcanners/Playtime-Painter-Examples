@@ -106,7 +106,7 @@ namespace PlaytimePainter.Examples
 
             pegi.nl();
 
-            if ("Weather configurations".IsEntered(ref _inspectedStuff, 0).nl())
+            if ("Weather configurations".isEntered(ref _inspectedStuff, 0).nl())
             {
                 var cam = PainterCamera.GetModule<ColorBleedCameraModule>();
                 if (cam != null)

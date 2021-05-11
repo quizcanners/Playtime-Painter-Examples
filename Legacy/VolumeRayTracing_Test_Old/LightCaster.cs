@@ -144,7 +144,7 @@ namespace PlaytimePainter
                 //    "Emissive Mesh".edit(ref emissiveMesh).nl();
             }
 
-            if ("Projection".IsEntered(ref inspectedElement, 1).nl())
+            if ("Projection".isEntered(ref inspectedElement, 1).nl())
             {
                 cameraConfiguration.Nested_Inspect().nl();
             }

@@ -418,7 +418,7 @@ namespace PlaytimePainter.Examples
 
             pegi.nl();
 
-            if ("Advanced".IsFoldout(ref _showOptional).nl())
+            if ("Advanced".isFoldout(ref _showOptional).nl())
             {
 
                 if (texture || !MatTex)
