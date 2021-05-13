@@ -230,7 +230,7 @@ MonoBehaviour:
     url: 
     inspectedItems: -1
   materialsUsingRenderTexture: []
-  autodisabledBufferTarget: {fileID: 2050424861}
+  autodisabledBufferTarget: {fileID: 0}
   tmpCurve:
     serializedVersion: 2
     m_Curve:
@@ -724,7 +724,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 499987844}
   m_LocalRotation: {x: -0.030955128, y: 0.9648967, z: -0.22420797, w: -0.13321783}
-  m_LocalPosition: {x: 6.9412546, y: 14.007811, z: 20.712765}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2536,7 +2536,7 @@ MonoBehaviour:
   picture: {fileID: 1144922678}
   pill: {fileID: 2050424860}
   cube: {fileID: 1815085830}
-  timer: -10.558364
+  timer: -23.444641
   style:
     m_Name: Hint Style
     m_Normal:
