@@ -32,9 +32,9 @@
 
 		void surf (Input IN, inout SurfaceOutputStandard o) {
 			
-			float2 perfTex = (floor(IN.uv_MainTex.xy*_MainTex_TexelSize.z) + 0.5) * _MainTex_TexelSize.x;
+			float2 perfTex = (floor(IN.uv_MainTex.xy*_MainTex_TexelSize.zw) + 0.5) * _MainTex_TexelSize.xy;
 			float2 off = (IN.uv_MainTex.xy - perfTex);
-			off = off *saturate((abs(off) * _MainTex_TexelSize.z)*40 - 19);
+			off = off *saturate((abs(off) * _MainTex_TexelSize.zw)*40 - 19);
 			perfTex  += off;
 
 			float4 c = tex2D(_MainTex, perfTex);

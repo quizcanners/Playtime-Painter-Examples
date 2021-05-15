@@ -467,7 +467,7 @@ MonoBehaviour:
   showUrlField: 0
   showRecentTextures: 0
   showColorSchemes: 1
-  meshTool: 3
+  meshTool: 0
   bevelDetectionSensitivity: 3
   meshToolsStd: t_pos|15|dm|1|0|inM|1|y||t_shF|7|dm|1|0||t_vCol|0||t_edgs|23|v|1|0|doCol|1|n|fe|1|y||t_noStd|16|cat|1|8|cac|1|0||t_sbmsh|0||t_uv|39|gtuv|1|y|nrmWrap|5|0.399|fr|1|y|mp|1|y||
   saveMeshUndos: 0
