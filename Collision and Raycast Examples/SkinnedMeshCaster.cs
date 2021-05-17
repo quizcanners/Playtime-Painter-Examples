@@ -121,6 +121,6 @@ namespace PlaytimePainter.Examples {
     }
 
 #if UNITY_EDITOR
-    [CustomEditor(typeof(SkinnedMeshCaster))] internal class SkinnedMeshCasterEditor : PEGI_Inspector_Mono<SkinnedMeshCaster> { }
+    [CustomEditor(typeof(SkinnedMeshCaster))] internal class SkinnedMeshCasterEditor : PEGI_Inspector { }
 #endif
 }

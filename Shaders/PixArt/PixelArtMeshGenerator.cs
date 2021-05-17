@@ -225,6 +225,6 @@ namespace PlaytimePainter {
     }
 
 #if UNITY_EDITOR
-    [CustomEditor(typeof(PixelArtMeshGenerator))] internal class PixelArtMeshGeneratorEditor : PEGI_Inspector_Mono<PixelArtMeshGenerator> { }
+    [CustomEditor(typeof(PixelArtMeshGenerator))] internal class PixelArtMeshGeneratorEditor : PEGI_Inspector { }
 #endif
 }

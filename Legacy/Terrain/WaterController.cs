@@ -84,6 +84,6 @@ namespace PlaytimePainter.Examples
     }
 
 #if UNITY_EDITOR
-    [CustomEditor(typeof(WaterController))] internal class WaterEditor : PEGI_Inspector_Mono<WaterController> { }
+    [CustomEditor(typeof(WaterController))] internal class WaterEditor : PEGI_Inspector { }
 #endif
 }
