@@ -254,6 +254,6 @@ namespace PlaytimePainter.Examples
     }
 
 #if UNITY_EDITOR
-    [CustomEditor(typeof(PaintWithoutComponent))] internal class PaintWithoutComponentEditor : PEGI_Inspector { }
+    [CustomEditor(typeof(PaintWithoutComponent))] internal class PaintWithoutComponentEditor : PEGI_Inspector_Override { }
 #endif
 }

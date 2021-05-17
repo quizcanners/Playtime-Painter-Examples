@@ -446,6 +446,6 @@ namespace PlaytimePainter.Examples
     }
 
 #if UNITY_EDITOR
-    [CustomEditor(typeof(PaintingReceiver))] internal class PaintingReceiverEditor : PEGI_Inspector { }
+    [CustomEditor(typeof(PaintingReceiver))] internal class PaintingReceiverEditor : PEGI_Inspector_Override { }
 #endif
 }

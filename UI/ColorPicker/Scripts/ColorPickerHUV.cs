@@ -112,7 +112,7 @@ namespace PlaytimePainter.Examples {
     }
 
 #if UNITY_EDITOR
-    [CustomEditor(typeof(ColorPickerHUV))] internal class ColorPickerHUVEditor : PEGI_Inspector { }
+    [CustomEditor(typeof(ColorPickerHUV))] internal class ColorPickerHUVEditor : PEGI_Inspector_Override { }
 
 #endif
 }

@@ -147,6 +147,6 @@ namespace PlaytimePainter.Examples {
     }
 
 #if UNITY_EDITOR
-    [CustomEditor(typeof(PainterBall))] internal class PainterBallEditor : PEGI_Inspector { }
+    [CustomEditor(typeof(PainterBall))] internal class PainterBallEditor : PEGI_Inspector_Override { }
 #endif
 }
