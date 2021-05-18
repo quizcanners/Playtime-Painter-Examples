@@ -65,7 +65,7 @@ namespace PlaytimePainter.Examples {
             if (PainterCamera.Data) {
                 var col = PainterCamera.Data.Brush.Color;
 
-                if ((!ColorPickerContrast.inst || !ColorPickerContrast.inst.mouseDown) && lastValue.DistanceRgba(col)>0.002f) {
+                if ((!ColorPickerContrast.inst || !ColorPickerContrast.inst.mouseDown) && LerpUtils.DistanceRgba(lastValue, col) >0.002f) {
                     
                     float H;
                     float S;
