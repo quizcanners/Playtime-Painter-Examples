@@ -5,9 +5,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using QuizCanners.Lerp;
 
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 
 // Note: Some seamingly arbitraru constants in script and shader are there to match Unity's picker (For Editor UI).
 
@@ -103,16 +100,12 @@ namespace PlaytimePainter.Examples {
         
         public void Inspect()
         {
-
-            pegi.toggleDefaultInspector(this);
             "HUE: {0}".F(hue).nl();
             "Saturateion: {0}".F(Saturation).nl();
             "Value: {0}".F(Saturation).nl();
         }
     }
 
-#if UNITY_EDITOR
-    [CustomEditor(typeof(ColorPickerHUV))] internal class ColorPickerHUVEditor : PEGI_Inspector_Override { }
+    [PEGI_Inspector_Override(typeof(ColorPickerHUV))] internal class ColorPickerHUVEditor : PEGI_Inspector_Override { }
 
-#endif
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18144906, g: 0.22707976, b: 0.30739078, a: 1}
+  m_IndirectSpecularColor: {r: 0.44812298, g: 0.49813706, b: 0.5755432, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -198,7 +198,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dataHolder: {fileID: 11400000, guid: 239fa0bb4dc0c564588758d49ee3f24e, type: 2}
   disableSecondBufferUpdateDebug: 1
-  mainDirectionalLight: {fileID: 2146497307}
   _mainCamera: {fileID: 1213774261}
   painterCamera: {fileID: 166147903}
   brushPrefab: {fileID: 114218434713451120, guid: 28dd40865c642244687d2f1f5835f69e, type: 3}
@@ -212,7 +211,6 @@ MonoBehaviour:
     height: 128
     useTexCoord2: 0
     _useTexCoord2AutoAssigned: 0
-    lockEditing: 0
     isATransparentLayer: 0
     enableUndoRedo: 0
     preserveTransparency: 1
@@ -723,8 +721,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 499987844}
-  m_LocalRotation: {x: 0.19744185, y: 0.19384247, z: -0.039861836, w: 0.9601317}
-  m_LocalPosition: {x: -0.57407, y: 13.809004, z: 7.7878647}
+  m_LocalRotation: {x: 0.11271995, y: -0.79566574, z: 0.1561679, w: 0.5743012}
+  m_LocalPosition: {x: 18.028011, y: 15.332035, z: 11.767092}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1554,6 +1552,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8144dbcfef542084fb571aaa729b175d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cfgData:
+    _value: mdls|119|pgns|109|TerCol|0||TerLight|0||TerSplat|0||UiMdl|0||TerHeight|0||TilAtlsPntr|21|sm|0||iai|1|0|ar|1|1||VolTexM|5|b|0|||||
   meshRenderer: {fileID: 1144922680}
   skinnedMeshRenderer: {fileID: 0}
   uiGraphic: {fileID: 0}
@@ -1568,6 +1568,8 @@ MonoBehaviour:
   _fallbackMaterial: {fileID: 0}
   meshEditing: 0
   selectedMeshProfile: 0
+  savedMeshData:
+    _value: 
   meshDataSavedFor: {fileID: 0}
   tilingY: 8
   forcedMeshCollider: 0
@@ -1903,6 +1905,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8144dbcfef542084fb571aaa729b175d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cfgData:
+    _value: 
   meshRenderer: {fileID: 0}
   skinnedMeshRenderer: {fileID: 0}
   uiGraphic: {fileID: 1214121534}
@@ -1917,6 +1921,8 @@ MonoBehaviour:
   _fallbackMaterial: {fileID: 0}
   meshEditing: 0
   selectedMeshProfile: 
+  savedMeshData:
+    _value: 
   meshDataSavedFor: {fileID: 0}
   tilingY: 8
   forcedMeshCollider: 0
@@ -2115,6 +2121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8144dbcfef542084fb571aaa729b175d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cfgData:
+    _value: 
   meshRenderer: {fileID: 0}
   skinnedMeshRenderer: {fileID: 0}
   uiGraphic: {fileID: 1516620837}
@@ -2129,6 +2137,8 @@ MonoBehaviour:
   _fallbackMaterial: {fileID: 0}
   meshEditing: 0
   selectedMeshProfile: 
+  savedMeshData:
+    _value: 
   meshDataSavedFor: {fileID: 0}
   tilingY: 8
   forcedMeshCollider: 0
@@ -2393,6 +2403,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8144dbcfef542084fb571aaa729b175d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cfgData:
+    _value: mdls|119|pgns|109|TerCol|0||TerLight|0||TerSplat|0||UiMdl|0||TerHeight|0||TilAtlsPntr|21|sm|0||iai|1|0|ar|1|1||VolTexM|5|b|0|||||
   meshRenderer: {fileID: 1815085834}
   skinnedMeshRenderer: {fileID: 0}
   uiGraphic: {fileID: 0}
@@ -2407,6 +2419,8 @@ MonoBehaviour:
   _fallbackMaterial: {fileID: 0}
   meshEditing: 0
   selectedMeshProfile: Bevel
+  savedMeshData:
+    _value: 
   meshDataSavedFor: {fileID: 1101939164}
   tilingY: 8
   forcedMeshCollider: 1
@@ -2536,7 +2550,7 @@ MonoBehaviour:
   picture: {fileID: 1144922678}
   pill: {fileID: 2050424860}
   cube: {fileID: 1815085830}
-  timer: -33.19637
+  timer: 0.1180547
   style:
     m_Name: Hint Style
     m_Normal:
@@ -2886,6 +2900,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8144dbcfef542084fb571aaa729b175d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cfgData:
+    _value: 
   meshRenderer: {fileID: 2050424863}
   skinnedMeshRenderer: {fileID: 0}
   uiGraphic: {fileID: 0}
@@ -2900,6 +2916,8 @@ MonoBehaviour:
   _fallbackMaterial: {fileID: 0}
   meshEditing: 0
   selectedMeshProfile: 0
+  savedMeshData:
+    _value: 
   meshDataSavedFor: {fileID: 0}
   tilingY: 8
   forcedMeshCollider: 0

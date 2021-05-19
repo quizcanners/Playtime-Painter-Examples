@@ -1,10 +1,6 @@
 ﻿using QuizCanners.Utils;
 using UnityEngine;
 using QuizCanners.Inspect;
-using PlaytimePainter.CameraModules;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 
 namespace PlaytimePainter.Examples
 {
@@ -83,7 +79,7 @@ namespace PlaytimePainter.Examples
         {
             if (_inspectedStuff == -1)
             {
-                pegi.toggleDefaultInspector(this).nl();
+                pegi.nl();
 
                 "Main Cam".edit(90, ref _mainCam).nl();
                 "Directional Light".edit(90, ref directional).nl();
@@ -109,8 +105,8 @@ namespace PlaytimePainter.Examples
         }
     }
 
-#if UNITY_EDITOR
-    [CustomEditor(typeof(SkyController))] internal class SkyControllerDrawer : PEGI_Inspector_Override { }
-#endif
+
+    [PEGI_Inspector_Override(typeof(SkyController))] internal class SkyControllerDrawer : PEGI_Inspector_Override { }
+
 
 }

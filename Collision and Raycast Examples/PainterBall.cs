@@ -3,10 +3,6 @@ using QuizCanners.Inspect;
 using QuizCanners.Utils;
 using UnityEngine;
 
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
-
 namespace PlaytimePainter.Examples { 
 
     [ExecuteInEditMode]
@@ -23,7 +19,7 @@ namespace PlaytimePainter.Examples {
 
             var target = go.GetComponent<PlaytimePainter>();
 
-            if (!target || target.LockTextureEditing) return;
+            if (!target || target.TextureEditingBlocked) return;
 
             var col = new PaintingCollision(target);
             paintingOn.Add(col);
@@ -146,7 +142,7 @@ namespace PlaytimePainter.Examples {
         }
     }
 
-#if UNITY_EDITOR
-    [CustomEditor(typeof(PainterBall))] internal class PainterBallEditor : PEGI_Inspector_Override { }
-#endif
+
+    [PEGI_Inspector_Override(typeof(PainterBall))] internal class PainterBallEditor : PEGI_Inspector_Override { }
+
 }

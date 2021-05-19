@@ -24,13 +24,6 @@ namespace PlaytimePainter.Examples
             if (picture)
                 picture.GetComponent<PlaytimePainter>().DestroyWhateverComponent();
 
-            if (cube)
-            {
-                var pntr = cube.GetComponent<PlaytimePainter>();
-                if (pntr && pntr.TexMeta != null)
-                    pntr.TexMeta.lockEditing = true;
-            }
-
             if (pill)
             {
                 var pntr = pill.GetComponent<PlaytimePainter>();
@@ -124,7 +117,7 @@ namespace PlaytimePainter.Examples
                     if (cube)
                     {
                         var painter = cube.GetComponent<PlaytimePainter>();
-                        if (!painter || (painter && painter.TexMeta != null && !painter.TexMeta.lockEditing))
+                        if (!painter || (painter && painter.TexMeta != null))
                             SetStage(HintStage.Draw);
                         timer = 5f;
                     }

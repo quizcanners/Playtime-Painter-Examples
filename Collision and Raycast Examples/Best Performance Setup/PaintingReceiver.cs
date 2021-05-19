@@ -3,10 +3,6 @@ using QuizCanners.Utils;
 using System;
 using UnityEngine;
 
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
-
 namespace PlaytimePainter.Examples
 {
 
@@ -229,8 +225,6 @@ namespace PlaytimePainter.Examples
         public virtual void Inspect()
         {
 
-            pegi.toggleDefaultInspector(this);
-
             if (texture && (!MatTex || MatTex != texture))
             {
                 "Target texture not set ont he Material".writeWarning();
@@ -445,7 +439,7 @@ namespace PlaytimePainter.Examples
         #endregion
     }
 
-#if UNITY_EDITOR
-    [CustomEditor(typeof(PaintingReceiver))] internal class PaintingReceiverEditor : PEGI_Inspector_Override { }
-#endif
+
+    [PEGI_Inspector_Override(typeof(PaintingReceiver))] internal class PaintingReceiverEditor : PEGI_Inspector_Override { }
+
 }

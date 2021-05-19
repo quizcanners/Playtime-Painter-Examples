@@ -4,9 +4,6 @@ using QuizCanners.Inspect;
 using PlaytimePainter.ComponentModules;
 using QuizCanners.Utils;
 using UnityEngine;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 
 namespace PlaytimePainter.Examples
 {
@@ -210,9 +207,6 @@ namespace PlaytimePainter.Examples
 
         public void Inspect()
         {
-
-            pegi.toggleDefaultInspector(this);
-
             pegi.FullWindow.DocumentationClickOpen(Documentation);
 
             "Continious".toggleIcon(ref continious).nl();
@@ -253,7 +247,7 @@ namespace PlaytimePainter.Examples
         #endregion
     }
 
-#if UNITY_EDITOR
-    [CustomEditor(typeof(PaintWithoutComponent))] internal class PaintWithoutComponentEditor : PEGI_Inspector_Override { }
-#endif
+
+    [PEGI_Inspector_Override(typeof(PaintWithoutComponent))] internal class PaintWithoutComponentEditor : PEGI_Inspector_Override { }
+
 }

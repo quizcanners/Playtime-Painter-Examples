@@ -8,7 +8,7 @@ public class InfiniteParticlesDrawerGUI : PEGI_Inspector_Material {
      
     public override bool Inspect(Material mat) {
 
-        var changed = pegi.toggleDefaultInspector(mat);
+        var changed = pegi.ChangeTrackStart();
 
         mat.toggle("SCREENSPACE").nl();
         mat.toggle("DYNAMIC_SPEED").nl();
