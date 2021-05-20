@@ -112,7 +112,7 @@ MonoBehaviour:
     saveName: Tiles_MASKnMAPS
     url: 
     inspectedItems: -1
-  - target: 1
+  - target: 0
     renderTexture: {fileID: 0}
     texture2D: {fileID: 2800000, guid: b435393d37601e84db1f10ed766d0206, type: 3}
     other: {fileID: 0}
@@ -418,7 +418,7 @@ MonoBehaviour:
     selectedForMerge: 0
   - material: {fileID: 2100000, guid: 4111ec3737538d24eac860c521e3f96e, type: 2}
     selectedTexture: 0
-    usePreviewShader: 1
+    usePreviewShader: 0
     colorToVertexColorOnMerge: 0
     selectedForMerge: 0
   - material: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
