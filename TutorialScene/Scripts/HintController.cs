@@ -57,7 +57,7 @@ namespace PlaytimePainter.Examples
                 case HintStage.AddTexture:
                     newText = "Pill on the left has no texture. Select it with " + mb + " and click 'Create Texture' icon"; break;
                 case HintStage.RenderTexture:
-                    int size = RenderTextureBuffersManager.renderBuffersSize;
+                    int size = PlaytimePainter_RenderTextureBuffersManager.renderBuffersSize;
                     newText = "Change MODE to GPU Blit and paint with it. \n This will enable different option and will use two " + size + "*" + size +
                               " Render Texture buffers for editing. \n"; break;
                 case HintStage.WellDone: goto default;

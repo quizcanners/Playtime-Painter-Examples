@@ -118,7 +118,7 @@ namespace PlaytimePainter.Examples
                 Refresh();
 
             if (Application.isPlaying && originalTexture && texture && (texture.GetType() == typeof(RenderTexture)))
-                RenderTextureBuffersManager.Blit(originalTexture, (RenderTexture)texture);
+                PlaytimePainter_RenderTextureBuffersManager.Blit(originalTexture, (RenderTexture)texture);
 
             if (Material && !Material.Has(TextureId))
                 _textureProperty = null;
@@ -131,7 +131,7 @@ namespace PlaytimePainter.Examples
             if (texture)
                 return texture;
 
-            var rtm = TexturesPool.inst;
+            var rtm = PlaytimePainter_TexturesPool.inst;
 
             if (!Material)
             {
@@ -151,7 +151,7 @@ namespace PlaytimePainter.Examples
 
             var tex = originalTexture ? originalTexture : MatTex;
             if (tex)
-                RenderTextureBuffersManager.Blit(tex, (RenderTexture)texture);
+                PlaytimePainter_RenderTextureBuffersManager.Blit(tex, (RenderTexture)texture);
             else
                 PainterCamera.Inst.Render(Color.black, (RenderTexture)texture);
 
@@ -170,7 +170,7 @@ namespace PlaytimePainter.Examples
                 fromRtManager = false;
                 Material = originalMaterial;
                 originalMaterial = null;
-                TexturesPool.inst.ReturnOne((RenderTexture)texture);
+                PlaytimePainter_TexturesPool.inst.ReturnOne((RenderTexture)texture);
                 texture = null;
                 return;
             }
@@ -197,7 +197,7 @@ namespace PlaytimePainter.Examples
                 t2D.Apply(true);
             }
             else
-                RenderTextureBuffersManager.Blit(originalTexture, (RenderTexture)texture);
+                PlaytimePainter_RenderTextureBuffersManager.Blit(originalTexture, (RenderTexture)texture);
 
         }
 
@@ -368,7 +368,7 @@ namespace PlaytimePainter.Examples
                     }
                     else
                     {
-                        var rtm = TexturesPool.inst;
+                        var rtm = PlaytimePainter_TexturesPool.inst;
 
                         if (rtm)
                         {
@@ -387,7 +387,7 @@ namespace PlaytimePainter.Examples
                         {
                             "No Render Texture Pool found".write();
                             if ("Create".Click().nl())
-                                pegi.GameView.ShowNotification((TexturesPool.ForceInstance.gameObject.name + " created"));
+                                pegi.GameView.ShowNotification((PlaytimePainter_TexturesPool.ForceInstance.gameObject.name + " created"));
                         }
                     }
                 }
