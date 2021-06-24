@@ -54,7 +54,7 @@ namespace PlaytimePainter
                     var mi = transform.position;
                     var destScale = other.scale;
 
-                    var dist =  Vector3.one* (destScale - scale) * 0.5f - mi;
+                    var dist =  (destScale - scale) * 0.5f * Vector3.one - mi;
 
                     var touchDist = (destScale + scale)/2;
 

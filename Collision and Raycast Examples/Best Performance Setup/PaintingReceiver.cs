@@ -18,8 +18,6 @@ namespace PlaytimePainter.Examples
         public MeshFilter meshFilter;
         public Renderer meshRenderer;
         public SkinnedMeshRenderer skinnedMeshRenderer;
-
-        [SerializeField]
         public int materialIndex;
 
         public RenderTexture TryGetRenderTexture()
