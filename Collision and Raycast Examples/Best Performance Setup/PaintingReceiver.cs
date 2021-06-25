@@ -191,7 +191,7 @@ namespace PlaytimePainter.Examples
 
             if (t2D)
             {
-                t2D.SetPixels(((Texture2D)originalTexture).GetPixels());
+                t2D.SetPixels32(((Texture2D)originalTexture).GetPixels32());
                 t2D.Apply(true);
             }
             else
