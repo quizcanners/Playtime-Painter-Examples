@@ -1,18 +1,16 @@
 ﻿using System.Collections.Generic;
 using QuizCanners.Inspect;
+using QuizCanners.Utils;
 using UnityEngine;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 
-namespace PlaytimePainter {
+namespace PlaytimePainter.Examples {
 
     [ExecuteInEditMode]
     public class PixelArtMeshGenerator : MonoBehaviour, IPEGI {
         private static int width = 8;
         private static float halfPix;
         private static Vert[] verts;
-        private static List<int> tris = new List<int>();
+        private static readonly List<int> tris = new List<int>();
 
       //  public Vector4 uvSector = new Vector4(0, 0, 1, 1);
         public int testWidth = 8;
@@ -165,15 +163,9 @@ namespace PlaytimePainter {
         }
 
         #if UNITY_EDITOR
-        private void Save() {
-
-           
-            string meshFilePath = "Assets/" + meshFilter.transform.name + ".asset";
-            Mesh meshToSave = meshFilter.sharedMesh;
-            AssetDatabase.CreateAsset(meshToSave, meshFilePath);
-            AssetDatabase.SaveAssets();
-            AssetDatabase.Refresh();
-           
+        private void Save() 
+        {
+            QcFile.Save.ToAssets(meshFilter.sharedMesh);
         }
         #endif
 

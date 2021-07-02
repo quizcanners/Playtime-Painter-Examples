@@ -98,7 +98,7 @@ namespace PlaytimePainter.Examples
                 else
                 {
                     Material.mainTexture = value;
-                    QcUnity.ChillLogger.LogErrorOnce(()=> "No {0} target ID on the material, trying to set main texture.".F(TextureId.GetNameForInspector()), key: "notid");
+                    QcUnity.ChillLogger.LogErrorOnce(()=> "No {0} target ID on the material, trying to set main texture.".F(pegi.GetNameForInspector(TextureId)), key: "notid");
                 }
             }
         }
@@ -155,7 +155,7 @@ namespace PlaytimePainter.Examples
 
             MatTex = texture;
 
-            texture.GetTextureMeta().useTexCoord2 = useTexcoord2;
+            texture.GetTextureMeta().UseTexCoord2 = useTexcoord2;
 
             return texture;
         }
@@ -290,7 +290,7 @@ namespace PlaytimePainter.Examples
                 var lst = Material.MyGetTextureProperties_Editor();
 
                 if ("   Property".select(80, ref _textureProperty, lst).nl())
-                    TexturePropertyName = _textureProperty.NameForDisplayPEGI();
+                    TexturePropertyName = _textureProperty.GetNameForInspector();
             }
 
             if (gameObject.isStatic && !originalMesh)
@@ -307,7 +307,7 @@ namespace PlaytimePainter.Examples
                 "  Original Mesh".edit("Static objects use Combined mesh, so original one will be needed for painting", 50, ref originalMesh).nl();
 
             if ("  Use second texture coordinates".toggleIcon("If shader uses texcoord2 (Baked Light) to display damage, turn this ON.", ref useTexcoord2).nl() && texture)
-                texture.GetTextureMeta().useTexCoord2 = useTexcoord2;
+                texture.GetTextureMeta().UseTexCoord2 = useTexcoord2;
 
             if (Material)
             {
