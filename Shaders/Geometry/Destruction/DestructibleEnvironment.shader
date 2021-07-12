@@ -21,8 +21,8 @@
 		CGPROGRAM
 		#pragma vertex vert
 		#pragma surface surf Standard fullforwardshadows
-		#pragma multi_compile  ___ _qcPp_UV_ATLASED
-		#pragma shader_feature ___ _DEBUG_UV2
+		#pragma multi_compile_local  ___ _qcPp_UV_ATLASED
+		#pragma shader_feature_local ___ _DEBUG_UV2
 		#include "Assets/Playtime-Painter/Shaders/quizcanners_built_in.cginc"
 		#pragma target 3.0
 

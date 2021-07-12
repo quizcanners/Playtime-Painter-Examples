@@ -18,7 +18,7 @@
 		CGPROGRAM
 		#pragma vertex vert
 		#pragma surface surf Standard fullforwardshadows
-		#pragma multi_compile _____ _Metal
+		#pragma multi_compile_local _____ _Metal
 		#pragma target 3.0
 		#include "UnityCG.cginc"
 

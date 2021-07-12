@@ -31,7 +31,7 @@
 				#include "AutoLight.cginc"
 				#include "Assets/Playtime-Painter/Shaders/quizcanners_built_in.cginc"
 
-				#pragma shader_feature  ___ CLIP_EDGES
+				#pragma shader_feature_local  ___ CLIP_EDGES
 				#pragma multi_compile ______ USE_NOISE_TEXTURE
 
 				sampler2D _MainTex;

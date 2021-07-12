@@ -35,7 +35,7 @@ Shader "Playtime Painter/Geometry/Destructible/Character" {
 				#include "Assets/Playtime-Painter/Shaders/quizcanners_built_in.cginc"
 
 				#pragma multi_compile_fwdbase 
-				#pragma shader_feature __ _DEBUG_UV2
+				#pragma shader_feature_local __ _DEBUG_UV2
 
 				sampler2D _MainTex;
 				float4 _MainTex_TexelSize;

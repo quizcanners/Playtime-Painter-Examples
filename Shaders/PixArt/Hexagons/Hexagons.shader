@@ -33,8 +33,8 @@
 				#pragma multi_compile_fwdbase
 				#pragma multi_compile_instancing
 
-				#pragma shader_feature _SHAPE_CIRCLE _SHAPE_HEXAGON
-				#pragma shader_feature _SPACE_SCREEN  _SPACE_TEX
+				#pragma shader_feature_local _SHAPE_CIRCLE _SHAPE_HEXAGON
+				#pragma shader_feature_local _SPACE_SCREEN  _SPACE_TEX
 
 				struct v2f {
 					float4 pos : SV_POSITION;

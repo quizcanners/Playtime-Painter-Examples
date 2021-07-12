@@ -32,9 +32,9 @@
 
 			#include "Assets/Playtime-Painter/Shaders/quizcanners_built_in.cginc"
 
-			#pragma shader_feature  ___ _qcPp_UV_ATLASED
-			#pragma shader_feature  ___ _qcPp_UV_PROJECTED
-			#pragma shader_feature  ___ _BUMP_NONE _BUMP_REGULAR _BUMP_COMBINED 
+			#pragma shader_feature_local  ___ _qcPp_UV_ATLASED
+			#pragma shader_feature_local  ___ _qcPp_UV_PROJECTED
+			#pragma shader_feature_local  ___ _BUMP_NONE _BUMP_REGULAR _BUMP_COMBINED 
 			#pragma multi_compile ______ USE_NOISE_TEXTURE
 
 			sampler2D _MainTex_ATL;

@@ -30,7 +30,7 @@
 				#include "AutoLight.cginc"
 				#include "Assets/Playtime-Painter/Shaders/quizcanners_built_in.cginc"
 
-				#pragma shader_feature  ___ _BUMP_NONE  _BUMP_COMBINED 
+				#pragma shader_feature_local  ___ _BUMP_NONE  _BUMP_COMBINED 
 
 				sampler2D _MainTex;
 				float4 _MainTex_TexelSize;

@@ -32,9 +32,9 @@
 			#pragma multi_compile_fwdbase
 			#pragma multi_compile_fog
 
-			#pragma shader_feature  ___ _qcPp_UV_ATLASED
-			#pragma shader_feature  ___ _qcPp_UV_PROJECTED
-			#pragma shader_feature  ___ _BUMP_NONE _BUMP_REGULAR _BUMP_COMBINED 
+			#pragma shader_feature_local  ___ _qcPp_UV_ATLASED
+			#pragma shader_feature_local  ___ _qcPp_UV_PROJECTED
+			#pragma shader_feature_local  ___ _BUMP_NONE _BUMP_REGULAR _BUMP_COMBINED 
 
 			sampler2D _MainTex_ATL;
 			sampler2D _BumpMapC_ATL;
