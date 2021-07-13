@@ -7,13 +7,13 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RoundedOutline
+  m_Name: RoundedOutline_Trimmed
   m_Shader: {fileID: 4800000, guid: 9869b05639be2634289810e7c1e2ff37, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: TRIMMED
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: 3060
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -75,7 +75,7 @@ Material:
     - _Thickness: 0.33
     - _UVSec: 0
     - _ZWrite: 1
-    - trimmed: 0
+    - trimmed: 1
     - unlinked: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
