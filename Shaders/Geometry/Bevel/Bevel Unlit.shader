@@ -25,7 +25,7 @@
 				#pragma vertex vert
 				#pragma fragment frag
 				#pragma multi_compile_instancing
-				#include "Assets/Playtime-Painter/Shaders/quizcanners_cg.cginc"
+				#include "Assets/The-Fire-Below/Common/Shaders/quizcanners_cg.cginc"
 
 				sampler2D _MainTex;
 				float4 _MainTex_TexelSize;

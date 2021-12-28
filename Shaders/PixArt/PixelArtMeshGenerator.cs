@@ -3,7 +3,7 @@ using QuizCanners.Inspect;
 using QuizCanners.Utils;
 using UnityEngine;
 
-namespace PlaytimePainter.Examples {
+namespace PainterTool.Examples {
 
     [ExecuteInEditMode]
     public class PixelArtMeshGenerator : MonoBehaviour, IPEGI {
@@ -172,10 +172,10 @@ namespace PlaytimePainter.Examples {
         #region Inspector
         public void Inspect()
         {
-            "Mesh Filter".PegiLabel().edit(ref meshFilter).nl();
-            "Mesh Collider".PegiLabel().edit(ref meshCollider).nl();
-            "Width: ".PegiLabel().edit(ref testWidth).nl();
-            "Thickness ".PegiLabel().edit(ref thickness).nl();
+            "Mesh Filter".PegiLabel().Edit(ref meshFilter).Nl();
+            "Mesh Collider".PegiLabel().Edit(ref meshCollider).Nl();
+            "Width: ".PegiLabel().Edit(ref testWidth).Nl();
+            "Thickness ".PegiLabel().Edit(ref thickness).Nl();
                 /*   "UV Sector".PegiLabel().edit(ref uvSector).changes(ref changed);
             if (uvSector != new Vector4(0,0,1,1) && icon.Refresh.Click())
                 uvSector = new Vector4(0,0,1,1);
@@ -186,7 +186,7 @@ namespace PlaytimePainter.Examples {
 
             if (!meshFilter)
             {
-                "Add Mesh filter".PegiLabel().Click().nl().OnChanged(() => gameObject.AddComponent<MeshFilter>());
+                "Add Mesh filter".PegiLabel().Click().Nl().OnChanged(() => gameObject.AddComponent<MeshFilter>());
             }
             else
                 "Generate".PegiLabel().Click(() =>
@@ -204,9 +204,9 @@ namespace PlaytimePainter.Examples {
 
 
 
-            pegi.nl();
+            pegi.Nl();
 
-            "For Pix Art shader set width equal to texture size, and thickness - 0".PegiLabel().writeHint();
+            "For Pix Art shader set width equal to texture size, and thickness - 0".PegiLabel().WriteHint();
 
         }
         #endregion

@@ -20,7 +20,7 @@
 					#include "UnityLightingCommon.cginc" 
 		#include "Lighting.cginc"
 		#include "AutoLight.cginc"
-		#include "Assets/Playtime-Painter/Shaders/quizcanners_built_in.cginc"
+		#include "Assets/The-Fire-Below/Common/Shaders/quizcanners_built_in.cginc"
 		#pragma multi_compile_local  ___ _qcPp_UV_ATLASED
 		#pragma multi_compile_local  ___ _BUMP_NONE _BUMP_REGULAR _BUMP_COMBINED 
 

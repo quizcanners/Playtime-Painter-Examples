@@ -29,7 +29,7 @@
 				#include "Lighting.cginc"
 				#include "UnityCG.cginc"
 				#include "AutoLight.cginc"
-				#include "Assets/Playtime-Painter/Shaders/quizcanners_built_in.cginc"
+				#include "Assets/The-Fire-Below/Common/Shaders/quizcanners_built_in.cginc"
 
 				#pragma shader_feature_local  ___ CLIP_EDGES
 				#pragma multi_compile ______ USE_NOISE_TEXTURE

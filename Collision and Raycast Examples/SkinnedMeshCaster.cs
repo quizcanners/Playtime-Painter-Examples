@@ -2,7 +2,7 @@
 using QuizCanners.Utils;
 using UnityEngine;
 
-namespace PlaytimePainter.Examples {
+namespace PainterTool.Examples {
 
 #pragma warning disable IDE0018 // Inline variable declaration
     public class SkinnedMeshCaster : MonoBehaviour, IPEGI {
@@ -21,7 +21,7 @@ namespace PlaytimePainter.Examples {
                 return;
             }
 
-            var painter = hit.transform.GetComponentInParent<PlaytimePainter>();
+            var painter = hit.transform.GetComponentInParent<PainterComponent>();
 
             if (!painter)
             {
@@ -72,7 +72,7 @@ namespace PlaytimePainter.Examples {
 
             if (Physics.Raycast(new Ray(transform.position, transform.forward), out hit)) {
 
-                var painter = hit.transform.GetComponentInParent<PlaytimePainter>();
+                var painter = hit.transform.GetComponentInParent<PainterComponent>();
 
                 Gizmos.color = !painter ? Color.red : Color.green;
                 Gizmos.DrawLine(transform.position, hit.point);
@@ -105,13 +105,13 @@ namespace PlaytimePainter.Examples {
                                                        "This Component has it's own brush configuration. Can be replaced with PainterCamera.Data.brushConfig " +
                                                        "to use global brush.", "How to use Skinned Mesh Caster", 15);
 
-            "Paint!".PegiLabel().Click(Paint).nl();
+            "Paint!".PegiLabel().Click(Paint).Nl();
 
-            "Last ray Cast result: {0}".F(lastShotResult).PegiLabel().nl();
+            "Last ray Cast result: {0}".F(lastShotResult).PegiLabel().Nl();
 
-            pegi.Nested_Inspect(brush.Targets_PEGI).nl();
-            pegi.Nested_Inspect(brush.Mode_Type_PEGI).nl();
-            pegi.Nested_Inspect(brush.ColorSliders).nl();
+            pegi.Nested_Inspect(brush.Targets_PEGI).Nl();
+            pegi.Nested_Inspect(brush.Mode_Type_PEGI).Nl();
+            pegi.Nested_Inspect(brush.ColorSliders).Nl();
         }
     }
 

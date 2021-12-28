@@ -28,7 +28,7 @@
 				#include "Lighting.cginc"
 				#include "UnityCG.cginc"
 				#include "AutoLight.cginc"
-				#include "Assets/Playtime-Painter/Shaders/quizcanners_built_in.cginc"
+				#include "Assets/The-Fire-Below/Common/Shaders/quizcanners_built_in.cginc"
 
 				#pragma shader_feature_local  ___ _BUMP_NONE  _BUMP_COMBINED 
 
@@ -119,9 +119,7 @@
 
 						ApplyTangent (normal, tnormal,  i.wTangent);
 						
-						bumpMap = bumpMap*(1-edgeColorVisibility) + bumpMapMip * edgeColorVisibility; //i.vcol.rgb*edgeColorVisibility;
-
-							
+						bumpMap = bumpMap*(1-edgeColorVisibility) + bumpMapMip * edgeColorVisibility; //i.vcol.rgb*edgeColorVisibility;	
 					#endif
 
 					float deWeight = 1 - weight;

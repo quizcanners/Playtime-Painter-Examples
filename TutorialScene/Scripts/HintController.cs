@@ -1,68 +1,84 @@
-﻿using QuizCanners.Utils;
+﻿using QuizCanners.Inspect;
+using QuizCanners.Utils;
 using UnityEngine;
 
-namespace PlaytimePainter.Examples
+namespace PainterTool.Examples
 {
 
     [ExecuteInEditMode]
-    public class HintController : MonoBehaviour
+    public class HintController : MonoBehaviour, IPEGI
     {
+        [SerializeField] private GameObject _picture;
+        [SerializeField] private GameObject _pill;
+        [SerializeField] private GameObject _cube;
+        private readonly Gate.SystemTime _timer = new Gate.SystemTime();
+
         private string _text = "";
 
         private HintStage _stage;
+        private enum HintStage { EnableTool, Draw, AddTool, AddTexture, RenderTexture, WellDone }
 
-        private enum HintStage { EnableTool, UnlockTexture, Draw, AddTool, AddTexture, RenderTexture, WellDone }
-
-        public GameObject picture;
-        public GameObject pill;
-        public GameObject cube;
-        public float timer = 5f;
-
-        [ContextMenu("Reset Tutorial")]
-        public void ResetTutorial()
+        private PainterComponent pp;
+        private PainterComponent PillPainter
         {
-            if (picture)
-                picture.GetComponent<PlaytimePainter>().DestroyWhateverComponent();
-
-            if (pill)
+            get
             {
-                var pntr = pill.GetComponent<PlaytimePainter>();
-                if (pntr && pntr.TexMeta != null)
-                    pntr.ChangeTexture(null);
+                if (!pp)
+                    pp = _pill.GetComponent<PainterComponent>();
+
+                return pp;
             }
-
-            PlaytimePainter.IsCurrentTool = false;
-
-            _stage = HintStage.EnableTool;
         }
 
         private void SetStage(HintStage st)
         {
             _stage = st;
 
-            var mb = (Application.isPlaying) ? "RIGHT MOUSE BUTTON" : "LEFT MOUSE BUTTON";
-
             string newText;
 
             switch (_stage)
             {
                 case HintStage.EnableTool:
-                    newText = "Select the central cube and click 'On/Off' to start using painter. Unlock texture if locked."; break;
-                case HintStage.UnlockTexture:
-                    newText = "Unlock texture on the cube (lock icon next to it)"; break;
+
+                    if (Application.isEditor == false)
+                    {
+                        newText = "Tutorial is Designed to be played in Editor";
+                    } else 
+                    {
+                        newText = "Select any object with PlaytimePainter Component and click 'On/Off' icon to start using painter." +
+                            (Application.isPlaying ? "" : "Alternatively select the tool in Unity's toolbox (a dropdown next where all the transform tools are)");
+                    }
+
+                        ; break;
                 case HintStage.Draw:
-                    newText = "Draw on the cube. \n You can LOCK EDITING for selected texture."; break;
+                    _timer.GetSecondsDeltaAndUpdate();
+                    newText = "Draw on the {0} in {1} view. ".F(_cube.name, Application.isPlaying ? "Game View" : "Scene View"); break;
                 case HintStage.AddTool:
-                    newText = "Picture to the right has no tool attached. \n Select it and \n Click 'Add Component'->'Mesh'->'Playtime Painter'"; break;
+                    var cmp = _picture.GetComponent<PainterComponent>();
+                    if (cmp)
+                        cmp.DestroyWhateverComponent();
+
+                 
+
+                    newText = "{0} to the right has no tool attached. \n Select it and \n Click 'Add Component'->'Mesh'->'Playtime Painter'".F(_picture);
+                    break;
+
+                   
+
                 case HintStage.AddTexture:
-                    newText = "Pill on the left has no texture. Select it with " + mb + " and click 'Create Texture' icon"; break;
+
+                    if (PillPainter) 
+                        PillPainter.ChangeTexture(null);
+
+
+                    newText = "Pill on the left has no texture. Select it with and click 'Create Texture' icon"; break;
                 case HintStage.RenderTexture:
-                    int size = PlaytimePainter_RenderTextureBuffersManager.renderBuffersSize;
-                    newText = "Change MODE to GPU Blit and paint with it. \n This will enable different option and will use two " + size + "*" + size +
+                    int size = RenderTextureBuffersManager.renderBuffersSize;
+                    newText = "Change MODE to GPU Blit and paint with it. \n This will enable more options, improve performance and will use two " + size + "*" + size +
                               " Render Texture buffers for editing. \n"; break;
                 case HintStage.WellDone: goto default;
                 default:
-                    newText = "Well Done! Remember to save your textures before entering/exiting Play Mode.";
+                    newText = "Well Done! Remember to save your textures before entering/exiting Play Mode or closing Unity. And use Preview shader to see selected texture and stroke size.";
                     break;
             }
 
@@ -73,74 +89,60 @@ namespace PlaytimePainter.Examples
         private void OnEnable()
         {
             SetStage(HintStage.EnableTool);
-            style.wordWrap = true;
+            tooltipStyle.wordWrap = true;
         }
 
-        public GUIStyle style = new GUIStyle();
-
-        private PlaytimePainter pp;
-
-        private PlaytimePainter PillPainter
-        {
-            get
-            {
-                if (!pp)
-                    pp = pill.GetComponent<PlaytimePainter>();
-
-                return pp;
-            }
-        }
+        public GUIStyle tooltipStyle = new GUIStyle();
 
         private void OnGUI()
         {
             var cont = new GUIContent(_text);
-            GUI.Box(new Rect(Screen.width - 400, 10, 390, 100), cont, style);
+            GUI.Box(new Rect(Screen.width - 400, 10, 390, 100), cont, tooltipStyle);
         }
 
         private void Update()
         {
-
-            timer -= Time.deltaTime;
-
-            if (!PlaytimePainter.IsCurrentTool)
+            if (!PainterComponent.IsCurrentTool)
                 SetStage(HintStage.EnableTool);
 
             switch (_stage)
             {
                 case HintStage.EnableTool:
-                    if (PlaytimePainter.IsCurrentTool)
+                    if (PainterComponent.IsCurrentTool)
                     {
-                        SetStage(HintStage.UnlockTexture);
-                    }
-                    break;
-                case HintStage.UnlockTexture:
-                    if (cube)
-                    {
-                        var painter = cube.GetComponent<PlaytimePainter>();
-                        if (!painter || (painter && painter.TexMeta != null))
-                            SetStage(HintStage.Draw);
-                        timer = 5f;
+                        SetStage(HintStage.Draw);
                     }
                     break;
                 case HintStage.Draw:
 
-                    if (timer < 0) { SetStage(HintStage.AddTool); }
+                    if (_timer.TryUpdateIfTimePassed(secondsPassed: 5))
+                    {
+                         SetStage(HintStage.AddTool);
+                    }
                     break;
                 case HintStage.AddTool:
-                    if (picture.GetComponent<PlaytimePainter>()) { SetStage(HintStage.AddTexture); }
+                    if (_picture.GetComponent<PainterComponent>()) { SetStage(HintStage.AddTexture); }
                     break;
                 case HintStage.AddTexture:
                     if (PillPainter && PillPainter.TexMeta != null) SetStage(HintStage.RenderTexture); break;
                 case HintStage.RenderTexture:
 
-                    var pntr = PlaytimePainter.currentlyPaintedObjectPainter;
+                    var pntr = PainterComponent.currentlyPaintedObjectPainter;
 
                     if (pntr && pntr.TexMeta != null && pntr.TexMeta.TargetIsRenderTexture())
                         SetStage(HintStage.WellDone); break;
             }
-
         }
 
+        public void Inspect()
+        {
+            if ("Restart Tutorial".PegiLabel().Click().Nl()) 
+            {
+                PainterComponent.IsCurrentTool = false;
+            }
+
+        }
     }
 
+    [PEGI_Inspector_Override(typeof(HintController))] internal class HintControllerDrawer : PEGI_Inspector_Override { }
 }
