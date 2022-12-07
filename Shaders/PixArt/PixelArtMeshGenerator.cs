@@ -206,7 +206,7 @@ namespace PainterTool.Examples {
 
             pegi.Nl();
 
-            "For Pix Art shader set width equal to texture size, and thickness - 0".PegiLabel().WriteHint();
+            "For Pix Art shader set width equal to texture size, and thickness - 0".PegiLabel().Write_Hint();
 
         }
         #endregion

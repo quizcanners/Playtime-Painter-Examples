@@ -239,11 +239,11 @@ namespace PainterTool.Examples
             }
             else if (_brush.GetBrushType(TexTarget.RenderTexture).GetType() != typeof(BrushTypes.Sphere))
             {
-                "This component works best with Sphere Brush? also supports Normal Brush.".PegiLabel().WriteHint();
+                "This component works best with Sphere Brush? also supports Normal Brush.".PegiLabel().Write_Hint();
             }
 
             if (!_brush.PaintingRGB)
-                "Enable RGB, disable A to use faster Brush Shader (if painting to RenderTexture).".PegiLabel().WriteHint();
+                "Enable RGB, disable A to use faster Brush Shader (if painting to RenderTexture).".PegiLabel().Write_Hint();
         }
         #endregion
     }

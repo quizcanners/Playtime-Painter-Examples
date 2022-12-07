@@ -534,9 +534,9 @@ namespace PainterTool.Examples
             if (col) 
             {
                 if (col.GetType() != typeof(MeshCollider))
-                    "The colider is {0}. Will only work with sphere brush.".F(col.GetType()).PegiLabel().WriteHint();
+                    "The colider is {0}. Will only work with sphere brush.".F(col.GetType()).PegiLabel().Write_Hint();
                 else if (col.enabled == false)
-                    "The collider is disabled".PegiLabel().WriteHint();
+                    "The collider is disabled".PegiLabel().Write_Hint();
             }
 
             pegi.Nl();
