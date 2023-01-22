@@ -125,7 +125,10 @@ namespace PainterTool.Examples
             var rtm = Singleton.Get<Singleton_TexturesPool>();
 
             if (!rtm)
+            {
+                QcLog.ChillLogger.LogErrorOnce("No {0} in the scene. Can't get tex".F(nameof(Singleton_TexturesPool)), key: "NoTexPool", gameObject); 
                 return null;
+            }
 
             _texture = rtm.GetRenderTexture(preferedDamageTextureSize);
             _texture.GetTextureMeta()[TextureCfgFlags.Texcoord2] = _useTexcoord2;
@@ -160,6 +163,13 @@ namespace PainterTool.Examples
 
         public PaintCommand.Base CreatePaintCommandFor(Stroke stroke, Brush brush, int subMesh = 0)
         {
+            var tex = GetTexture();
+
+            if (!tex) 
+            {
+                Debug.LogError("No Texture for " + gameObject.name, gameObject);
+            }
+
             if (skinnedMeshRenderer) 
             {
                 return new PaintCommand.WorldSpace(stroke, GetTexture(), brush, skinnedMeshRenderer, subMesh);
