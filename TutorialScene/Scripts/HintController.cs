@@ -11,7 +11,7 @@ namespace PainterTool.Examples
         [SerializeField] private GameObject _picture;
         [SerializeField] private GameObject _pill;
         [SerializeField] private GameObject _cube;
-        private readonly Gate.SystemTime _timer = new Gate.SystemTime();
+        private readonly Gate.SystemTime _timer = new Gate.SystemTime(Gate.InitialValue.Uninitialized);
 
         private string _text = "";
 
