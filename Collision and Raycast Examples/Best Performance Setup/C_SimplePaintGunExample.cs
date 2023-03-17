@@ -71,9 +71,9 @@ namespace PainterTool.Examples
                     C_PaintingReceiver receiver = receivers[0];
 
                     #region Multiple Submeshes
-                    if (hit.collider.GetType() == typeof(MeshCollider))
+                    if (hit.TryGetSubMeshIndex(out subMesh)) //hit.collider.GetType() == typeof(MeshCollider))
                     {
-                        subMesh = ((MeshCollider)hit.collider).sharedMesh.GetSubMeshNumber(hit.triangleIndex);
+                        //subMesh = ((MeshCollider)hit.collider).sharedMesh.GetSubMeshNumber(hit.triangleIndex);
 
                         if (receivers.Length > 1)
                         {
