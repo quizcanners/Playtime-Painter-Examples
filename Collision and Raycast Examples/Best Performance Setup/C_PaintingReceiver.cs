@@ -151,12 +151,15 @@ namespace PainterTool.Examples
         {
             int subMesh;
 
+            hit.TryGetSubMeshIndex(out subMesh);
+
+            /*
             if (hit.collider.GetType() == typeof(MeshCollider))
             {
                 subMesh = ((MeshCollider)hit.collider).sharedMesh.GetSubMeshNumber(hit.triangleIndex);
             }
             else
-                subMesh = materialIndex;
+                subMesh = materialIndex;*/
 
             return subMesh;
         }
@@ -453,7 +456,7 @@ namespace PainterTool.Examples
 
             if (CurrentMaterial)
             {
-                if (!CurrentMaterial.Has(TextureId)) // && !Material.mainTexture)
+                if (!DamagedMaterial.Has(TextureId)) // && !Material.mainTexture)
                     "No Material Property Selected".PegiLabel().WriteWarning().Nl();
                 else
                 {
@@ -600,9 +603,9 @@ namespace PainterTool.Examples
 
             var first = receivers[0];
 
-            if (hit.collider.GetType() == typeof(MeshCollider))
+            if (hit.TryGetSubMeshIndex(out subMesh))
             {
-                subMesh = first.Renderer.materials.Length > 1 ? ((MeshCollider)hit.collider).sharedMesh.GetSubMeshNumber(hit.triangleIndex) : 0;
+               // subMesh = first.Renderer.materials.Length > 1 ? ((MeshCollider)hit.collider).sharedMesh.GetSubMeshNumber(hit.triangleIndex) : 0;
 
                 if (receivers.Length > 1)
                 {
