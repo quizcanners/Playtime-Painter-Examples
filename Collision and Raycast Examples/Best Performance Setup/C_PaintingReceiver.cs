@@ -7,7 +7,7 @@ using UnityEngine;
 namespace PainterTool.Examples
 {
     [ExecuteInEditMode]
-    public class C_PaintingReceiver : MonoBehaviour, IPEGI
+    public class C_PaintingReceiver : MonoBehaviour, IPEGI, INeedAttention
     {
         public enum RendererType { Regular, Skinned, Terrain }
 
@@ -586,6 +586,17 @@ namespace PainterTool.Examples
                     }
                 }
             }
+        }
+
+        public string NeedAttention()
+        {
+            if (type != RendererType.Terrain && gameObject.isStatic && !originalMesh)
+            {
+                return "For STATIC Game Objects original mesh is needed.";
+            }
+
+
+            return null;
         }
 
         #endregion
