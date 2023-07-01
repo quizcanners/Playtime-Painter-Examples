@@ -55,14 +55,14 @@ namespace PainterTool.Examples
 
         private void Paint(Collision collision, PaintingCollision pCont)
         {
-            if (pCont.painter.PaintCommand.SetBrush(brush).Is3DBrush)
+            if (pCont.painter.Command.SetBrush(brush).Is3DBrush)
             {
                 var v = pCont.vector;
                 v.posTo = transform.position;
                 if (v.MouseDownEvent)
                     v.posFrom = v.posTo;
 
-                var command = pCont.painter.PaintCommand;
+                var command = pCont.painter.Command;
                 var originalStroke = command.Stroke;
                 brush.Paint(command); 
                 command.Stroke = originalStroke;
@@ -78,7 +78,7 @@ namespace PainterTool.Examples
                 var v = pCont.vector;
                 v.uvTo = hit.textureCoord;
                 if (v.MouseDownEvent) v.uvFrom = v.uvTo;
-                var command = pCont.painter.PaintCommand;
+                var command = pCont.painter.Command;
                 var originalVector = command.Stroke;
                 command.Stroke = pCont.vector;
                 pCont.painter.SetTexTarget(brush);

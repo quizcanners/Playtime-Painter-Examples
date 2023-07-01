@@ -12,8 +12,8 @@ namespace PainterTool.Examples {
         public Rigidbody rigid;
         public SphereCollider _collider;
 
-		public List<PaintingCollision> paintingOn = new List<PaintingCollision>();
-        public Brush brush = new Brush();
+		public List<PaintingCollision> paintingOn = new();
+        public Brush brush = new();
 
         private void TryGetPainterFrom(GameObject go) {
 
@@ -74,13 +74,13 @@ namespace PainterTool.Examples {
             {
 				var p = col.painter;
 
-                if (!p.PaintCommand.SetBrush(brush).Is3DBrush) 
+                if (!p.Command.SetBrush(brush).Is3DBrush) 
                     continue;
 
                 var v = col.vector;
                 v.posTo = transform.position;
 
-                brush.Paint(p.PaintCommand.SetStroke(v));//v, p);
+                brush.Paint(p.Command.SetStroke(v));//v, p);
             }
         }
 

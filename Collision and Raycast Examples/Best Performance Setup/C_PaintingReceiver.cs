@@ -20,7 +20,7 @@ namespace PainterTool.Examples
         public Terrain terrain;
         public int materialIndex;
         public int preferedDamageTextureSize = 128;
-
+        public bool autoSelectTextureSizeByVolume;
         public Texture originalTexture;
       
         public bool fromRtManager;
@@ -30,10 +30,22 @@ namespace PainterTool.Examples
         [SerializeField] private bool _useTexcoord2;
         [SerializeField] private Material _damagedMaterialVariant;
         [SerializeField] private string textureField = "";
+        [SerializeField] private bool allowGettingSubmeshIndex;
 
         [NonSerialized] private Texture _texture;
         [NonSerialized] private ShaderProperty.TextureValue _textureProperty;
 
+        public int GetTextureSizeByBoundingBox() 
+        {
+            if (!Renderer)
+                return 128;
+
+            var box = Renderer.bounds.extents.magnitude;
+
+            var power = Mathf.RoundToInt(Mathf.Clamp(Mathf.Log(box * preferedDamageTextureSize, 2), 5, 10));
+
+            return (int)Math.Pow(2, power);
+        }
 
         public bool UseTexcoord2 
         {
@@ -130,7 +142,9 @@ namespace PainterTool.Examples
                 return null;
             }
 
-            _texture = rtm.GetRenderTexture(preferedDamageTextureSize);
+
+            var size = autoSelectTextureSizeByVolume ? GetTextureSizeByBoundingBox() : preferedDamageTextureSize;
+            _texture = rtm.GetRenderTexture(size);
             _texture.GetTextureMeta()[TextureCfgFlags.Texcoord2] = _useTexcoord2;
 
             fromRtManager = true;
@@ -140,7 +154,7 @@ namespace PainterTool.Examples
             if (tex)
                 RenderTextureBuffersManager.Blit(tex, (RenderTexture)_texture);
             else
-                Singleton_PainterCamera.GetOrCreate().Prepare(Color.black, (RenderTexture)_texture).Render();
+                Painter.Camera.Prepare(Color.black, (RenderTexture)_texture).Render();
 
             MatTex = _texture;
 
@@ -149,10 +163,15 @@ namespace PainterTool.Examples
 
         public int GetSubmeshIndex(RaycastHit hit) 
         {
-            int subMesh;
+           
 
-            hit.TryGetSubMeshIndex(out subMesh);
+            if (allowGettingSubmeshIndex)
+            {
+                hit.TryGetSubMeshIndex_MAlloc(out int subMesh);
+                return subMesh;
+            }
 
+            return 0;
             /*
             if (hit.collider.GetType() == typeof(MeshCollider))
             {
@@ -161,10 +180,10 @@ namespace PainterTool.Examples
             else
                 subMesh = materialIndex;*/
 
-            return subMesh;
+         
         }
 
-        public PaintCommand.Base CreatePaintCommandFor(Stroke stroke, Brush brush, int subMesh = 0)
+        public Painter.Command.Base CreateCommandFor(Stroke stroke, Brush brush, int subMesh = 0)
         {
             var tex = GetTexture();
 
@@ -175,15 +194,15 @@ namespace PainterTool.Examples
 
             if (skinnedMeshRenderer) 
             {
-                return new PaintCommand.WorldSpace(stroke, GetTexture(), brush, skinnedMeshRenderer, subMesh);
+                return new Painter.Command.WorldSpace(stroke, GetTexture(), brush, skinnedMeshRenderer, subMesh);
             } 
 
             if (type == RendererType.Terrain) 
             {
-                return new PaintCommand.UV(stroke, GetTexture(), brush);
+                return new Painter.Command.UV(stroke, GetTexture(), brush);
             }
             
-            return new PaintCommand.WorldSpace(stroke, GetTexture().GetTextureMeta(), brush,
+            return new Painter.Command.WorldSpace(stroke, GetTexture().GetTextureMeta(), brush,
                 mesh: originalMesh ? originalMesh : Mesh, subMesh, gameObject);
         }
 
@@ -331,6 +350,12 @@ namespace PainterTool.Examples
 
         public virtual void Inspect()
         {
+
+            if (autoSelectTextureSizeByVolume)
+                "Box size: {0}x{1}px = {2}".F(Renderer.bounds.extents.magnitude, preferedDamageTextureSize, GetTextureSizeByBoundingBox()).PegiLabel().Nl();
+
+         //   "Log: {0}".F(Mathf.log(logTest, 2)).PegiLabel().Edit(ref logTest);
+
             if (_texture && (!MatTex || MatTex != _texture))
             {
                 "Target texture not set ont he Material".PegiLabel().WriteWarning();
@@ -348,7 +373,7 @@ namespace PainterTool.Examples
 
             pegi.Nl();
 
-            if (!Singleton_PainterCamera.GetOrCreate())
+            if (!Painter.Camera)
             {
                 "No Painter Camera found".PegiLabel().WriteWarning();
 
@@ -508,8 +533,10 @@ namespace PainterTool.Examples
                     {
                         var rtm = Singleton.Get<Singleton_TexturesPool>();
 
-                        "Damage Texture Size".PegiLabel().SelectPow2(ref preferedDamageTextureSize, 16, 2048).Nl();
+                        "Auto Size ({0})".F(GetTextureSizeByBoundingBox()).PegiLabel().ToggleIcon(ref autoSelectTextureSizeByVolume).Nl();
 
+                         (autoSelectTextureSizeByVolume ? "Prefered pixels per meter" : "Damage Texture Size").PegiLabel().SelectPow2(ref preferedDamageTextureSize, 16, 2048).Nl();
+                        
                         if (rtm)
                         {
                             "Render Texture Pool will be used to get texture".PegiLabel().Nl();
@@ -600,6 +627,46 @@ namespace PainterTool.Examples
         }
 
         #endregion
+
+        public class ReferenceForContinious 
+        {
+            public Stroke Stroke;
+            public Painter.Command.Base Command;
+            public Gate.UnityTimeUnScaled DeltaTime = new(Gate.InitialValue.StartArmed);
+
+            public void OnContactDetected() => DeltaTime.Update();
+
+            public bool TryPaintIfPositionChanged(Vector3 newPos, float minDelta, float timeLessThen = 1) 
+            {
+                if (DeltaTime.TryUpdateIfTimePassed(timeLessThen))
+                {
+                    Stroke.OnStrokeEnd();
+                    return false;
+                }
+
+                if (!Stroke.firstStroke && Vector3.Distance(newPos, Stroke.posFrom) < minDelta)
+                {
+                    return false;
+                }
+
+                Stroke.OnStrokeStart(newPos);
+                Command.Paint();
+
+                return true;
+            }
+
+            public ReferenceForContinious(C_PaintingReceiver reciever, Brush brush, Vector3 point) 
+            {
+                Stroke = new Stroke(point);
+                Command = reciever.CreateCommandFor(Stroke, brush);
+            }
+        }
+
+        public ReferenceForContinious GetReferenceForContinious(Brush brush, Vector3 point) 
+        {
+            return new ReferenceForContinious(this, brush, point);
+        }
+
     }
 
     public static class PaintingReceiverExtensions
@@ -612,12 +679,13 @@ namespace PainterTool.Examples
                 return null;
             }
 
+            
+
             var first = receivers[0];
 
-            if (hit.TryGetSubMeshIndex(out subMesh))
+            /*
+            if (hit.TryGetSubMeshIndex_MAlloc(out subMesh))
             {
-               // subMesh = first.Renderer.materials.Length > 1 ? ((MeshCollider)hit.collider).sharedMesh.GetSubMeshNumber(hit.triangleIndex) : 0;
-
                 if (receivers.Length > 1)
                 {
                     var mats = first.Renderer.materials;
@@ -625,8 +693,9 @@ namespace PainterTool.Examples
                     return receivers.FirstOrDefault(r => r.CurrentMaterial == material);
                 }
             }
-            else
+            else*/
                 subMesh = first.materialIndex;
+
 
             return first;
         }

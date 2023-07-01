@@ -7,7 +7,7 @@ namespace PainterTool.Examples {
 #pragma warning disable IDE0018 // Inline variable declaration
     public class SkinnedMeshCaster : MonoBehaviour, IPEGI {
 
-        public Brush brush = new Brush();
+        public Brush brush = new();
 
         public string lastShotResult = "Never fired (Left mouse button during play)";
 
@@ -32,7 +32,7 @@ namespace PainterTool.Examples {
 
             painter.SetTexTarget(brush);
 
-            var cmd = painter.PaintCommand.SetBrush(brush);
+            var cmd = painter.Command.SetBrush(brush);
             
             if (painter.skinnedMeshRenderer && !cmd.Is3DBrush) {   
 
@@ -61,7 +61,7 @@ namespace PainterTool.Examples {
 
             painter.stroke.From(hit, false);
             
-            brush.Paint(painter.PaintCommand);
+            brush.Paint(painter.Command);
         }
 
 
