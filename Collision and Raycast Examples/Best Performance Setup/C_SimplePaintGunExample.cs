@@ -10,12 +10,12 @@ namespace PainterTool.Examples
     public class C_SimplePaintGunExample : MonoBehaviour, IPEGI
     {
         [SerializeField] private PaintingMode _mode;
-        [SerializeField] private Brush _brush = new Brush();
+        [SerializeField] private Brush _brush = new();
         [SerializeField] private int _shoots = 1;
         [SerializeField] private bool _continious;
         [SerializeField] private float _spread;
 
-        private readonly Stroke continiousStroke = new Stroke(); // For continious
+        private readonly Stroke continiousStroke = new(); // For continious
         private C_PaintingReceiver previousTargetForContinious;
       
 
@@ -42,14 +42,13 @@ namespace PainterTool.Examples
                 }
             }
             else if (_continious)
-                continiousStroke.StrokeEnd();
+                continiousStroke.OnStrokeEnd();
         }
 
-        private static readonly List<TextureMeta> _texturesNeedUpdate = new List<TextureMeta>();
+        private static readonly List<TextureMeta> _texturesNeedUpdate = new();
 
         public void Paint(Vector3 targetPosition)
         {
-            RaycastHit hit;
 
             Vector3 direction = targetPosition - transform.position;
 
@@ -58,7 +57,7 @@ namespace PainterTool.Examples
                                 (_continious 
                                     ? Vector3.zero 
                                     : (transform.right * Random.Range(-_spread, _spread) + transform.up * Random.Range(-_spread, _spread)))
-                                ), out hit)) 
+                                ), out RaycastHit hit)) 
                 {
                     var receivers = hit.transform.GetComponentsInParent<C_PaintingReceiver>();
 
@@ -67,14 +66,11 @@ namespace PainterTool.Examples
                     if (receivers.Length == 0) 
                         continue;
 
-                    int subMesh;
                     C_PaintingReceiver receiver = receivers[0];
 
                     #region Multiple Submeshes
-                    if (hit.TryGetSubMeshIndex(out subMesh)) //hit.collider.GetType() == typeof(MeshCollider))
+                    if (hit.TryGetSubMeshIndex_MAlloc(out int subMesh)) 
                     {
-                        //subMesh = ((MeshCollider)hit.collider).sharedMesh.GetSubMeshNumber(hit.triangleIndex);
-
                         if (receivers.Length > 1)
                         {
                             var mats = receiver.Renderer.materials;
@@ -104,31 +100,30 @@ namespace PainterTool.Examples
                     if (_continious)
                     {
                         if (previousTargetForContinious && (receiver != previousTargetForContinious))
-                            continiousStroke.StrokeEnd();
+                            continiousStroke.OnStrokeEnd();
 
                         previousTargetForContinious = receiver;
                     }
 
                     if (rendTex)
                     {
-                        var st = _continious ? continiousStroke :
-                            new Stroke(hit, receiver.UseTexcoord2);
+                        var st = _continious ? continiousStroke : new Stroke(hit, receiver.UseTexcoord2);
 
                         st.unRepeatedUv = hit.collider.GetType() == typeof(MeshCollider)
                             ? (receiver.UseTexcoord2 ? hit.textureCoord2 : hit.textureCoord).Floor()
                             : receiver.meshUvOffset;
 
                         if (_continious)
-                            st.StrokeStart(hit, receiver.UseTexcoord2);
+                            st.OnStrokeContiniousStart(hit, receiver.UseTexcoord2);
 
                         if (receiver.type == C_PaintingReceiver.RendererType.Skinned && receiver.skinnedMeshRenderer)
-                            receiver.CreatePaintCommandFor(st, _brush, subMesh).Paint();
+                            receiver.CreateCommandFor(st, _brush, subMesh).Paint();
 
                         else if (receiver.type == C_PaintingReceiver.RendererType.Regular && receiver.meshFilter)
                         {
                             if (_brush.GetBrushType(TexTarget.RenderTexture) == BrushTypes.Sphere.Inst)
                             {
-                                receiver.CreatePaintCommandFor(st, _brush, subMesh).Paint();
+                                receiver.CreateCommandFor(st, _brush, subMesh).Paint();
                             }
                             else
                                 BrushTypes.Normal.Paint(rendTex, _brush, st);
@@ -139,13 +134,13 @@ namespace PainterTool.Examples
                     }
                     #endregion
                     #region TEXTURE SPACE BRUSH
-                    else if (tex is Texture2D)
+                    else if (tex is Texture2D d)
                     {
 
                         if (hit.collider.GetType() != typeof(MeshCollider))
                             Debug.Log("Can't get UV coordinates from a Non-Mesh Collider");
 
-                        BlitFunctions.Paint(receiver.UseTexcoord2 ? hit.textureCoord2 : hit.textureCoord, 1, (Texture2D)tex, Vector2.zero, Vector2.one, _brush);
+                        BlitFunctions.Paint(receiver.UseTexcoord2 ? hit.textureCoord2 : hit.textureCoord, 1, d, Vector2.zero, Vector2.one, _brush);
                         var id = tex.GetTextureMeta();
                         _texturesNeedUpdate.AddIfNew(id);
 
@@ -175,9 +170,8 @@ namespace PainterTool.Examples
             var f = tf.forward;
 
             var ray = new Ray(pos, f);
-            RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out RaycastHit hit))
             {
                 var painter = hit.transform.GetComponentInParent<PainterComponent>();
 
