@@ -377,9 +377,6 @@ namespace PainterTool.Examples
             {
                 "No Painter Camera found".PegiLabel().WriteWarning();
 
-                if ("Refresh".PegiLabel().Click())
-                    PainterClass.applicationIsQuitting = false;
-
                 return;
             }
             

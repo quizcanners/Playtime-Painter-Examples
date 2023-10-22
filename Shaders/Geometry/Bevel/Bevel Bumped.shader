@@ -117,7 +117,7 @@
 
 					Simple_Light(height, normal, i.viewDir.xyz, col, shadow, 0.25 + tex2D(_Refl, TRANSFORM_TEX(i.texcoord, _Refl)).r *0.5);
 
-					BleedAndBrightness(col, 1, i.texcoord.xy);
+					//BleedAndBrightness(col, 1, i.texcoord.xy);
 				
 					return saturate(col);
 
