@@ -209,7 +209,7 @@
 				col.rgb += (pow(dott, 4096 * power)*(_LightColor0.rgb )* power
 					 * 8 * direct  +ShadeSH9(float4(-reflected, 1)))*col.a;
 
-				BleedAndBrightness(col, fernel, i.texcoord.xy);
+				//BleedAndBrightness(col, fernel, i.texcoord.xy);
 
 				return col;
 

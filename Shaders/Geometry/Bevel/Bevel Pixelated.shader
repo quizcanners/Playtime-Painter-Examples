@@ -89,7 +89,7 @@
 					Simple_Light(1,
 						normal, i.viewDir.xyz, col, shadow, 1);
 
-					BleedAndBrightness(col, 1, i.texcoord.xy);
+					//BleedAndBrightness(col, 1, i.texcoord.xy);
 
 					return col;
 		
