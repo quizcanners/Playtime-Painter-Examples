@@ -197,7 +197,7 @@ namespace PainterTool.Examples
             "Brush type should be Sphere").PegiLabel().WriteBig();
         }
 
-        public void Inspect()
+        void IPEGI.Inspect()
         {
             pegi.FullWindow.DocumentationClickOpen(Documentation);
 
