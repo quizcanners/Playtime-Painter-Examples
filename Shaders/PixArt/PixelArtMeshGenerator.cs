@@ -170,7 +170,7 @@ namespace PainterTool.Examples {
         #endif
 
         #region Inspector
-        public void Inspect()
+        void IPEGI.Inspect()
         {
             "Mesh Filter".PegiLabel().Edit(ref meshFilter).Nl();
             "Mesh Collider".PegiLabel().Edit(ref meshCollider).Nl();

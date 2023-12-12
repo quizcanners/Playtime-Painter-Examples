@@ -97,7 +97,7 @@ namespace PainterTool.Examples {
 
         }
 
-        public void Inspect()
+        void IPEGI.Inspect()
         {
             pegi.FullWindow.DocumentationClickOpen(()=> "Will cast a ray in transform.forward direction when Left Mouse Button is pressed. " +
                                                        "Target objects need to have PlaytimePainter component attached. Then this brush will be applied " +

@@ -89,7 +89,7 @@ namespace PainterTool.Examples
 
         #region Inspector
 
-        public void Inspect()
+        void IPEGI.Inspect()
         {
 
             pegi.FullWindow.DocumentationClickOpen(()=> "During collision will try to cast ray in the direction of that collision. " +

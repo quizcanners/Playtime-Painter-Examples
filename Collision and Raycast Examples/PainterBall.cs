@@ -84,7 +84,7 @@ namespace PainterTool.Examples {
             }
         }
 
-        public void Inspect()
+        void IPEGI.Inspect()
         {
 
             pegi.FullWindow.DocumentationClickOpen(()=> "When colliding with other object will try to use sphere brush to paint on them." +

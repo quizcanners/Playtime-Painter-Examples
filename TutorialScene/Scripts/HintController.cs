@@ -134,7 +134,7 @@ namespace PainterTool.Examples
             }
         }
 
-        public void Inspect()
+        void IPEGI.Inspect()
         {
             if ("Restart Tutorial".PegiLabel().Click().Nl()) 
             {
