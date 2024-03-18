@@ -185,24 +185,25 @@ namespace PainterTool.Examples
 
         public Painter.Command.Base CreateCommandFor(Stroke stroke, Brush brush, int subMesh = 0)
         {
+            
             var tex = GetTexture();
 
             if (!tex) 
             {
                 Debug.LogError("No Texture for " + gameObject.name, gameObject);
             }
-
+            
             if (skinnedMeshRenderer) 
             {
-                return new Painter.Command.WorldSpace(stroke, GetTexture(), brush, skinnedMeshRenderer, subMesh);
+                return new Painter.Command.WorldSpace(stroke, tex, brush, skinnedMeshRenderer, subMesh);
             } 
 
             if (type == RendererType.Terrain) 
             {
-                return new Painter.Command.UV(stroke, GetTexture(), brush);
+                return new Painter.Command.UV(stroke, tex, brush);
             }
             
-            return new Painter.Command.WorldSpace(stroke, GetTexture().GetTextureMeta(), brush,
+            return new Painter.Command.WorldSpace(stroke, tex.GetTextureMeta(), brush,
                 mesh: originalMesh ? originalMesh : Mesh, subMesh, gameObject);
         }
 
@@ -235,12 +236,13 @@ namespace PainterTool.Examples
             if (fromRtManager)
             {
                 fromRtManager = false;
-               
-                if (_texture && !Singleton.Try<Singleton_TexturesPool>(
-                    onFound: srv => srv.ReturnOne((RenderTexture)_texture),
-                    logOnServiceMissing: false))
+
+                if (_texture)
                 {
-                    Destroy(_texture);
+                    if (Singleton.TryGet<Singleton_TexturesPool>(out var srv))
+                        srv.ReturnOne((RenderTexture)_texture);
+                    else 
+                        Destroy(_texture);
                 }
 
                 _texture = null;
@@ -628,8 +630,22 @@ namespace PainterTool.Examples
         public class ReferenceForContinious 
         {
             public Stroke Stroke;
-            public Painter.Command.Base Command;
+            private C_PaintingReceiver _reciever;
+            private Brush _brush;
+
+            public Painter.Command.Base Command 
+            {
+                get 
+                {
+                    if (_command == null)
+                        _command = _reciever.CreateCommandFor(Stroke, _brush);
+
+                    return _command;
+                }
+            }
             public Gate.UnityTimeUnScaled DeltaTime = new(Gate.InitialValue.StartArmed);
+
+            private Painter.Command.Base _command;
 
             public void OnContactDetected() => DeltaTime.Update();
 
@@ -655,7 +671,8 @@ namespace PainterTool.Examples
             public ReferenceForContinious(C_PaintingReceiver reciever, Brush brush, Vector3 point) 
             {
                 Stroke = new Stroke(point);
-                Command = reciever.CreateCommandFor(Stroke, brush);
+                _reciever = reciever;
+                _brush = brush;
             }
         }
 
