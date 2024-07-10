@@ -18,588 +18,59 @@ MonoBehaviour:
   - {fileID: 0}
   selectedCustomBlitMode: 0
   defaultMaterial: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  dontIncludeShaderInBuild: 1
-  shadersToBuldWith: []
+  dontIncludeShaderInBuild: 0
+  shadersToBuldWith:
+  - {fileID: 4800000, guid: 2c53ba0be849dbf4aa4be3323d13167c, type: 3}
+  - {fileID: 4800000, guid: 7d5254122746ac1459eacee12007478c, type: 3}
+  - {fileID: 4800000, guid: 5d4c30d1d90b10244bd976b05af957a9, type: 3}
+  - {fileID: 4800000, guid: 84c227f7b81af824eb575393648fa7a0, type: 3}
+  - {fileID: 4800000, guid: d3ea98b92dd0ff445b11c0dd6118cfd9, type: 3}
+  - {fileID: 4800000, guid: 7a98cafb8f2839d4087701973cfacca0, type: 3}
+  - {fileID: 4800000, guid: 51bac762c78f2aa4ca09cf0b51187cfb, type: 3}
+  - {fileID: 4800000, guid: e61e77dc68316594988ca461eb587d29, type: 3}
+  - {fileID: 4800000, guid: 3761ceeca3c2a474a89bffcc44782a24, type: 3}
+  - {fileID: 4800000, guid: 5c155ea54209c1b4282c00cea158edb3, type: 3}
+  - {fileID: 4800000, guid: 6703c1c81efacba42a3f90a2920832a3, type: 3}
+  - {fileID: 4800000, guid: 03c859c9cb64e4e4790e707d28f9cb8c, type: 3}
+  - {fileID: 4800000, guid: f2fe9d0c60fd29b4d84fc2dbad4f2cbf, type: 3}
+  - {fileID: 4800000, guid: 5e5b22a6f613bce4ba98a3e5c1328384, type: 3}
+  - {fileID: 4800000, guid: 8afa7564920dd2746bf6b4523c648e22, type: 3}
+  - {fileID: 4800000, guid: 33684419dd9bb2846b34f5ad27c14ebf, type: 3}
+  - {fileID: 4800000, guid: 6452b21f7c7012342b9fbc17d1dae802, type: 3}
+  - {fileID: 4800000, guid: 84f2bad6db8604a46b3073f13f79c839, type: 3}
+  - {fileID: 4800000, guid: 0e8cb133ade8ae34382b61cf53d668ed, type: 3}
+  - {fileID: 4800000, guid: 64fa7bd7d59cb1245a6603bb8dfb652b, type: 3}
+  - {fileID: 4800000, guid: fff128497067a014b8c2b0f12b3fdf7b, type: 3}
+  - {fileID: 4800000, guid: 3ec7c5159e5607c44a874c70918a10be, type: 3}
+  - {fileID: 4800000, guid: 6aecdde8d92504546917739ac0a84f20, type: 3}
+  - {fileID: 4800000, guid: f5d92f3fc18010c4ba8cbe284edb5d43, type: 3}
+  - {fileID: 4800000, guid: 5d4363bf2b6e1d747803462dcc63de6d, type: 3}
+  - {fileID: 4800000, guid: 189db779c3259794ea3202f88c029174, type: 3}
+  - {fileID: 4800000, guid: f109a9b24b09edf4c8669c1035baae20, type: 3}
+  - {fileID: 4800000, guid: 3416c86bca183ed41afdb0a1b64a40cc, type: 3}
   atlasedMaterials: []
   playtimeSavedTextures: []
-  imgMetas:
-  - _configurationFlags: 1
-    Target: 0
-    RenderTexture: {fileID: 0}
-    Texture2D: {fileID: 2800000, guid: e3b9abafd1c73344580464e5f8195b15, type: 3}
-    OtherTexture: {fileID: 0}
-    Width: 64
-    Height: 64
-    IsAVolumeTexture: 0
-    updateTex2DafterStroke: 0
-    backupManually: 0
-    _useTexCoord2AutoAssigned: 0
-    _isPng: 0
-    repaintDelay: 0.016
-    clearColor: {r: 0, g: 0, b: 0, a: 1}
-    saveName: New Cube
-    _numberOfTexture2DBackups: 10
-    _numberOfRenderTextureBackups: 10
-    _sdfMaxInside: 1
-    _sdfMaxOutside: 1
-    _sdfPostProcessDistance: 1
-    processContext:
-      _currentlyEntered: -1
-    context:
-      _currentlyEntered: -1
-  - _configurationFlags: 4
-    Target: 0
-    RenderTexture: {fileID: 0}
-    Texture2D: {fileID: 2800000, guid: d8481f7b411a7994fa1745844a37345e, type: 3}
-    OtherTexture: {fileID: 0}
-    Width: 32
-    Height: 32
-    IsAVolumeTexture: 0
-    updateTex2DafterStroke: 0
-    backupManually: 0
-    _useTexCoord2AutoAssigned: 0
-    _isPng: 1
-    repaintDelay: 0.016
-    clearColor: {r: 0, g: 0, b: 0, a: 1}
-    saveName: Empty
-    _numberOfTexture2DBackups: 10
-    _numberOfRenderTextureBackups: 10
-    _sdfMaxInside: 1
-    _sdfMaxOutside: 1
-    _sdfPostProcessDistance: 1
-    processContext:
-      _currentlyEntered: -1
-    context:
-      _currentlyEntered: -1
-  - _configurationFlags: 0
-    Target: 0
-    RenderTexture: {fileID: 0}
-    Texture2D: {fileID: 2800000, guid: 963e34d7b4af5d64984565a55337d3fa, type: 3}
-    OtherTexture: {fileID: 0}
-    Width: 2048
-    Height: 1024
-    IsAVolumeTexture: 0
-    updateTex2DafterStroke: 0
-    backupManually: 0
-    _useTexCoord2AutoAssigned: 0
-    _isPng: 1
-    repaintDelay: 0.016
-    clearColor: {r: 0, g: 0, b: 0, a: 1}
-    saveName: Cliff_COLOR
-    _numberOfTexture2DBackups: 10
-    _numberOfRenderTextureBackups: 10
-    _sdfMaxInside: 1
-    _sdfMaxOutside: 1
-    _sdfPostProcessDistance: 1
-    processContext:
-      _currentlyEntered: -1
-    context:
-      _currentlyEntered: -1
-  - _configurationFlags: 0
-    Target: 0
-    RenderTexture: {fileID: 0}
-    Texture2D: {fileID: 2800000, guid: 507834b80a307ef42914caba414f2562, type: 3}
-    OtherTexture: {fileID: 0}
-    Width: 16
-    Height: 16
-    IsAVolumeTexture: 0
-    updateTex2DafterStroke: 0
-    backupManually: 0
-    _useTexCoord2AutoAssigned: 0
-    _isPng: 1
-    repaintDelay: 0.016
-    clearColor: {r: 0, g: 0, b: 0, a: 1}
-    saveName: pixArt
-    _numberOfTexture2DBackups: 10
-    _numberOfRenderTextureBackups: 10
-    _sdfMaxInside: 1
-    _sdfMaxOutside: 1
-    _sdfPostProcessDistance: 1
-    processContext:
-      _currentlyEntered: -1
-    context:
-      _currentlyEntered: -1
-  - _configurationFlags: 0
-    Target: 0
-    RenderTexture: {fileID: 0}
-    Texture2D: {fileID: 2800000, guid: b435393d37601e84db1f10ed766d0206, type: 3}
-    OtherTexture: {fileID: 0}
-    Width: 1024
-    Height: 1024
-    IsAVolumeTexture: 0
-    updateTex2DafterStroke: 0
-    backupManually: 0
-    _useTexCoord2AutoAssigned: 0
-    _isPng: 1
-    repaintDelay: 0.016
-    clearColor: {r: 0, g: 0, b: 0, a: 1}
-    saveName: Sand_COLOR
-    _numberOfTexture2DBackups: 10
-    _numberOfRenderTextureBackups: 10
-    _sdfMaxInside: 1
-    _sdfMaxOutside: 1
-    _sdfPostProcessDistance: 1
-    processContext:
-      _currentlyEntered: -1
-    context:
-      _currentlyEntered: -1
-  - _configurationFlags: 0
-    Target: 0
-    RenderTexture: {fileID: 0}
-    Texture2D: {fileID: 2800000, guid: b3154c26d1f5719428e9e220a9a07135, type: 3}
-    OtherTexture: {fileID: 0}
-    Width: 2048
-    Height: 1024
-    IsAVolumeTexture: 0
-    updateTex2DafterStroke: 0
-    backupManually: 0
-    _useTexCoord2AutoAssigned: 0
-    _isPng: 1
-    repaintDelay: 0.016
-    clearColor: {r: 0, g: 0, b: 0, a: 1}
-    saveName: daniel-schmelling-6
-    _numberOfTexture2DBackups: 10
-    _numberOfRenderTextureBackups: 10
-    _sdfMaxInside: 1
-    _sdfMaxOutside: 1
-    _sdfPostProcessDistance: 1
-    processContext:
-      _currentlyEntered: -1
-    context:
-      _currentlyEntered: -1
-  - _configurationFlags: 0
-    Target: 0
-    RenderTexture: {fileID: 0}
-    Texture2D: {fileID: 2800000, guid: 43866032c9f85bd43bcafdf035f6b35a, type: 3}
-    OtherTexture: {fileID: 0}
-    Width: 2048
-    Height: 1024
-    IsAVolumeTexture: 0
-    updateTex2DafterStroke: 0
-    backupManually: 0
-    _useTexCoord2AutoAssigned: 0
-    _isPng: 1
-    repaintDelay: 0.016
-    clearColor: {r: 0, g: 0, b: 0, a: 1}
-    saveName: Cliff_MASKnMAPS
-    _numberOfTexture2DBackups: 10
-    _numberOfRenderTextureBackups: 10
-    _sdfMaxInside: 1
-    _sdfMaxOutside: 1
-    _sdfPostProcessDistance: 1
-    processContext:
-      _currentlyEntered: -1
-    context:
-      _currentlyEntered: -1
-  - _configurationFlags: 0
-    Target: 0
-    RenderTexture: {fileID: 0}
-    Texture2D: {fileID: 2800000, guid: 12d4c718a951c004bb7e78bee62168a2, type: 3}
-    OtherTexture: {fileID: 0}
-    Width: 512
-    Height: 512
-    IsAVolumeTexture: 0
-    updateTex2DafterStroke: 0
-    backupManually: 0
-    _useTexCoord2AutoAssigned: 0
-    _isPng: 0
-    repaintDelay: 0.016
-    clearColor: {r: 0, g: 0, b: 0, a: 1}
-    saveName: istockphoto-524328479-612x612
-    _numberOfTexture2DBackups: 10
-    _numberOfRenderTextureBackups: 10
-    _sdfMaxInside: 1
-    _sdfMaxOutside: 1
-    _sdfPostProcessDistance: 1
-    processContext:
-      _currentlyEntered: -1
-    context:
-      _currentlyEntered: -1
-  - _configurationFlags: 0
-    Target: 0
-    RenderTexture: {fileID: 0}
-    Texture2D: {fileID: 2800000, guid: 880264bf1b7d9b043a3a93f41b404d9d, type: 3}
-    OtherTexture: {fileID: 0}
-    Width: 1024
-    Height: 1024
-    IsAVolumeTexture: 0
-    updateTex2DafterStroke: 0
-    backupManually: 0
-    _useTexCoord2AutoAssigned: 0
-    _isPng: 1
-    repaintDelay: 0.016
-    clearColor: {r: 0, g: 0, b: 0, a: 1}
-    saveName: papers.co-nc48-space-blue-purple-nebula-star-awesome-28-wallpaper
-    _numberOfTexture2DBackups: 10
-    _numberOfRenderTextureBackups: 10
-    _sdfMaxInside: 1
-    _sdfMaxOutside: 1
-    _sdfPostProcessDistance: 1
-    processContext:
-      _currentlyEntered: -1
-    context:
-      _currentlyEntered: -1
-  - _configurationFlags: 0
-    Target: 0
-    RenderTexture: {fileID: 0}
-    Texture2D: {fileID: 2800000, guid: e9a9466c5df5de1438f70e9307cad194, type: 3}
-    OtherTexture: {fileID: 0}
-    Width: 1024
-    Height: 512
-    IsAVolumeTexture: 0
-    updateTex2DafterStroke: 0
-    backupManually: 0
-    _useTexCoord2AutoAssigned: 0
-    _isPng: 1
-    repaintDelay: 0.016
-    clearColor: {r: 0, g: 0, b: 0, a: 1}
-    saveName: 1ad24428ec68b1132c68c6a4cf43cb0e
-    _numberOfTexture2DBackups: 10
-    _numberOfRenderTextureBackups: 10
-    _sdfMaxInside: 1
-    _sdfMaxOutside: 1
-    _sdfPostProcessDistance: 1
-    processContext:
-      _currentlyEntered: -1
-    context:
-      _currentlyEntered: -1
-  - _configurationFlags: 0
-    Target: 0
-    RenderTexture: {fileID: 0}
-    Texture2D: {fileID: 2800000, guid: 85248a6806e4f844e9db394e24c02a35, type: 3}
-    OtherTexture: {fileID: 0}
-    Width: 1024
-    Height: 2048
-    IsAVolumeTexture: 0
-    updateTex2DafterStroke: 0
-    backupManually: 0
-    _useTexCoord2AutoAssigned: 0
-    _isPng: 0
-    repaintDelay: 0.016
-    clearColor: {r: 0, g: 0, b: 0, a: 1}
-    saveName: 93e1f8d69fa334ede4226c192af57fcf
-    _numberOfTexture2DBackups: 10
-    _numberOfRenderTextureBackups: 10
-    _sdfMaxInside: 1
-    _sdfMaxOutside: 1
-    _sdfPostProcessDistance: 1
-    processContext:
-      _currentlyEntered: -1
-    context:
-      _currentlyEntered: -1
-  - _configurationFlags: 0
-    Target: 0
-    RenderTexture: {fileID: 0}
-    Texture2D: {fileID: 2800000, guid: 7464feea3406c0941a5639822767cf22, type: 3}
-    OtherTexture: {fileID: 0}
-    Width: 1024
-    Height: 512
-    IsAVolumeTexture: 0
-    updateTex2DafterStroke: 0
-    backupManually: 0
-    _useTexCoord2AutoAssigned: 0
-    _isPng: 1
-    repaintDelay: 0.016
-    clearColor: {r: 0, g: 0, b: 0, a: 1}
-    saveName: 9f248ca7b42a42a9e9aaf2a13c5d704f
-    _numberOfTexture2DBackups: 10
-    _numberOfRenderTextureBackups: 10
-    _sdfMaxInside: 1
-    _sdfMaxOutside: 1
-    _sdfPostProcessDistance: 1
-    processContext:
-      _currentlyEntered: -1
-    context:
-      _currentlyEntered: -1
-  - _configurationFlags: 0
-    Target: 0
-    RenderTexture: {fileID: 0}
-    Texture2D: {fileID: 2800000, guid: feaec4c2b253b0546828920b0c7110c8, type: 3}
-    OtherTexture: {fileID: 0}
-    Width: 1583
-    Height: 2048
-    IsAVolumeTexture: 0
-    updateTex2DafterStroke: 0
-    backupManually: 0
-    _useTexCoord2AutoAssigned: 0
-    _isPng: 1
-    repaintDelay: 0.016
-    clearColor: {r: 0, g: 0, b: 0, a: 1}
-    saveName: P10
-    _numberOfTexture2DBackups: 10
-    _numberOfRenderTextureBackups: 10
-    _sdfMaxInside: 1
-    _sdfMaxOutside: 1
-    _sdfPostProcessDistance: 1
-    processContext:
-      _currentlyEntered: -1
-    context:
-      _currentlyEntered: -1
-  - _configurationFlags: 0
-    Target: 0
-    RenderTexture: {fileID: 0}
-    Texture2D: {fileID: 2800000, guid: 28313fa3856aab04289a1c8510f3edb8, type: 3}
-    OtherTexture: {fileID: 0}
-    Width: 1024
-    Height: 1024
-    IsAVolumeTexture: 0
-    updateTex2DafterStroke: 0
-    backupManually: 0
-    _useTexCoord2AutoAssigned: 0
-    _isPng: 1
-    repaintDelay: 0.016
-    clearColor: {r: 0, g: 0, b: 0, a: 1}
-    saveName: 307-3070481_pelican-nebula-4k-purple-nebula-4k
-    _numberOfTexture2DBackups: 10
-    _numberOfRenderTextureBackups: 10
-    _sdfMaxInside: 1
-    _sdfMaxOutside: 1
-    _sdfPostProcessDistance: 1
-    processContext:
-      _currentlyEntered: -1
-    context:
-      _currentlyEntered: -1
-  - _configurationFlags: 0
-    Target: 0
-    RenderTexture: {fileID: 0}
-    Texture2D: {fileID: 2800000, guid: cbb382abf0a714f47aaf3d0a8742bb36, type: 3}
-    OtherTexture: {fileID: 0}
-    Width: 1024
-    Height: 2048
-    IsAVolumeTexture: 0
-    updateTex2DafterStroke: 0
-    backupManually: 0
-    _useTexCoord2AutoAssigned: 0
-    _isPng: 1
-    repaintDelay: 0.016
-    clearColor: {r: 0, g: 0, b: 0, a: 1}
-    saveName: 93e1f8d69fa334ede4226c192af57fcf
-    _numberOfTexture2DBackups: 10
-    _numberOfRenderTextureBackups: 10
-    _sdfMaxInside: 1
-    _sdfMaxOutside: 1
-    _sdfPostProcessDistance: 1
-    processContext:
-      _currentlyEntered: -1
-    context:
-      _currentlyEntered: -1
-  - _configurationFlags: 0
-    Target: 0
-    RenderTexture: {fileID: 0}
-    Texture2D: {fileID: 2800000, guid: b8979de1c73a252409b201c9cff5affd, type: 3}
-    OtherTexture: {fileID: 0}
-    Width: 2048
-    Height: 1024
-    IsAVolumeTexture: 0
-    updateTex2DafterStroke: 0
-    backupManually: 0
-    _useTexCoord2AutoAssigned: 0
-    _isPng: 1
-    repaintDelay: 0.016
-    clearColor: {r: 0, g: 0, b: 0, a: 1}
-    saveName: d1x98tg-d3d1be05-31ab-4b3c-80df-100078746897
-    _numberOfTexture2DBackups: 10
-    _numberOfRenderTextureBackups: 10
-    _sdfMaxInside: 1
-    _sdfMaxOutside: 1
-    _sdfPostProcessDistance: 1
-    processContext:
-      _currentlyEntered: -1
-    context:
-      _currentlyEntered: -1
-  - _configurationFlags: 0
-    Target: 0
-    RenderTexture: {fileID: 0}
-    Texture2D: {fileID: 2800000, guid: 3130d10873306a14e9c7e09c42ee242f, type: 3}
-    OtherTexture: {fileID: 0}
-    Width: 128
-    Height: 128
-    IsAVolumeTexture: 0
-    updateTex2DafterStroke: 0
-    backupManually: 0
-    _useTexCoord2AutoAssigned: 0
-    _isPng: 1
-    repaintDelay: 0.016
-    clearColor: {r: 0, g: 0, b: 0, a: 1}
-    saveName: cloudFluffMask
-    _numberOfTexture2DBackups: 10
-    _numberOfRenderTextureBackups: 10
-    _sdfMaxInside: 1
-    _sdfMaxOutside: 1
-    _sdfPostProcessDistance: 1
-    processContext:
-      _currentlyEntered: -1
-    context:
-      _currentlyEntered: -1
-  - _configurationFlags: 0
-    Target: 0
-    RenderTexture: {fileID: 0}
-    Texture2D: {fileID: 2800000, guid: d453d8921e594f54384caf6248e87da9, type: 3}
-    OtherTexture: {fileID: 0}
-    Width: 1024
-    Height: 512
-    IsAVolumeTexture: 0
-    updateTex2DafterStroke: 0
-    backupManually: 0
-    _useTexCoord2AutoAssigned: 0
-    _isPng: 1
-    repaintDelay: 0.016
-    clearColor: {r: 0, g: 0, b: 0, a: 1}
-    saveName: maxresdefault
-    _numberOfTexture2DBackups: 10
-    _numberOfRenderTextureBackups: 10
-    _sdfMaxInside: 1
-    _sdfMaxOutside: 1
-    _sdfPostProcessDistance: 1
-    processContext:
-      _currentlyEntered: -1
-    context:
-      _currentlyEntered: -1
-  - _configurationFlags: 0
-    Target: 0
-    RenderTexture: {fileID: 0}
-    Texture2D: {fileID: 2800000, guid: 880264bf1b7d9b043a3a93f41b404d9d, type: 3}
-    OtherTexture: {fileID: 0}
-    Width: 1024
-    Height: 1024
-    IsAVolumeTexture: 0
-    updateTex2DafterStroke: 0
-    backupManually: 0
-    _useTexCoord2AutoAssigned: 0
-    _isPng: 1
-    repaintDelay: 0.016
-    clearColor: {r: 0, g: 0, b: 0, a: 1}
-    saveName: papers.co-nc48-space-blue-purple-nebula-star-awesome-28-wallpaper
-    _numberOfTexture2DBackups: 10
-    _numberOfRenderTextureBackups: 10
-    _sdfMaxInside: 1
-    _sdfMaxOutside: 1
-    _sdfPostProcessDistance: 1
-    processContext:
-      _currentlyEntered: -1
-    context:
-      _currentlyEntered: -1
-  - _configurationFlags: 0
-    Target: 0
-    RenderTexture: {fileID: 0}
-    Texture2D: {fileID: 2800000, guid: 42d154fc955022a46863a31643098494, type: 3}
-    OtherTexture: {fileID: 0}
-    Width: 2048
-    Height: 1024
-    IsAVolumeTexture: 0
-    updateTex2DafterStroke: 0
-    backupManually: 0
-    _useTexCoord2AutoAssigned: 0
-    _isPng: 1
-    repaintDelay: 0.016
-    clearColor: {r: 0, g: 0, b: 0, a: 1}
-    saveName: d880fba3f61720423ef9ffac5125f93f
-    _numberOfTexture2DBackups: 10
-    _numberOfRenderTextureBackups: 10
-    _sdfMaxInside: 1
-    _sdfMaxOutside: 1
-    _sdfPostProcessDistance: 1
-    processContext:
-      _currentlyEntered: -1
-    context:
-      _currentlyEntered: -1
-  - _configurationFlags: 0
-    Target: 0
-    RenderTexture: {fileID: 0}
-    Texture2D: {fileID: 2800000, guid: 880264bf1b7d9b043a3a93f41b404d9d, type: 3}
-    OtherTexture: {fileID: 0}
-    Width: 1024
-    Height: 1024
-    IsAVolumeTexture: 0
-    updateTex2DafterStroke: 0
-    backupManually: 0
-    _useTexCoord2AutoAssigned: 0
-    _isPng: 1
-    repaintDelay: 0.016
-    clearColor: {r: 0, g: 0, b: 0, a: 1}
-    saveName: papers.co-nc48-space-blue-purple-nebula-star-awesome-28-wallpaper
-    _numberOfTexture2DBackups: 10
-    _numberOfRenderTextureBackups: 10
-    _sdfMaxInside: 1
-    _sdfMaxOutside: 1
-    _sdfPostProcessDistance: 1
-    processContext:
-      _currentlyEntered: -1
-    context:
-      _currentlyEntered: -1
-  - _configurationFlags: 0
-    Target: 0
-    RenderTexture: {fileID: 0}
-    Texture2D: {fileID: 2800000, guid: 60124804a5d3de04f92d0b1378478013, type: 3}
-    OtherTexture: {fileID: 0}
-    Width: 2048
-    Height: 1024
-    IsAVolumeTexture: 0
-    updateTex2DafterStroke: 0
-    backupManually: 0
-    _useTexCoord2AutoAssigned: 0
-    _isPng: 0
-    repaintDelay: 0.016
-    clearColor: {r: 0, g: 0, b: 0, a: 1}
-    saveName: f7e34ece09dceffe57a0b6be28415a5e
-    _numberOfTexture2DBackups: 10
-    _numberOfRenderTextureBackups: 10
-    _sdfMaxInside: 1
-    _sdfMaxOutside: 1
-    _sdfPostProcessDistance: 1
-    processContext:
-      _currentlyEntered: -1
-    context:
-      _currentlyEntered: -1
-  - _configurationFlags: 0
-    Target: 0
-    RenderTexture: {fileID: 0}
-    Texture2D: {fileID: 2800000, guid: 79285e3789c084c47943a393d2a5fed9, type: 3}
-    OtherTexture: {fileID: 0}
-    Width: 512
-    Height: 512
-    IsAVolumeTexture: 0
-    updateTex2DafterStroke: 0
-    backupManually: 0
-    _useTexCoord2AutoAssigned: 0
-    _isPng: 0
-    repaintDelay: 0.016
-    clearColor: {r: 0, g: 0, b: 0, a: 1}
-    saveName: stars_by_gwathiell-d34hisw
-    _numberOfTexture2DBackups: 10
-    _numberOfRenderTextureBackups: 10
-    _sdfMaxInside: 1
-    _sdfMaxOutside: 1
-    _sdfPostProcessDistance: 1
-    processContext:
-      _currentlyEntered: -1
-    context:
-      _currentlyEntered: -1
-  - _configurationFlags: 0
-    Target: 0
-    RenderTexture: {fileID: 0}
-    Texture2D: {fileID: 2800000, guid: 15d613fe7c6f87448bfe66b4e726e68a, type: 3}
-    OtherTexture: {fileID: 0}
-    Width: 1024
-    Height: 1024
-    IsAVolumeTexture: 0
-    updateTex2DafterStroke: 0
-    backupManually: 0
-    _useTexCoord2AutoAssigned: 0
-    _isPng: 0
-    repaintDelay: 0.016
-    clearColor: {r: 0, g: 0, b: 0, a: 1}
-    saveName: nebula_stock_11_by_quethu_d7pqc2x-fullview
-    _numberOfTexture2DBackups: 10
-    _numberOfRenderTextureBackups: 10
-    _sdfMaxInside: 1
-    _sdfMaxOutside: 1
-    _sdfPostProcessDistance: 1
-    processContext:
-      _currentlyEntered: -1
-    context:
-      _currentlyEntered: -1
   matMetas:
+  - material: {fileID: 2100000, guid: 1abe6f61604689545bc10af341036ccb, type: 2}
+    selectedTexture: 0
+    usePreviewShader: 0
+    colorToVertexColorOnMerge: 0
+    selectedForMerge: 0
+  - material: {fileID: 2100000, guid: 789e54da23c7b5b45a4df3b72f895a0f, type: 2}
+    selectedTexture: 0
+    usePreviewShader: 0
+    colorToVertexColorOnMerge: 0
+    selectedForMerge: 0
+  - material: {fileID: 2100000, guid: d980479477f820e469f71cc28b2c10d5, type: 2}
+    selectedTexture: 0
+    usePreviewShader: 0
+    colorToVertexColorOnMerge: 0
+    selectedForMerge: 0
+  - material: {fileID: 2100000, guid: 49814354475ac084887436eff3edfbd0, type: 2}
+    selectedTexture: 0
+    usePreviewShader: 0
+    colorToVertexColorOnMerge: 0
+    selectedForMerge: 0
   - material: {fileID: 2100000, guid: 122ad79ee7336ca40aca8b9e1c8420da, type: 2}
     selectedTexture: 0
     usePreviewShader: 0
@@ -613,11 +84,6 @@ MonoBehaviour:
   - material: {fileID: 2100000, guid: 4111ec3737538d24eac860c521e3f96e, type: 2}
     selectedTexture: 0
     usePreviewShader: 0
-    colorToVertexColorOnMerge: 0
-    selectedForMerge: 0
-  - material: {fileID: 2100000, guid: aeba06ad61d1154429f5cd8638e0e64e, type: 2}
-    selectedTexture: 0
-    usePreviewShader: 1
     colorToVertexColorOnMerge: 0
     selectedForMerge: 0
   - material: {fileID: 2100000, guid: f90d3c8fe8280d043b64fa62d862113a, type: 2}
@@ -659,7 +125,7 @@ MonoBehaviour:
   showColorSchemes: 0
   meshTool: 0
   bevelDetectionSensitivity: 3
-  meshToolsStd: t_pos|15|dm|1|0|inM|1|y||t_shF|7|dm|1|0||t_vCol|0||t_edgs|23|v|1|0|doCol|1|n|fe|1|y||t_noStd|16|cat|1|8|cac|1|0||t_sbmsh|0||t_uv|46|gtuv|1|y|nrmWrap|5|0.399|fr|1|y|mp|1|y|po|1|n||
+  meshToolsStd: t_pos|15|dm|1|0|inM|1|n||t_shF|7|dm|1|0||t_vCol|0||t_edgs|16|v|1|1|doCol|1|n||t_noStd|16|cat|1|0|cac|1|0||t_sbmsh|0||t_uv|30|gtuv|1|n|nrmWrap|3|0.5|po|1|y||
   saveMeshUndos: 0
   makeVerticesUniqueOnEdgeColoring: 1
   gridSize: 1
@@ -674,7 +140,7 @@ MonoBehaviour:
   meshesFolderName: Models
   vectorsFolderName: Vectors
   atlasFolderName: Atlases
-  enablePainterUIonPlay: 1
+  enablePainterUIonPlay: 0
   BrushConfig: {fileID: 11400000, guid: 268884d2c815b4a4184d9f2b8b00d6b6, type: 2}
   showColorSliders: 1
   disableNonMeshColliderInPlayMode: 0
@@ -693,8 +159,9 @@ MonoBehaviour:
   recordingNames: []
   browsedRecord: 0
   stdData:
-    _value: sch|1|0|pals|0||cam|119|mm|0||pl|95|TilAtlCntrl|0||VolumePntng|64|mFiv|2|60|mFov|3|170|cam|35|fov|2|90|p|0||r|0||n|3|0.1|f|3|100||||rts|4|2048||Vpck|2082|e|312|n|6|Simple|sln|292|e|20|en|1|y|sameSize|1|0||e|75|en|1|y|t|1|1|vals|53|e|6|t|1|1||e|12|t|1|1|v|1|1||e|7|t|2|10||e|7|t|2|10||||e|61|en|1|y|t|1|2|vals|39|e|6|t|1|2||e|12|t|1|2|v|1|1||e|0||e|0||||e|6|t|1|3||e|6|t|1|4||e|26|en|1|y|t|1|5|sameSize|1|3||e|26|en|1|y|t|1|6|sameSize|1|4||e|26|en|1|y|t|1|7|sameSize|1|6||||e|512|n|5|Bevel|sln|493|e|20|en|1|y|sameSize|1|0||e|81|en|1|y|t|1|1|vals|59|e|6|t|1|1||e|12|t|1|1|v|1|1||e|6|t|1|9||e|13|t|2|11|v|1|3||||e|84|en|1|y|t|1|2|vals|62|e|7|t|2|12||e|13|t|2|12|v|1|1||e|13|t|2|12|v|1|2||e|7|t|2|11||||e|91|en|1|y|t|1|3|vals|69|e|7|t|2|13||e|13|t|2|13|v|1|1||e|13|t|2|13|v|1|2||e|13|t|2|11|v|1|1||||e|91|en|1|y|t|1|4|vals|69|e|7|t|2|14||e|13|t|2|14|v|1|1||e|13|t|2|14|v|1|2||e|13|t|2|11|v|1|2||||e|26|en|1|y|t|1|5|sameSize|1|3||e|26|en|1|y|t|1|6|sameSize|1|4||e|26|en|1|y|t|1|7|sameSize|1|6||||e|515|n|14|Bevel
-      Weighted|sln|486|e|20|en|1|y|sameSize|1|0||e|74|en|1|y|t|1|1|vals|52|e|6|t|1|1||e|12|t|1|1|v|1|1||e|6|t|1|9||e|7|t|2|10||||e|84|en|1|y|t|1|2|vals|62|e|7|t|2|12||e|13|t|2|12|v|1|1||e|13|t|2|12|v|1|2||e|7|t|2|15||||e|91|en|1|y|t|1|3|vals|69|e|7|t|2|13||e|13|t|2|13|v|1|1||e|13|t|2|13|v|1|2||e|13|t|2|15|v|1|1||||e|91|en|1|y|t|1|4|vals|69|e|7|t|2|14||e|13|t|2|14|v|1|1||e|13|t|2|14|v|1|2||e|13|t|2|15|v|1|2||||e|26|en|1|y|t|1|5|sameSize|1|3||e|26|en|1|y|t|1|6|sameSize|1|4||e|26|en|1|y|t|1|7|sameSize|1|6||||e|344|n|16|AtlasedProjected|sln|313|e|20|en|1|y|sameSize|1|0||e|75|en|1|y|t|1|1|vals|53|e|6|t|1|1||e|12|t|1|1|v|1|1||e|7|t|2|10||e|7|t|2|10||||e|6|t|1|2||e|6|t|1|3||e|27|en|1|y|t|1|4|sameSize|2|11||e|26|en|1|y|t|1|5|sameSize|1|3||e|81|en|1|y|t|1|6|vals|59|e|6|t|1|5||e|12|t|1|5|v|1|1||e|12|t|1|5|v|1|2||e|7|t|2|10||||e|26|en|1|y|t|1|7|sameSize|1|6||||e|364|n|16|Standard_Atlased|sln|333|e|20|en|1|y|sameSize|1|0||e|80|en|1|y|t|1|1|vals|58|e|6|t|1|1||e|12|t|1|1|v|1|1||e|6|t|1|9||e|12|t|1|9|v|1|1||||e|75|en|1|y|t|1|2|vals|53|e|6|t|1|2||e|12|t|1|2|v|1|1||e|7|t|2|10||e|7|t|2|10||||e|6|t|1|3||e|27|en|1|y|t|1|4|sameSize|2|11||e|26|en|1|y|t|1|5|sameSize|1|3||e|26|en|1|y|t|1|6|sameSize|1|4||e|26|en|1|y|t|1|7|sameSize|1|6|||||
+    _value: sch|1|0|pals|0||cam|119|mm|0||pl|95|TilAtlCntrl|0||VolumePntng|64|mFiv|2|60|mFov|3|170|cam|35|fov|2|90|p|0||r|0||n|3|0.1|f|3|100||||rts|4|2048||Vpck|2607|e|312|n|6|Simple|sln|292|e|20|en|1|y|sameSize|1|0||e|75|en|1|y|t|1|1|vals|53|e|6|t|1|1||e|12|t|1|1|v|1|1||e|7|t|2|10||e|7|t|2|10||||e|61|en|1|y|t|1|2|vals|39|e|6|t|1|2||e|12|t|1|2|v|1|1||e|0||e|0||||e|6|t|1|3||e|6|t|1|4||e|26|en|1|y|t|1|5|sameSize|1|3||e|26|en|1|y|t|1|6|sameSize|1|4||e|26|en|1|y|t|1|7|sameSize|1|6||||e|512|n|5|Bevel|sln|493|e|20|en|1|y|sameSize|1|0||e|81|en|1|y|t|1|1|vals|59|e|6|t|1|1||e|12|t|1|1|v|1|1||e|6|t|1|9||e|13|t|2|11|v|1|3||||e|84|en|1|y|t|1|2|vals|62|e|7|t|2|12||e|13|t|2|12|v|1|1||e|13|t|2|12|v|1|2||e|7|t|2|11||||e|91|en|1|y|t|1|3|vals|69|e|7|t|2|13||e|13|t|2|13|v|1|1||e|13|t|2|13|v|1|2||e|13|t|2|11|v|1|1||||e|91|en|1|y|t|1|4|vals|69|e|7|t|2|14||e|13|t|2|14|v|1|1||e|13|t|2|14|v|1|2||e|13|t|2|11|v|1|2||||e|26|en|1|y|t|1|5|sameSize|1|3||e|26|en|1|y|t|1|6|sameSize|1|4||e|26|en|1|y|t|1|7|sameSize|1|6||||e|515|n|14|Bevel
+      Weighted|sln|486|e|20|en|1|y|sameSize|1|0||e|74|en|1|y|t|1|1|vals|52|e|6|t|1|1||e|12|t|1|1|v|1|1||e|6|t|1|9||e|7|t|2|10||||e|84|en|1|y|t|1|2|vals|62|e|7|t|2|12||e|13|t|2|12|v|1|1||e|13|t|2|12|v|1|2||e|7|t|2|15||||e|91|en|1|y|t|1|3|vals|69|e|7|t|2|13||e|13|t|2|13|v|1|1||e|13|t|2|13|v|1|2||e|13|t|2|15|v|1|1||||e|91|en|1|y|t|1|4|vals|69|e|7|t|2|14||e|13|t|2|14|v|1|1||e|13|t|2|14|v|1|2||e|13|t|2|15|v|1|2||||e|26|en|1|y|t|1|5|sameSize|1|3||e|26|en|1|y|t|1|6|sameSize|1|4||e|26|en|1|y|t|1|7|sameSize|1|6||||e|344|n|16|AtlasedProjected|sln|313|e|20|en|1|y|sameSize|1|0||e|75|en|1|y|t|1|1|vals|53|e|6|t|1|1||e|12|t|1|1|v|1|1||e|7|t|2|10||e|7|t|2|10||||e|6|t|1|2||e|6|t|1|3||e|27|en|1|y|t|1|4|sameSize|2|11||e|26|en|1|y|t|1|5|sameSize|1|3||e|81|en|1|y|t|1|6|vals|59|e|6|t|1|5||e|12|t|1|5|v|1|1||e|12|t|1|5|v|1|2||e|7|t|2|10||||e|26|en|1|y|t|1|7|sameSize|1|6||||e|364|n|16|Standard_Atlased|sln|333|e|20|en|1|y|sameSize|1|0||e|80|en|1|y|t|1|1|vals|58|e|6|t|1|1||e|12|t|1|1|v|1|1||e|6|t|1|9||e|12|t|1|9|v|1|1||||e|75|en|1|y|t|1|2|vals|53|e|6|t|1|2||e|12|t|1|2|v|1|1||e|7|t|2|10||e|7|t|2|10||||e|6|t|1|3||e|27|en|1|y|t|1|4|sameSize|2|11||e|26|en|1|y|t|1|5|sameSize|1|3||e|26|en|1|y|t|1|6|sameSize|1|4||e|26|en|1|y|t|1|7|sameSize|1|6||||e|518|n|15|Bevel
+      With Seam|sln|488|e|20|en|1|y|sameSize|1|0||e|75|en|1|y|t|1|1|vals|53|e|6|t|1|1||e|12|t|1|1|v|1|1||e|7|t|2|10||e|7|t|2|10||||e|84|en|1|y|t|1|2|vals|62|e|7|t|2|12||e|13|t|2|12|v|1|1||e|13|t|2|12|v|1|2||e|7|t|2|11||||e|91|en|1|y|t|1|3|vals|69|e|7|t|2|13||e|13|t|2|13|v|1|1||e|13|t|2|13|v|1|2||e|13|t|2|11|v|1|1||||e|91|en|1|y|t|1|4|vals|69|e|7|t|2|14||e|13|t|2|14|v|1|1||e|13|t|2|14|v|1|2||e|13|t|2|11|v|1|2||||e|26|en|1|y|t|1|5|sameSize|1|3||e|26|en|1|y|t|1|6|sameSize|1|4||e|27|en|1|y|t|1|7|sameSize|2|16|||||
   _context:
     _currentlyEntered: -1
   _contextLists:
