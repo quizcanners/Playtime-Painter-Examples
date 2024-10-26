@@ -17,10 +17,11 @@
 		#pragma vertex vert
 		// Physically based Standard lighting model, and enable shadows on all light types
 		#pragma surface surf Standard fullforwardshadows
-					#include "UnityLightingCommon.cginc" 
+		#include "UnityLightingCommon.cginc" 
 		#include "Lighting.cginc"
 		#include "AutoLight.cginc"
 		#include "Assets/The-Fire-Below/Common/Shaders/quizcanners_built_in.cginc"
+		#include "Assets/The-Fire-Below/Playtime-Painter/Shaders/PlaytimePainter cg.cginc"
 		#pragma multi_compile_local  ___ _qcPp_UV_ATLASED
 		#pragma multi_compile_local  ___ _BUMP_NONE _BUMP_REGULAR _BUMP_COMBINED 
 

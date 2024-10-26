@@ -24,6 +24,7 @@
 		#pragma multi_compile_local  ___ _qcPp_UV_ATLASED
 		#pragma shader_feature_local ___ _DEBUG_UV2
 		#include "Assets/The-Fire-Below/Common/Shaders/quizcanners_built_in.cginc"
+		#include "Assets/The-Fire-Below/Playtime-Painter/Shaders/PlaytimePainter cg.cginc"
 		#pragma target 3.0
 
 		sampler2D _MainTex_ATL_UvTwo;

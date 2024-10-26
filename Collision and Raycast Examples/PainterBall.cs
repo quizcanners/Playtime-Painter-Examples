@@ -15,11 +15,9 @@ namespace PainterTool.Examples {
 		public List<PaintingCollision> paintingOn = new();
         public Brush brush = new();
 
-        private void TryGetPainterFrom(GameObject go) {
-
-            var target = go.GetComponent<PainterComponent>();
-
-            if (!target || target.TextureEditingBlocked) 
+        private void TryGetPainterFrom(GameObject go)
+        {
+            if (!go.TryGetComponent<PainterComponent>(out var target) || target.TextureEditingBlocked) 
                 return;
 
             var col = new PaintingCollision(target);

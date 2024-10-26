@@ -18,9 +18,7 @@ namespace PainterTool.Examples
             foreach (var col in _paintingOn)
                 if (col.painter.gameObject == go) return col;
 
-            var pp = go.GetComponent<PainterComponent>();
-
-            if (!pp) return null;
+            if (!go.TryGetComponent<PainterComponent>(out var pp)) return null;
 
             var nCol = new PaintingCollision(pp);
 
