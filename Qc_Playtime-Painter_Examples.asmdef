@@ -2,8 +2,8 @@
     "name": "Qc_Playtime-Painter_Examples",
     "rootNamespace": "",
     "references": [
-        "Quiz-cAnners",
-        "Qc_Playtime-Painter"
+        "GUID:cdce99151fa041d4998cc8811fcfe22c",
+        "GUID:ab1342c736cc42e4eb47da553f076f43"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
