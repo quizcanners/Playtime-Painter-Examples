@@ -194,7 +194,7 @@ namespace PainterTool.Examples
             "Also its better to use textures without mipMaps" +
             "Render Texture Painting may have artifacts if material has tiling or offset" +
             "Editing will be symmetrical if mesh is symmetrical" +
-            "Brush type should be Sphere").PegiLabel().WriteBig();
+            "Brush type should be Sphere").PL().WriteBig();
         }
 
         void IPEGI.Inspect()
@@ -203,41 +203,41 @@ namespace PainterTool.Examples
 
             pegi.Nl();
 
-            "Continious".PegiLabel().ToggleIcon(ref _continious).Nl();
+            "Continious".PL().ToggleIcon(ref _continious).Nl();
 
-            "Mode".PegiLabel(50).Edit_Enum(ref _mode).Nl();
+            "Mode".PL(50).Edit_Enum(ref _mode).Nl();
 
             switch (_mode) 
             {
                 case PaintingMode.ShootInMousePointedDirection:
                     if (!Camera.main)
-                        "No Main Camera Found".PegiLabel().WriteWarning().Nl();
+                        "No Main Camera Found".PL().WriteWarning().Nl();
                     break;
             }
 
             if (!_continious)
             {
-                "Bullets:".PegiLabel(50).Edit(ref _shoots, 1, 50).Nl();
-                "Spread:".PegiLabel(50).Edit(ref _spread, 0f, 1f).Nl();
+                "Bullets:".PL(50).Edit(ref _shoots, 1, 50).Nl();
+                "Spread:".PL(50).Edit(ref _spread, 0f, 1f).Nl();
             }
 
-            "Fire!".PegiLabel().Click().Nl().OnChanged(() => Paint(transform.position + transform.forward));
+            "Fire!".PL().Click().Nl().OnChanged(() => Paint(transform.position + transform.forward));
 
             _brush.Nested_Inspect();
 
             if (_brush.FallbackTarget == TexTarget.Texture2D)
             {
-                "Script expects Render Texture terget".PegiLabel().WriteWarning().Nl();
+                "Script expects Render Texture terget".PL().WriteWarning().Nl();
 
-                "Switch to Render Texture".PegiLabel().Click(()=> _brush.FallbackTarget = TexTarget.RenderTexture);
+                "Switch to Render Texture".PL().Click(()=> _brush.FallbackTarget = TexTarget.RenderTexture);
             }
             else if (_brush.GetBrushType(TexTarget.RenderTexture).GetType() != typeof(BrushTypes.Sphere))
             {
-                "This component works best with Sphere Brush? also supports Normal Brush.".PegiLabel().Write_Hint();
+                "This component works best with Sphere Brush? also supports Normal Brush.".PL().Write_Hint();
             }
 
             if (!_brush.PaintingRGB)
-                "Enable RGB, disable A to use faster Brush Shader (if painting to RenderTexture).".PegiLabel().Write_Hint();
+                "Enable RGB, disable A to use faster Brush Shader (if painting to RenderTexture).".PL().Write_Hint();
         }
         #endregion
     }

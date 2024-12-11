@@ -354,14 +354,14 @@ namespace PainterTool.Examples
         {
 
             if (autoSelectTextureSizeByVolume)
-                "Box size: {0}x{1}px = {2}".F(Renderer.bounds.extents.magnitude, preferedDamageTextureSize, GetTextureSizeByBoundingBox()).PegiLabel().Nl();
+                "Box size: {0}x{1}px = {2}".F(Renderer.bounds.extents.magnitude, preferedDamageTextureSize, GetTextureSizeByBoundingBox()).PL().Nl();
 
          //   "Log: {0}".F(Mathf.log(logTest, 2)).PegiLabel().Edit(ref logTest);
 
             if (_texture && (!MatTex || MatTex != _texture))
             {
-                "Target texture not set ont he Material".PegiLabel().WriteWarning();
-                "Clear target texture".PegiLabel().Click(() =>
+                "Target texture not set ont he Material".PL().WriteWarning();
+                "Clear target texture".PL().Click(() =>
                 {
                     _texture = null;
                     MatTex = null;
@@ -371,13 +371,13 @@ namespace PainterTool.Examples
 
             pegi.Nl();
 
-            "Damaged Material Variant".PegiLabel().Edit(ref _damagedMaterialVariant).Nl();
+            "Damaged Material Variant".PL().Edit(ref _damagedMaterialVariant).Nl();
 
             pegi.Nl();
 
             if (!Painter.Camera)
             {
-                "No Painter Camera found".PegiLabel().WriteWarning();
+                "No Painter Camera found".PL().WriteWarning();
 
                 return;
             }
@@ -388,7 +388,7 @@ namespace PainterTool.Examples
             if (Icon.Refresh.Click("Find Components automatically"))
                 Refresh();
 
-            if ("Renderer GetBrushType:".PegiLabel(90).Edit_Enum(ref type).Nl())
+            if ("Renderer GetBrushType:".PL(90).Edit_Enum(ref type).Nl())
             {
                 switch (type)
                 {
@@ -416,20 +416,20 @@ namespace PainterTool.Examples
             switch (type)
             {
                 case RendererType.Skinned:
-                    "   Skinned Mesh Renderer".PegiLabel(90).Edit(ref skinnedMeshRenderer).Nl();
+                    "   Skinned Mesh Renderer".PL(90).Edit(ref skinnedMeshRenderer).Nl();
                     break;
 
                 case RendererType.Regular:
-                    "   Mesh Filter".PegiLabel(90).Edit( ref meshFilter).Nl();
-                    "   Renderer".PegiLabel(90).Edit( ref meshRenderer).Nl();
+                    "   Mesh Filter".PL(90).Edit( ref meshFilter).Nl();
+                    "   Renderer".PL(90).Edit( ref meshRenderer).Nl();
 
                     if (meshFilter && meshFilter.sharedMesh) 
                     {
                         var mc = GetComponent<MeshCollider>();
                         if (mc && meshFilter.sharedMesh != mc.sharedMesh) 
                         {
-                            "Mesh Collider has a different mesh".PegiLabel().WriteWarning().Nl();
-                            if ("Copy Mesh".PegiLabel().Click())
+                            "Mesh Collider has a different mesh".PL().WriteWarning().Nl();
+                            if ("Copy Mesh".PL().Click())
                                 mc.sharedMesh = meshFilter.sharedMesh;
 
                             pegi.Nl();
@@ -437,7 +437,7 @@ namespace PainterTool.Examples
                     }
                     break;
                 case RendererType.Terrain:
-                    "Terrain".PegiLabel().Edit(ref terrain).Nl();
+                    "Terrain".PL().Edit(ref terrain).Nl();
 
                     break;
             }
@@ -445,19 +445,19 @@ namespace PainterTool.Examples
             var r = Renderer;
 
             if ((r && r.sharedMaterials.Length > 1) || materialIndex != 0)
-                "   Material".PegiLabel(width: 80).Select_Index(ref materialIndex, r.sharedMaterials).Nl();
+                "   Material".PL(width: 80).Select_Index(ref materialIndex, r.sharedMaterials).Nl();
 
             if (DamagedMaterial)
             {
                 var lst = DamagedMaterial.MyGetTextureProperties_Editor();
 
-                if ("   Target Texture".PegiLabel(width: 80).Select(ref _textureProperty, lst).Nl())
+                if ("   Target Texture".PL(width: 80).Select(ref _textureProperty, lst).Nl())
                     TexturePropertyName = _textureProperty.ToString();
             }
 
             if (type != RendererType.Terrain && gameObject.isStatic && !originalMesh)
             {
-                "For STATIC Game Objects original mesh is needed:".PegiLabel().WriteWarning();
+                "For STATIC Game Objects original mesh is needed:".PL().WriteWarning();
 
                 pegi.Nl();
 
@@ -466,22 +466,22 @@ namespace PainterTool.Examples
             }
 
             if (gameObject.isStatic)
-                "  Original Mesh".PegiLabel("Static objects use Combined mesh, so original one will be needed for painting", 50).Edit(ref originalMesh).Nl();
+                "  Original Mesh".PL("Static objects use Combined mesh, so original one will be needed for painting", 50).Edit(ref originalMesh).Nl();
 
             var uv2 = UseTexcoord2;
-            if ("  Use second texture coordinates".PegiLabel("If shader uses texcoord2 (Baked Light) to display damage, turn this ON.").ToggleIcon( ref uv2).Nl())
+            if ("  Use second texture coordinates".PL("If shader uses texcoord2 (Baked Light) to display damage, turn this ON.").ToggleIcon( ref uv2).Nl())
                 UseTexcoord2 = uv2;
 
             if (UseTexcoord2 && Mesh) 
             {
                 if (!Mesh.HasVertexAttribute(UnityEngine.Rendering.VertexAttribute.TexCoord1))
-                    "{0} doesn't have UV2".F(Mesh.name).PegiLabel().WriteWarning().Nl();
+                    "{0} doesn't have UV2".F(Mesh.name).PL().WriteWarning().Nl();
             }
 
             if (CurrentMaterial)
             {
                 if (!DamagedMaterial.Has(TextureId)) // && !Material.mainTexture)
-                    "No Material Property Selected".PegiLabel().WriteWarning().Nl();
+                    "No Material Property Selected".PL().WriteWarning().Nl();
                 else
                 {
                     if (_texture)
@@ -491,7 +491,7 @@ namespace PainterTool.Examples
                         if (t2D)
                         {
                             Icon.Done.Draw();
-                            "CPU brush will work if object has MeshCollider".PegiLabel().Nl();
+                            "CPU brush will work if object has MeshCollider".PL().Nl();
 
                             if (originalTexture)
                             {
@@ -501,12 +501,12 @@ namespace PainterTool.Examples
                                 {
                                     if ((ot2D.width == t2D.width) && (ot2D.height == t2D.height))
                                     {
-                                        if (("Undo Changes".PegiLabel().Click()).Nl())
+                                        if (("Undo Changes".PL().Click()).Nl())
                                             ResetEffect();
                                     }
-                                    else "Original and edited texture are not of the same size".PegiLabel().Nl();
+                                    else "Original and edited texture are not of the same size".PL().Nl();
                                 }
-                                else "Original Texture is not a Texture 2D".PegiLabel().Nl();
+                                else "Original Texture is not a Texture 2D".PL().Nl();
                             }
                         }
                         else
@@ -514,17 +514,17 @@ namespace PainterTool.Examples
                             if (Renderer)
                             {
                                 Icon.Done.Draw();
-                                "Will paint if object has any collider".PegiLabel().Nl();
+                                "Will paint if object has any collider".PL().Nl();
                                 if (skinnedMeshRenderer)
                                 {
-                                    "Colliders should be placed close to actual mesh".PegiLabel().Nl();
-                                    "Otherwise brush size may be too small to reach the mesh".PegiLabel().Nl();
+                                    "Colliders should be placed close to actual mesh".PL().Nl();
+                                    "Otherwise brush size may be too small to reach the mesh".PL().Nl();
                                 }
                             }
                             else
-                                "Render Texture Painting needs Skinned Mesh or Mesh Filter to work".PegiLabel().Nl();
+                                "Render Texture Painting needs Skinned Mesh or Mesh Filter to work".PL().Nl();
 
-                            if ((originalTexture) && ("Undo Changes".PegiLabel().Click().Nl()))
+                            if ((originalTexture) && ("Undo Changes".PL().Click().Nl()))
                                 ResetEffect();
                         }
                     }
@@ -532,33 +532,33 @@ namespace PainterTool.Examples
                     {
                         var rtm = Singleton.Get<Singleton_TexturesPool>();
 
-                        "Auto Size ({0})".F(GetTextureSizeByBoundingBox()).PegiLabel().ToggleIcon(ref autoSelectTextureSizeByVolume).Nl();
+                        "Auto Size ({0})".F(GetTextureSizeByBoundingBox()).PL().ToggleIcon(ref autoSelectTextureSizeByVolume).Nl();
 
-                         (autoSelectTextureSizeByVolume ? "Prefered pixels per meter" : "Damage Texture Size").PegiLabel().SelectPow2(ref preferedDamageTextureSize, 16, 2048).Nl();
+                         (autoSelectTextureSizeByVolume ? "Prefered pixels per meter" : "Damage Texture Size").PL().SelectPow2(ref preferedDamageTextureSize, 16, 2048).Nl();
                         
                         if (rtm)
                         {
-                            "Render Texture Pool will be used to get texture".PegiLabel().Nl();
-                            if (!Renderer) "! Renderer needs to be Assigned.".PegiLabel().Nl();
+                            "Render Texture Pool will be used to get texture".PL().Nl();
+                            if (!Renderer) "! Renderer needs to be Assigned.".PL().Nl();
                             else
                             {
                                 Icon.Done.Draw();
-                                "COMPONENT SET UP CORRECTLY".PegiLabel().Write();
-                                if (fromRtManager && "Restore".PegiLabel().Click())
+                                "COMPONENT SET UP CORRECTLY".PL().Write();
+                                if (fromRtManager && "Restore".PL().Click())
                                     ResetEffect();
                                 pegi.Nl();
                             }
                         }
                         else
                         {
-                            "No Render Texture Pool found. GPU painting needs a Render Texture".PegiLabel().WriteWarning();
-                            "Create".PegiLabel().Click().Nl().OnChanged(() =>
+                            "No Render Texture Pool found. GPU painting needs a Render Texture".PL().WriteWarning();
+                            "Create".PL().Click().Nl().OnChanged(() =>
                                 pegi.GameView.ShowNotification((Singleton_TexturesPool.ForcedInstance.gameObject.name + " created")));
                         }
                     }
                 }
             }
-            else "No material found".PegiLabel().Nl();
+            else "No material found".PL().Nl();
 
 
             var col = GetComponent<Collider>();
@@ -567,21 +567,21 @@ namespace PainterTool.Examples
             {
                 col = GetComponentInChildren<Collider>();
                 if (!col)
-                    "Collider not found".PegiLabel().WriteWarning();
+                    "Collider not found".PL().WriteWarning();
             }
 
             if (col) 
             {
                 if (col.GetType() != typeof(MeshCollider))
-                    "The colider is {0}. Will only work with sphere brush.".F(col.GetType()).PegiLabel().Write_Hint();
+                    "The colider is {0}. Will only work with sphere brush.".F(col.GetType()).PL().Write_Hint();
                 else if (col.enabled == false)
-                    "The collider is disabled".PegiLabel().Write_Hint();
+                    "The collider is disabled".PL().Write_Hint();
             }
 
             pegi.Nl();
 
             if (Application.isPlaying)
-                "Target Texture".PegiLabel("If not using Render Textures Pool", 120).Edit(ref _texture);
+                "Target Texture".PL("If not using Render Textures Pool", 120).Edit(ref _texture);
 
                // if (Renderer && Material && "Find".PegiLabel().Click())
                  //   texture = MatTex;
@@ -592,16 +592,16 @@ namespace PainterTool.Examples
             
             pegi.Nl();
 
-            if ("Advanced".PegiLabel().IsFoldout(ref _showOptional).Nl())
+            if ("Advanced".PL().IsFoldout(ref _showOptional).Nl())
             {
                 if (_texture || !MatTex)
-                    "Start Texture:".PegiLabel("Copy of this texture will be modified.", 110).Edit(ref originalTexture).Nl();
+                    "Start Texture:".PL("Copy of this texture will be modified.", 110).Edit(ref originalTexture).Nl();
                 
                 if (!_texture || _texture.GetType() == typeof(RenderTexture))
                 {
-                    "Mesh UV Offset".PegiLabel(toolTip: "Some Meshes have UV coordinates with displacement for some reason. " +
+                    "Mesh UV Offset".PL(toolTip: "Some Meshes have UV coordinates with displacement for some reason. " +
                         "If your object doesn't use a mesh collider to provide a UV offset, this will be used.",  width: 80).Edit(ref meshUvOffset).Nl();
-                    if (Mesh && "Offset from Mesh".PegiLabel().Click().Nl())
+                    if (Mesh && "Offset from Mesh".PL().Click().Nl())
                     {
                         var firstVertInSubmeshIndex = Mesh.GetTriangles(materialIndex)[0];
                         meshUvOffset = UseTexcoord2 ? Mesh.uv2[firstVertInSubmeshIndex] : Mesh.uv[firstVertInSubmeshIndex];

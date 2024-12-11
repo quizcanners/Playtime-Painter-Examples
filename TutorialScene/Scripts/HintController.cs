@@ -136,7 +136,7 @@ namespace PainterTool.Examples
 
         void IPEGI.Inspect()
         {
-            if ("Restart Tutorial".PegiLabel().Click().Nl()) 
+            if ("Restart Tutorial".PL().Click().Nl()) 
             {
                 PainterComponent.IsCurrentTool = false;
             }

@@ -105,9 +105,9 @@ namespace PainterTool.Examples {
                                                        "This Component has it's own brush configuration. Can be replaced with PainterCamera.Data.brushConfig " +
                                                        "to use global brush.", "How to use Skinned Mesh Caster", 15);
 
-            "Paint!".PegiLabel().Click(Paint).Nl();
+            "Paint!".PL().Click(Paint).Nl();
 
-            "Last ray Cast result: {0}".F(lastShotResult).PegiLabel().Nl();
+            "Last ray Cast result: {0}".F(lastShotResult).PL().Nl();
 
             pegi.Nested_Inspect(brush.Targets_PEGI).Nl();
             pegi.Nested_Inspect(brush.Mode_Type_PEGI).Nl();

@@ -98,9 +98,9 @@ namespace PainterTool.Examples {
         
         void IPEGI.Inspect()
         {
-            "HUE: {0}".F(hue).PegiLabel().Nl();
-            "Saturateion: {0}".F(Saturation).PegiLabel().Nl();
-            "Value: {0}".F(Saturation).PegiLabel().Nl();
+            "HUE: {0}".F(hue).PL().Nl();
+            "Saturateion: {0}".F(Saturation).PL().Nl();
+            "Value: {0}".F(Saturation).PL().Nl();
         }
     }
 

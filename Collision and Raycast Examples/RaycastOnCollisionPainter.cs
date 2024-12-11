@@ -94,7 +94,7 @@ namespace PainterTool.Examples
                                                        "If target has Playtime Painter Component this script will try to paint on it.", "How to use Raycast On Collision");
 
             if (Application.isPlaying)
-                "Painting on {0} objects".F(_paintingOn.Count).PegiLabel().Nl();
+                "Painting on {0} objects".F(_paintingOn.Count).PL().Nl();
 
             brush.Targets_PEGI(); pegi.Nl();
             brush.Mode_Type_PEGI(); pegi.Nl();

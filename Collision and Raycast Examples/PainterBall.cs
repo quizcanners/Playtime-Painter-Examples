@@ -89,9 +89,9 @@ namespace PainterTool.Examples {
                                                        "Targets need to have PlaytimePainter component", "About Painter Ball");
      
             if (Application.isPlaying)
-                "Painting on {0} objects".F(paintingOn.Count).PegiLabel().Nl();
+                "Painting on {0} objects".F(paintingOn.Count).PL().Nl();
 
-            if (_collider.isTrigger && "Set as Rigid Collider object".PegiLabel().Click().Nl())
+            if (_collider.isTrigger && "Set as Rigid Collider object".PL().Click().Nl())
             {
                 _collider.isTrigger = false;
                 rigid.isKinematic = false;
@@ -99,7 +99,7 @@ namespace PainterTool.Examples {
             }
 
             if (!_collider.isTrigger)
-                "Set as Trigger".PegiLabel().Click().Nl().OnChanged(() =>
+                "Set as Trigger".PL().Click().Nl().OnChanged(() =>
                     {
                         _collider.isTrigger = true;
                         rigid.isKinematic = true;
@@ -108,12 +108,12 @@ namespace PainterTool.Examples {
 
             var size = transform.localScale.x;
 
-            if ("Size:".PegiLabel("Size of the ball", 50).Edit( ref size, 0.1f, 10).Nl())
+            if ("Size:".PL("Size of the ball", 50).Edit( ref size, 0.1f, 10).Nl())
                 transform.localScale = Vector3.one * size;
 
             const string ballHint = "PaintBall_brushHint";
 
-            "Painter ball made for World Space Brushes only".PegiLabel().WriteOneTimeHint(ballHint);
+            "Painter ball made for World Space Brushes only".PL().WriteOneTimeHint(ballHint);
 
             if ((pegi.Nested_Inspect(brush.Targets_PEGI).Nl()) | (pegi.Nested_Inspect(brush.Mode_Type_PEGI).Nl()))
             {

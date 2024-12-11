@@ -172,10 +172,10 @@ namespace PainterTool.Examples {
         #region Inspector
         void IPEGI.Inspect()
         {
-            "Mesh Filter".PegiLabel().Edit(ref meshFilter).Nl();
-            "Mesh Collider".PegiLabel().Edit(ref meshCollider).Nl();
-            "Width: ".PegiLabel().Edit(ref testWidth).Nl();
-            "Thickness ".PegiLabel().Edit(ref thickness).Nl();
+            "Mesh Filter".PL().Edit(ref meshFilter).Nl();
+            "Mesh Collider".PL().Edit(ref meshCollider).Nl();
+            "Width: ".PL().Edit(ref testWidth).Nl();
+            "Thickness ".PL().Edit(ref thickness).Nl();
                 /*   "UV Sector".PegiLabel().edit(ref uvSector).changes(ref changed);
             if (uvSector != new Vector4(0,0,1,1) && icon.Refresh.Click())
                 uvSector = new Vector4(0,0,1,1);
@@ -186,10 +186,10 @@ namespace PainterTool.Examples {
 
             if (!meshFilter)
             {
-                "Add Mesh filter".PegiLabel().Click().Nl().OnChanged(() => gameObject.AddComponent<MeshFilter>());
+                "Add Mesh filter".PL().Click().Nl().OnChanged(() => gameObject.AddComponent<MeshFilter>());
             }
             else
-                "Generate".PegiLabel().Click(() =>
+                "Generate".PL().Click(() =>
                 {
                     meshFilter.mesh = GenerateMesh(testWidth * 2);
 
@@ -198,7 +198,7 @@ namespace PainterTool.Examples {
                 });
 
             #if UNITY_EDITOR
-            if (meshFilter && meshFilter.sharedMesh && "Save".PegiLabel().Click())
+            if (meshFilter && meshFilter.sharedMesh && "Save".PL().Click())
                 Save();
 #endif
 
@@ -206,7 +206,7 @@ namespace PainterTool.Examples {
 
             pegi.Nl();
 
-            "For Pix Art shader set width equal to texture size, and thickness - 0".PegiLabel().Write_Hint();
+            "For Pix Art shader set width equal to texture size, and thickness - 0".PL().Write_Hint();
 
         }
         #endregion
